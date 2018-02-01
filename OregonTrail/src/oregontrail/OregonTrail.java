@@ -16,6 +16,7 @@ public class OregonTrail {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        // MT adding a note here
     }
     
 }
