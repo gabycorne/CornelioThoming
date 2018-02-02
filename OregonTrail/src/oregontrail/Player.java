@@ -17,9 +17,22 @@ public class Player implements Serializable{
     private String name;
     private double bestTime;
 
+    private ArrayList<Game> games = new ArrayList<Game>(); 
+    
     public Player() {
     }
+    
+    public ArrayList<Game> getGames() {
+        return games;
+    }
 
+    public void setGames(ArrayList<Game> games) {
+        this.games = games;
+    }
+
+    
+    
+    
     public String getName() {
         return name;
     }
