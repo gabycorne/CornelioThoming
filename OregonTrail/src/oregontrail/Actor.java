@@ -11,16 +11,6 @@ package oregontrail;
  */
 public enum Actor {
     
-    Father
-    Mother
-    Son
-    Daughter
-    Baby
-    Grandmother
-    Grandfather
-    Cousin
-    Aunt
-    Uncle
     
     private String name;
     private String description;
@@ -36,5 +26,17 @@ public enum Actor {
         return name;
     }
     
-    public String getDescription
+    public String getDescription() {
+        return description;
+    }
+    
+    public Point getCoordinates() {
+        return coordinates;
+    }
+    
+    @Override
+    public String toString() {
+        return "Actor{" + "name=" + name + ", description="
+                + description + ", coordinates=" + coordinates + '}';
+    }
 }
