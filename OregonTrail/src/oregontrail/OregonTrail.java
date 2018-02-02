@@ -5,6 +5,8 @@
  */
 package oregontrail;
 
+
+
 /**
  *
  * @author Owner
@@ -15,8 +17,7 @@ public class OregonTrail {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        // MT adding a note here
+        Player playerOne = new Player();
     }
     
 }
