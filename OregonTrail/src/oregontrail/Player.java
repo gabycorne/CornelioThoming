@@ -85,6 +85,10 @@ public class Player implements Serializable{
         }
         return true;
     }
+
+    void bestTime(double d) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 
 }
