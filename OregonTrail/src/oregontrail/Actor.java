@@ -5,6 +5,8 @@
  */
 package oregontrail;
 
+import java.awt.Point;
+
 /**
  *
  * @author mthoming
@@ -18,9 +20,8 @@ public enum Actor {
     Baby("Jacob", "The younges boy of the family.", new Point(1,2)),
     Grandfather("Ronald", "He is Elizabeth's Dad and a sick men.", new Point(1,1)),
     Cousin("Daniel","He is George's and Emily's cousin", new Point(3,4)),
-    Aunt("Emma", "She is Daniel's mom and a great cooker.", new Point(5,2)),
+    Aunt("Emma", "She is Daniel's mom and a great cooker.", new Point(5,2));
    
-    
     private String name;
     private String description;
     private Point coordinates;

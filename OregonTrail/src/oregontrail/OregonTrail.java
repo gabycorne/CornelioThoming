@@ -20,12 +20,14 @@ public class OregonTrail {
       Player playerOne = new Player();
         
         playerOne.setName("George"); 
-        playerOne.bestTime(7.0);
+        playerOne.bestTime(7.00);
         
         String playerOneName = playerOne.getName();
         double playerOneTime = playerOne.getBestTime();
+        Actor.Father.getName();
+        Actor.Father.getDescription();
         
-        system.out.println("Name = " + playerOneName + ", time = " + playerOneTime);
+        System.out.println(playerOne.toString());
     }
     
 }

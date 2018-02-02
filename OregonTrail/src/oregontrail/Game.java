@@ -15,7 +15,8 @@ public class Game implements Serializable {
     private String name;
     private double bestTime;
     private Player player;
-    
+    private InventoryItem[] inventoryItem = new InventoryItem[7];
+
     public Game() {
     }
 
@@ -27,8 +28,6 @@ public class Game implements Serializable {
         this.player = player;
     }
 
-    
-    
     public String getName() {
         return name;
     }
@@ -45,6 +44,14 @@ public class Game implements Serializable {
         this.bestTime = bestTime;
     }
 
+    public InventoryItem[] getInventoryItem() {
+        return inventoryItem;
+    }
+
+    public void setInventoryItem(InventoryItem[] inventoryItem) {
+        this.inventoryItem = inventoryItem;
+    }
+    
     @Override
     public String toString() {
         return "Game{" + "name=" + name + ", bestTime=" + bestTime + '}';
