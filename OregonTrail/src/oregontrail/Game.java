@@ -14,8 +14,17 @@ public class Game implements Serializable {
     
     private String name;
     private double bestTime;
-
+    private Player player;
+    
     public Game() {
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
     
