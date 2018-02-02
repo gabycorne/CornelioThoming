@@ -7,6 +7,7 @@ package oregontrail;
 
 import java.util.Objects;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
