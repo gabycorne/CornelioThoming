@@ -3,23 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.oregontrail.model;
-import java.io.Serializable;
+package oregontrail;
+
 import java.util.Objects;
+import java.io.Serializable;
+
 /**
  *
  * @made by Gabby
  */
-public class Game implements Serializable {
+public class Player implements Serializable{
     
     private String name;
     private double bestTime;
 
-    public Game() {
+    public Player() {
     }
 
-    
-    
     public String getName() {
         return name;
     }
@@ -34,24 +34,23 @@ public class Game implements Serializable {
 
     public void setBestTime(double bestTime) {
         this.bestTime = bestTime;
+       
     }
 
     @Override
     public String toString() {
-        return "Game{" + "name=" + name + ", bestTime=" + bestTime + '}';
+        return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
     }
-
-    
+  
     
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 89 * hash + Objects.hashCode(this.name);
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
+        int hash = 5;
+        hash = 29 * hash + Objects.hashCode(this.name);
+        hash = 29 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
         return hash;
     }
 
-    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -63,7 +62,7 @@ public class Game implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Game other = (Game) obj;
+        final Player other = (Player) obj;
         if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
             return false;
         }
@@ -73,10 +72,5 @@ public class Game implements Serializable {
         return true;
     }
     
-    
-    
-    
-    
-    
-    
+
 }
