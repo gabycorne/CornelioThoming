@@ -16,10 +16,9 @@ import java.util.ArrayList;
 public class Player implements Serializable{
     
     private String name;
-    public double bestTime;
-
+    private double bestTime;
     private ArrayList<Game> games = new ArrayList<Game>(); 
-    
+
     public Player() {
     }
     
@@ -30,9 +29,6 @@ public class Player implements Serializable{
     public void setGames(ArrayList<Game> games) {
         this.games = games;
     }
-
-    
-    
     
     public String getName() {
         return name;
@@ -48,15 +44,13 @@ public class Player implements Serializable{
 
     public void setBestTime(double bestTime) {
         this.bestTime = bestTime;
-       
     }
 
     @Override
     public String toString() {
         return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
     }
-  
-    
+      
     @Override
     public int hashCode() {
         int hash = 5;

@@ -5,8 +5,6 @@
  */
 
 package oregontrail;
-import static java.time.Clock.system;
-import oregontrail.Player;
 /**
  *
  * @author Owner
@@ -20,14 +18,37 @@ public class OregonTrail {
       Player playerOne = new Player();
         
         playerOne.setName("George"); 
-        playerOne.bestTime(7.00);
+        playerOne.setBestTime(7.00);
         
         String playerOneName = playerOne.getName();
         double playerOneTime = playerOne.getBestTime();
         Actor.Father.getName();
         Actor.Father.getDescription();
+        Actor.Mother.getName();
+        Actor.Mother.getDescription();
+        Actor.Son.getName();
+        Actor.Son.getDescription();
+        Actor.Daughter.getName();
+        Actor.Daughter.getDescription();
+        Actor.Baby.getName();
+        Actor.Baby.getDescription();
+        Actor.Grandfather.getName();
+        Actor.Grandfather.getDescription();
+        Actor.Cousin.getName();
+        Actor.Cousin.getDescription();
+        Actor.Aunt.getName();
+        Actor.Aunt.getDescription();
         
         System.out.println(playerOne.toString());
+        System.out.println(Actor.Father);
+        System.out.println(Actor.Mother);
+        System.out.println(Actor.Son);
+        System.out.println(Actor.Daughter);
+        System.out.println(Actor.Baby);
+        System.out.println(Actor.Grandfather);
+        System.out.println(Actor.Cousin);
+        System.out.println(Actor.Aunt);
+        
     }
     
 }
