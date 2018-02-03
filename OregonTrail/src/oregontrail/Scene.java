@@ -16,6 +16,9 @@ public class Scene implements Serializable {
     private double description;
     private double blockedLocation;
     private String displaySymbol;
+    private InventoryItem inventoryItem;
+    private Location[] location = new Location[15];
+
 
     public String getTravelTime() {
         return travelTime;
@@ -49,11 +52,25 @@ public class Scene implements Serializable {
         this.displaySymbol = displaySymbol;
     }
 
+    public InventoryItem getInventoryItem() {
+        return inventoryItem;
+    }
+
+    public void setInventoryItem(InventoryItem inventoryItem) {
+        this.inventoryItem = inventoryItem;
+    }
+
+    public Location[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[] location) {
+        this.location = location;
+    }
+    
     @Override
     public String toString() {
         return "WarehouseTypeScene{" + "travelTime=" + travelTime + ", description=" + description + ", blockedLocation=" + blockedLocation + ", displaySymbol=" + displaySymbol + '}';
     }
-    
-   
-    
+
 }

@@ -15,11 +15,22 @@ public class Game implements Serializable {
     private String name;
     private double bestTime;
     private Player player;
+    private Map map;
     private InventoryItem[] inventoryItem = new InventoryItem[7];
 
+    //default constructor
     public Game() {
     }
 
+    //getters and setters
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+        
     public Player getPlayer() {
         return player;
     }
@@ -52,13 +63,13 @@ public class Game implements Serializable {
         this.inventoryItem = inventoryItem;
     }
     
+    //toString
     @Override
     public String toString() {
         return "Game{" + "name=" + name + ", bestTime=" + bestTime + '}';
     }
 
-    
-    
+    //hashCode and equals
     @Override
     public int hashCode() {
         int hash = 3;
@@ -66,7 +77,6 @@ public class Game implements Serializable {
         hash = 89 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
         return hash;
     }
-
     
     @Override
     public boolean equals(Object obj) {
@@ -88,11 +98,5 @@ public class Game implements Serializable {
         }
         return true;
     }
-    
-    
-    
-    
-    
-    
     
 }

@@ -16,12 +16,25 @@ public class OregonTrail {
      */
     public static void main(String[] args) {
       Player playerOne = new Player();
+      InventoryItem itemOne = new InventoryItem();
+      Map mapOne = new Map();
+      Location currentLocation = new Location();
         
         playerOne.setName("George"); 
         playerOne.setBestTime(7.00);
+        itemOne.setInventoryType("Wagon Wheel");
+        itemOne.setQuantityInStock(5);
+        itemOne.setRequiredAmount(50);
+        mapOne.setRowCount(2);
+        mapOne.setColumnCount(2);
+        currentLocation.setRow(1);
+        currentLocation.setColumn(5);
+        currentLocation.setVisited(true);
+        currentLocation.setAmountRemaining(200);        
         
         String playerOneName = playerOne.getName();
         double playerOneTime = playerOne.getBestTime();
+        String itemOneInventoryType = itemOne.getInventoryType();
         Actor.Father.getName();
         Actor.Father.getDescription();
         Actor.Mother.getName();
@@ -48,7 +61,9 @@ public class OregonTrail {
         System.out.println(Actor.Grandfather);
         System.out.println(Actor.Cousin);
         System.out.println(Actor.Aunt);
-        
+        System.out.println(itemOne.toString());
+        System.out.println(mapOne.toString());
+        System.out.println(currentLocation.toString());
     }
     
 }

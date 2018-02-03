@@ -25,6 +25,7 @@ public enum Actor {
     private String name;
     private String description;
     private Point coordinates;
+    private Location location;
 
     Actor(String name, String description, Point coordinates) {
         this.name = name;
@@ -32,21 +33,48 @@ public enum Actor {
         this.coordinates = coordinates;
     }
 
+    //default constructor
+    private Actor() {
+    }
+    
+    //getters and setters
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
     
     public String getDescription() {
         return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
     
     public Point getCoordinates() {
         return coordinates;
     }
     
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
+    }
+    
+    //toString
     @Override
     public String toString() {
         return "Actor{" + "name=" + name + ", description="
                 + description + ", coordinates=" + coordinates + '}';
     }
+    
 }

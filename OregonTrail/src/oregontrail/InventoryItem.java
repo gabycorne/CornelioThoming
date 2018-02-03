@@ -18,6 +18,8 @@ public class InventoryItem implements Serializable{
     private double quantityInStock;
     private double requiredAmount;
     private Game game;
+    private Scene[] scene = new Scene[10];
+
 
     //constructor method
     public InventoryItem() {
@@ -56,6 +58,15 @@ public class InventoryItem implements Serializable{
         this.game = game;
     }
 
+    public Scene[] getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene[] scene) {
+        this.scene = scene;
+    }
+
+    
     
     //toString, hashCode and equals methods
     @Override

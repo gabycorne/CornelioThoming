@@ -19,9 +19,11 @@ public class Player implements Serializable{
     private double bestTime;
     private ArrayList<Game> games = new ArrayList<Game>(); 
 
+    //default constructor
     public Player() {
     }
     
+    //getters and setters
     public ArrayList<Game> getGames() {
         return games;
     }
@@ -46,11 +48,13 @@ public class Player implements Serializable{
         this.bestTime = bestTime;
     }
 
+    //toString
     @Override
     public String toString() {
         return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
     }
       
+    //hashCode and equals
     @Override
     public int hashCode() {
         int hash = 5;
