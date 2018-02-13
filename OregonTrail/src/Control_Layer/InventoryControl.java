@@ -11,4 +11,24 @@ package Control_Layer;
  */
 public class InventoryControl {
     
+    public static double calcItemTotalCost(double itemCost, double itemQuantityToPurchase) {
+        
+        itemQuantityToPurchase = 5;
+        itemCost = 10;
+            
+        //if (StringUtils.isNumeric(itemCost) = false) {
+        //    return -1;
+        //}
+        
+        if (itemCost < 1) {
+          return -1;
+        }
+    
+        if (itemQuantityToPurchase < 1 || itemQuantityToPurchase > 10000) {
+            return -1;
+        }
+    
+        double totalCost = itemCost * itemQuantityToPurchase;
+            return totalCost;
+    }
 }
