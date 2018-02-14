@@ -13,9 +13,6 @@ public class InventoryControl {
     
     public static double calcItemTotalCost(double itemCost, double itemQuantityToPurchase) {
         
-        itemQuantityToPurchase = 5;
-        itemCost = 10;
-            
         //if (StringUtils.isNumeric(itemCost) = false) {
         //    return -1;
         //}
