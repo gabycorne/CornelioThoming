@@ -29,6 +29,7 @@ public class InventoryControlTest {
 
     /**
      * Test of calcItemTotalCost method, of class InventoryControl.
+     * Author: MThoming
      */
     @Test
     public void testCalcItemTotalCost() {
