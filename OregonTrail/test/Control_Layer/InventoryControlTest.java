@@ -33,7 +33,7 @@ public class InventoryControlTest {
      */
     @Test
     public void testCalcItemTotalCost() {
-        System.out.println("calcItemTotalCost");
+        System.out.println("calcItemTotalCost (Michael's Tests)");
         
         // Test case 1
         System.out.println("\tTest case 1 (Food)");
@@ -157,8 +157,9 @@ public class InventoryControlTest {
     
     
     //Author: Gaby Cornelio
+    @Test
     public void testCalcItemTotalWeight() {
-        System.out.println("calcItemTotalWeight");
+        System.out.println("calcItemTotalWeight (Gaby's Tests)");
       System.out.println("test case 1");
         double itemWeight = 50;
         double itemQuantityToPurchase = 4;
