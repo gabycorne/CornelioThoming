@@ -155,4 +155,63 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
     }
     
+    
+    //Author: Gaby Cornelio
+    public void testCalcItemTotalWeight() {
+        System.out.println("calcItemTotalWeight");
+      System.out.println("test case 1");
+        double itemWeight = 50;
+        double itemQuantityToPurchase = 4;
+        double expResult = 200;
+        double result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+     
+        
+        System.out.println("test case 2");
+         itemWeight = 50;
+         itemQuantityToPurchase = -1;
+        expResult = -1;
+         result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         System.out.println("test case 3");
+         itemWeight = 50;
+         itemQuantityToPurchase = 5;
+        expResult = -1;
+         result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         System.out.println("test case 4");
+         itemWeight = 50;
+         itemQuantityToPurchase = 0;
+        expResult = -1;
+         result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         System.out.println("test case 5");
+         itemWeight = 50;
+         itemQuantityToPurchase = 2;
+        expResult = 100;
+         result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+         System.out.println("test case 6");
+         itemWeight = 50;
+         itemQuantityToPurchase = 4;
+        expResult = 200;
+         result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }    
 }

@@ -11,6 +11,7 @@ package Control_Layer;
  */
 public class InventoryControl {
     
+    //Author: MThoming
     public static double calcItemTotalCost(double itemCost, double itemQuantityToPurchase) {
         
         //if (StringUtils.isNumeric(itemCost) = false) {
@@ -28,4 +29,22 @@ public class InventoryControl {
         double totalCost = itemCost * itemQuantityToPurchase;
             return totalCost;
     }
+    
+    
+    //Author: Gaby Cornelio
+    public static double calcItemTotalWeight( double itemWeight, double itemQuantityToPurchase){
+      
+       
+       //test case 1
+        if (itemQuantityToPurchase < 2 || itemQuantityToPurchase > 4){
+                    return -1; 
+        }
+     
+     
+       double totalWeight = itemWeight * itemQuantityToPurchase;
+
+        return totalWeight;
+        
+       
+         }    
 }
