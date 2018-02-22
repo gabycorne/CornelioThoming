@@ -5,6 +5,8 @@
  */
 package ViewLayer;
 
+import java.util.Scanner;
+
 /**
  *
  * @author mthoming
@@ -14,7 +16,7 @@ public class StartProgramView {
     public StartProgramView() {
     }
     
-    void displayStartProgramView() {        
+    public void displayStartProgramView() {        
         boolean endOfView = false;
         do {
             String input = getInputs();
@@ -32,15 +34,47 @@ public class StartProgramView {
     }
     
     private String getInputs() {
+        boolean validInput = false;
+        
+        String input = ""; 
+                
+        do {
+            System.out.println("\t  Please enter your name:");
+            
+            Scanner inFile;
+            inFile = new Scanner(System.in);
+            
+            String userName = inFile.nextLine();
+            
+            userName = userName.trim();
+            
+            if (userName == null || input.length() < 1 ) {
+                
+                System.out.println("\t  You must enter a non-blank value:");
+            }
+            else {
+                validInput = true;
+            }
+           }
+        
+        while (!validInput);
+        
+        return input;
+        
+        }
         //add "scanner" statement to get input from the user
         
         
+        
+        /*  Stub code
         System.out.println("**** getInputs() called ***");
         
         String input = new String();
         input = "testInput";
         
         return input;
+        */
+        
         /*
         getInputs(): String[] {
 
@@ -67,7 +101,8 @@ public class StartProgramView {
 
         RETURN inputs
         */
-    }
+       
+
 
     private boolean doAction(String input) {
         System.out.println("**** doAction() called ***");
