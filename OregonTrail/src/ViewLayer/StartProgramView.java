@@ -36,7 +36,7 @@ public class StartProgramView {
     private String getInputs() {
         boolean validInput = false;
         
-        String input = ""; 
+        String input = "Test"; 
                 
         do {
             System.out.println("\t  Please enter your name:");
