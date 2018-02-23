@@ -30,78 +30,41 @@ public class StartProgramView {
            
             endOfView = doAction(input);
         } while (endOfView != true);
-        
+                
+        ViewLayer.MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMainMenuView();
     }
     
-    private String getInputs() {
+    public String getInputs() {
         boolean validInput = false;
+        String name = ""; 
         
-        String input = "Test"; 
-                
+        System.out.println("\t  Please enter your name:");
+        
         do {
-            System.out.println("\t  Please enter your name:");
+            String input = "";
             
             Scanner inFile;
             inFile = new Scanner(System.in);
+  
+            input = inFile.nextLine();
             
-            String userName = inFile.nextLine();
-            
-            userName = userName.trim();
-            
-            if (userName == null || input.length() < 1 ) {
+            if (input == null || input.length() < 1 ) {
                 
                 System.out.println("\t  You must enter a non-blank value:");
             }
             else {
                 validInput = true;
+                name = input.trim();
+                
             }
            }
         
         while (!validInput);
         
-        return input;
+        return name;
         
-        }
-        //add "scanner" statement to get input from the user
-        
-        
-        
-        /*  Stub code
-        System.out.println("**** getInputs() called ***");
-        
-        String input = new String();
-        input = "testInput";
-        
-        return input;
-        */
-        
-        /*
-        getInputs(): String[] {
-
-        inputs = new String array one element long
-
-        Display a description of the view
-
-        valid = false
-        WHILE valid == false (no input value has been enterd)
-
-            Display the prompt message
-            Get the value entered from the keyboard
-            Trim off leading and trailing blanks from the value
-
-            IF length of the value < 1 then
-                Display "You must enter a non-blank value”
-                Continue (move to the top of the loop and repeat)
-            ENDIF
-
-            Assign the value to the fist position in the inputs array
-
-            valid = true (ends the loop)
-        ENDWHILE
-
-        RETURN inputs
-        */
-       
+        }       
 
 
     private boolean doAction(String input) {
@@ -115,4 +78,21 @@ public class StartProgramView {
         System.out.println("*** display() called ***");
     }
     
+    public void displayMainMenuView() {
+
+        boolean endView = false;
+
+        do {
+            String input = getInputs();
+            input = input.toUpperCase();
+
+            if (input == null || input.length() < 1 || input.equals("Q")) {
+                
+            }
+            else {
+                    endView = doAction(input); 
+            }
+        } while (endView != true);
+
+    }
 }
