@@ -73,22 +73,35 @@ public class MainMenuView {
         return true;
         }
         
-        private void getHelp() {
-        ViewLayer.MainMenuView.HelpMenuView helpMenuView = new HelpMenuView();
-        HelpMenuView.display();
+        public void startNewGame() {
+            System.out.println("**** startNewGame() called ***");
+            System.out.println(" No variable set ");
             
+            GameMenuView gameMenu = new GameMenuView();
+            gameMenu.displayGameMenuView();
+        }
+        
+        private void getHelp() {
+            ViewLayer.MainMenuView.HelpMenuView helpMenuView = new HelpMenuView();
+            HelpMenuView.displayHelpMenuView();
         }
 
-    private static class HelpMenuView {
+        private static class HelpMenuView {
 
-        private static void display() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
+            public static void displayHelpMenuView() {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
 
-        public HelpMenuView() {
-            System.out.println("**** HelpMenuView() called ***");
-            System.out.println("\tinput = ??");
+            public HelpMenuView() {
+                System.out.println("**** HelpMenuView() called ***");
+                System.out.println("\tinput = ??");
+            }
         }
-    }
+    
+        public static void main(String[] args) {
+        ViewLayer.GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.displayGameMenuView();
+
+        }
 
 }

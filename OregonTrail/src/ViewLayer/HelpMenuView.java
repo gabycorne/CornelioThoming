@@ -5,6 +5,8 @@
  */
 package ViewLayer;
 
+import java.util.Scanner;
+
 /**
  *
  * @author mthoming
@@ -12,13 +14,49 @@ package ViewLayer;
 public class HelpMenuView {
 
     public HelpMenuView() {
+    }
+    
+    public void displayHelpMenuView() {
+        System.out.println("**** displayMenuView() called ***");
+        System.out.println("no variable");
+    }
+
+        public String getInputs() {
+        boolean validInput = false;
+        String input = ""; 
         
-    }
-    
-    /*
-    public boolean doAction(String selection) {
-    
-    }
-    */   
+        System.out.println("\t  Please enter your desired menu item");
+        
+        do {
+            String value = "";
+            
+            Scanner inFile;
+            inFile = new Scanner(System.in);
+  
+            value = inFile.nextLine();
+            
+            if (value == null || value.length() < 1 ) {
+                
+                System.out.println("\t  You must enter a non-blank value:");
+            }
+            else {
+                validInput = true;
+                input = value.trim();
+                
+            }
+           }
+        
+        while (!validInput);
+        
+        return input;
+        
+        }
+        
+        private boolean doAction(String input) {
+            System.out.println("**** HelpMenuView.doAction() called ***");
+            System.out.println("\tinput = " + input);
+        
+        return true;
+        }
     
 }
