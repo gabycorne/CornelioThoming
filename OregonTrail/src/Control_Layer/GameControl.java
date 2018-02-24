@@ -7,6 +7,7 @@ package Control_Layer;
 
 import oregontrail.OregonTrail;
 import oregontrail.Player;
+import ViewLayer.HelpMenuView;
 
 /**
  *
@@ -32,6 +33,10 @@ public class GameControl {
                     
          return playerTemp;
                 
+    }
+    
+    public static void CreateNewGame(Player player) {
+        System.out.println("**** CreateNewGame() called ****");
     }
 }
 

@@ -5,7 +5,9 @@
  */
 package ViewLayer;
 
+import Control_Layer.GameControl;
 import java.util.Scanner;
+import oregontrail.OregonTrail;
 import oregontrail.Player;
 
 /**
@@ -20,21 +22,24 @@ public class StartProgramView {
     public void displayStartProgramView() {        
         boolean endOfView = false;
         do {
-            String input = getInputs();
+            String[] input = new String[10];
+                    input[0] = getInputs();
             
-            input = input.toUpperCase();
+            input[0] = input[0].toUpperCase();
             
-           if (input == null || input.length() < 1 || input.equals("Q")) {
+           if (input[0] == null || input[0].length() < 1 || input[0].equals("Q")) {
                boolean isValidInput = false;
                return;
             }
            
-            endOfView = doAction(input);
+            endOfView = true;
         } while (endOfView != true);
-                
+
         ViewLayer.MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMainMenuView();
     }
+    
+    
     
     public String getInputs() {
         boolean validInput = false;
@@ -68,10 +73,9 @@ public class StartProgramView {
         }       
 
 
-    private boolean doAction(String input) {
-        System.out.println("**** doAction() called ***");
-        System.out.println("\tinput = " + input);
-        
+    private boolean doAction(String input[]) {
+
+                
         Player player = new Player();
         
         if (player == null){
@@ -79,11 +83,65 @@ public class StartProgramView {
                 return false;          
                        }
         
-       player.setName(input);
-        System.out.println("================================================= " + "Welcome to the game " + input + " We hope you have a lot of fun!" + "==================================================="); 
+       player.setName(input[0]);
+        System.out.println("=== " + "Welcome to the game " + input + " We hope you have a lot of fun!" + "==="); 
+
+        
+        /*
+        System.out.println("**** doAction() called ***");
+        System.out.println("\tinput = " + input);
+        */
+        
+        String menuItem = input[0];
+        
+        menuItem = menuItem.toUpperCase();
+        
+        switch(menuItem){
+            
+            case "N": startNewGame();
+                break;
+                
+            case "R": restartGame();
+                break;
+                
+            case "H": getHelp();
+                break;
+               
+            case "E": return true;
+                
+                default: System.out.println("Invalid main menu");
+      
+            return false;
+            
+            }
         
         return true;
     }    
+    
+            private void startNewGame(){
+             
+           Player playerTemp = new Player(); 
+           
+           GameControl.CreateNewGame(OregonTrail.getplayer);
+           ViewLayer.GameMenuView gameMenuView = new GameMenuView();
+           gameMenuView.displayGameMenuView();
+            
+        }
+        
+        private void restartNewGame(){
+             ViewLayer.StartExistingGameView startExistingGameView = new StartExistingGameView();
+           startExistingGameView.displayStartExistingGameView();
+            
+        }
+        
+         private void restartGame() {
+         }
+        
+         private void getHelp() {
+        ViewLayer.MainMenuView.HelpMenuView helpMenuView = new MainMenuView.HelpMenuView();
+        MainMenuView.HelpMenuView.displayHelpMenuView();
+            
+        }
 
     public void display() {
         System.out.println("*** display() called ***");
@@ -94,10 +152,11 @@ public class StartProgramView {
         boolean endView = false;
 
         do {
-            String input = getInputs();
-            input = input.toUpperCase();
+            String[] input = new String[10];
+            input[0] = getInputs();
+            input[0] = input[0].toUpperCase();
 
-            if (input == null || input.length() < 1 || input.equals("Q")) {
+            if (input[0] == null || input[0].length() < 1 || input[0].equals("Q")) {
                 
             }
             else {

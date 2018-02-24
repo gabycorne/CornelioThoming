@@ -13,7 +13,6 @@ import ViewLayer.StartProgramView;
  * @author Owner
  */
 public class OregonTrail {
-    private Player player;
 
     /**
      * @param args the command line arguments
@@ -24,8 +23,28 @@ public class OregonTrail {
         
     }
     
-    public void setPlayer(Player player){
-        this.player = player;
+    public static Player getplayer;
+
+    private Player player;
+    private static Game currentGame = null;
+    private static Player playerOpt = null;
+    
+     public void setPlayer(Player player){
+    //this.player = player;
+    OregonTrail.playerOpt = player;
+    }
+     public static Game getCurrentGame(){
+         return currentGame;
+    }
+    public static void setCurrentGame(Game currentGame){
+         
+    OregonTrail.currentGame = currentGame;
+    }
+    public static Player getPlayer(){
+        return playerOpt;
+    }
+    public static void setPlayer(){
+  
     }
     
 }

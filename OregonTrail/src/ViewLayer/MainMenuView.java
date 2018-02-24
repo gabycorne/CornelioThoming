@@ -6,6 +6,11 @@
 package ViewLayer;
 
 import java.util.Scanner;
+import ViewLayer.StartExistingGameView;
+import Control_Layer.GameControl;
+import oregontrail.OregonTrail;
+import oregontrail.Player;
+import ViewLayer.HelpMenuView;
 
 /**
  *
@@ -21,23 +26,53 @@ public class MainMenuView {
         boolean endView = false;
 
         do {
-            String input = getInputs();
-            input = input.toUpperCase();
+            String[] input = new String[10];
+                    input[0] = getInputs();
+            input[0] = input[0].toUpperCase();
 
-            if (input == null || input.length() < 1 || input.equals("Q")) {
+            if (input[0] == null || input[0].length() < 1 || input[0].equals("Q")) {
                 boolean isValidInput = false;
                return;
             }
             else {
-                    endView = doAction(input); 
+                  return;
             }
         } while (endView != true);
 
+
     }
+    
+    
+private boolean doAction(String[] input){
+     
+        String menuItem = input[0];
+        
+        menuItem = menuItem.toUpperCase();
+        
+        switch(menuItem){
+            
+            case "N": startNewGame();
+                break;
+                
+            case "R": restartGame();
+                break;
+                
+            case "H": getHelp();
+                break;
+               
+            case "E": return true;
+                
+                default: System.out.println("Invalid main menu");
+      
+            return false;
+            
+            }
+        return false;
+  }
     
         public String getInputs() {
         boolean validInput = false;
-        String input = ""; 
+        String[] input = new String[10]; 
         
         System.out.println("\t  Please enter your desired menu item");
         
@@ -55,46 +90,53 @@ public class MainMenuView {
             }
             else {
                 validInput = true;
-                input = value.trim();
+                input[0] = value.trim();
                 
             }
            }
         
         while (!validInput);
         
-        return input;
+        return input[0];
         
         } 
         
-        private boolean doAction(String input) {
-        System.out.println("**** doAction() called ***");
-        System.out.println("\tinput = " + input);
-        
-        return true;
-        }
-        
-        public void startNewGame() {
-            System.out.println("**** startNewGame() called ***");
-            System.out.println(" No variable set ");
+          
+        public void startNewGame(){
+             
+           Player playerTemp = new Player(); 
+           
+           GameControl.CreateNewGame(OregonTrail.getplayer);
+           ViewLayer.GameMenuView gameMenuView = new GameMenuView();
+           gameMenuView.displayGameMenuView();
             
-            GameMenuView gameMenu = new GameMenuView();
-            gameMenu.displayGameMenuView();
         }
         
-        private void getHelp() {
-            ViewLayer.MainMenuView.HelpMenuView helpMenuView = new HelpMenuView();
-            HelpMenuView.displayHelpMenuView();
+        public void restartNewGame(){
+             ViewLayer.StartExistingGameView startExistingGameView = new StartExistingGameView();
+           startExistingGameView.displayStartExistingGameView();
+            
         }
+        
+         private void restartGame() {
+         }
+        
+         public void getHelp() {
+        ViewLayer.MainMenuView.HelpMenuView helpMenuView = new HelpMenuView();
+        HelpMenuView.displayHelpMenuView();
+            
+        }      
 
-        private static class HelpMenuView {
+        public static class HelpMenuView {
 
             public static void displayHelpMenuView() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                System.out.println("**** displayHelpMenuView() called ***");
+                
             }
 
             public HelpMenuView() {
                 System.out.println("**** HelpMenuView() called ***");
-                System.out.println("\tinput = ??");
+                
             }
         }
     
