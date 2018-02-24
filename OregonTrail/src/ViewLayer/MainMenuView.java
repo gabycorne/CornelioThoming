@@ -74,14 +74,20 @@ public class MainMenuView {
         }
         
         private void getHelp() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenuView.Display();
+        ViewLayer.MainMenuView.HelpMenuView helpMenuView = new HelpMenuView();
+        HelpMenuView.display();
             
         }
 
     private static class HelpMenuView {
 
+        private static void display() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
         public HelpMenuView() {
+            System.out.println("**** HelpMenuView() called ***");
+            System.out.println("\tinput = ??");
         }
     }
 
