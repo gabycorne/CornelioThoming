@@ -71,6 +71,18 @@ public class MainMenuView {
         System.out.println("\tinput = " + input);
         
         return true;
+        }
+        
+        private void getHelp() {
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenuView.Display();
+            
+        }
+
+    private static class HelpMenuView {
+
+        public HelpMenuView() {
+        }
     }
 
 }
