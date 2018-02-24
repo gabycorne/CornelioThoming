@@ -13,6 +13,7 @@ import ViewLayer.StartProgramView;
  * @author Owner
  */
 public class OregonTrail {
+    private Player player;
 
     /**
      * @param args the command line arguments
@@ -21,6 +22,10 @@ public class OregonTrail {
         ViewLayer.StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
         
+    }
+    
+    public void setPlayer(Player player){
+        this.player = player;
     }
     
 }

@@ -5,11 +5,33 @@
  */
 package Control_Layer;
 
+import oregontrail.OregonTrail;
+import oregontrail.Player;
+
 /**
  *
  * @author mthoming
  */
-public class GameControl {
-    
-    
+public class GameControl {    
+
+
+    public GameControl() {
+    }
+    public static Player savePlayer( String name){
+               
+        if (name == null || name.length() < 1){
+                    
+            return null;
+    }
+               
+        Player playerTemp = new Player(); 
+        
+        playerTemp.setName(name);
+        
+        //OregonTrail.setPlayer(playerTemp);
+                    
+         return playerTemp;
+                
+    }
 }
+

@@ -6,6 +6,7 @@
 package ViewLayer;
 
 import java.util.Scanner;
+import oregontrail.Player;
 
 /**
  *
@@ -70,6 +71,16 @@ public class StartProgramView {
     private boolean doAction(String input) {
         System.out.println("**** doAction() called ***");
         System.out.println("\tinput = " + input);
+        
+        Player player = new Player();
+        
+        if (player == null){
+                System.out.println("Could not create the player."  + "Enter a different name." );
+                return false;          
+                       }
+        
+       player.setName(input);
+        System.out.println("================================================= " + "Welcome to the game " + input + " We hope you have a lot of fun!" + "==================================================="); 
         
         return true;
     }    
