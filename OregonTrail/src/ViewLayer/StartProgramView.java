@@ -19,7 +19,20 @@ public class StartProgramView {
     public StartProgramView() {
     }
     
-    public void displayStartProgramView() {        
+        public void displayBanner() {
+            //display message
+        System.out.println("\n"
+            + "\n================================="
+            + "\n  Welcome to Oregon Trail!       "
+            + "\n  Test your survival skills      "
+            + "\n  and see if you can survive     "
+            + "\n  on the western frontier!       "
+            + "\n=================================");
+    
+    }
+    
+    public void displayStartProgramView() {
+        
         boolean endOfView = false;
         do {
             String[] input = new String[10];
@@ -36,7 +49,12 @@ public class StartProgramView {
         } while (endOfView != true);
 
         ViewLayer.MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMainMenuView();
+        mainMenuView.displayMenuOptions();
+        String mainMenuInput = "";
+        mainMenuView.getInputs();
+        mainMenuView.doAction(mainMenuInput);
+        
+        
     }
     
     

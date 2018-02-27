@@ -6,6 +6,7 @@
 
 package oregontrail;
 
+import ViewLayer.GetFoodView;
 import ViewLayer.StartProgramView;
 
 /**
@@ -18,11 +19,21 @@ public class OregonTrail {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        /*
         ViewLayer.StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayBanner();
         startProgramView.displayStartProgramView();
         
+        */
+        
+        ViewLayer.GetFoodView displayGetFoodView = new GetFoodView();
+        getFoodView.displayBanner();
+        
+        
+        
     }
-    
+
     public static Player getplayer;
 
     private Player player;
