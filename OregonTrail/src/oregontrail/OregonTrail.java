@@ -28,7 +28,7 @@ public class OregonTrail {
         */
         
         ViewLayer.GetFoodView displayGetFoodView = new GetFoodView();
-        getFoodView.displayBanner();
+        //getFoodView.displayBanner();
         
         
         
