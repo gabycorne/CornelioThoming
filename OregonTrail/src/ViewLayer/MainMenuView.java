@@ -21,35 +21,28 @@ public class MainMenuView {
     public MainMenuView() {
     }
     
-    public void displayMainMenuView() {
-
-        boolean endView = false;
-
-        do {
-            String[] input = new String[10];
-                    input[0] = getInputs();
-            input[0] = input[0].toUpperCase();
-
-            if (input[0] == null || input[0].length() < 1 || input[0].equals("Q")) {
-                boolean isValidInput = false;
-               return;
-            }
-            else {
-                  return;
-            }
-        } while (endView != true);
-
-
+    public void displayMenuOptions() {
+        
+        
+        
+            //display message
+        System.out.println("\n"
+            + "\n================================="
+            + "\n  Choose from the following:     "
+            + "\n                                 "
+            + "\n  N - New Game                   "
+            + "\n  R - Restart saved Game         "
+            + "\n  H - Get help                   "                
+            + "\n  Q - Quit game                  "            
+            + "\n=================================");
+    
     }
-    
-    
-private boolean doAction(String[] input){
+        
+        
+    public boolean doAction(String selection){
      
-        String menuItem = input[0];
-        
-        menuItem = menuItem.toUpperCase();
-        
-        switch(menuItem){
+        String input = "";
+        switch(input){
             
             case "N": startNewGame();
                 break;
@@ -60,15 +53,18 @@ private boolean doAction(String[] input){
             case "H": getHelp();
                 break;
                
-            case "E": return true;
+            case "Q": return true;
                 
-                default: System.out.println("Invalid main menu");
+            default: System.out.println("Invalid selection");
       
-            return false;
-            
-            }
+            break;
+        }
         return false;
-  }
+    }
+    
+    
+    
+    
     
         public String getInputs() {
         boolean validInput = false;
