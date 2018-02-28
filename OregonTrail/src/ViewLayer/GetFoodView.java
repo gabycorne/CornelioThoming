@@ -5,6 +5,8 @@
  */
 package ViewLayer;
 
+import java.util.Scanner;
+
 /**
  *
  * @author mthoming
@@ -34,33 +36,66 @@ public class GetFoodView {
     
     }
     
-        public void displayGetFoodView() {
-            boolean endOfView = false;
-            do {
-                
-                
-                
-            } while (endOfView != true);
+    public void displayGetFoodView() {
+        boolean done = false;
+        do{
+            String menuOption = this.getMenuOption();
+            if (menuOption.toUpperCase().equals("Q"))
+                return;
             
+            done = this.doAction(menuOption);
+        } while (!done);
+    
+    }
+    
+        private String getMenuOption() {
+        boolean validInput = false;
+        String selection = ""; 
+        
+        System.out.println("\t  Please enter your selection:");
+        
+        do {
+            String input = "";
+            
+            Scanner inFile;
+            inFile = new Scanner(System.in);
+  
+            input = inFile.nextLine();
+            
+            if (input == null || input.length() < 1 ) {
+                
+                System.out.println("\t  You must enter a non-blank value:");
+            }
+            else {
+                validInput = true;
+                selection = input.trim();
+                
+            }
+           }
+        
+        while (!validInput);
+        
+        return selection;
+        
         }
     
-        public boolean doAction(String selection) {
-            char charSel = selection.charAt(0);
-        
-        switch (charSel) {
-            case 'H':  // Start New Game 
+    
+        private boolean doAction(String menuOption) {
+                    
+        switch (menuOption) {
+            case "H":  // Start New Game 
                 hunting();
                 break;
-            case 'G':  // Load Saved Game
+            case "G":  // Load Saved Game
                 gathering();
                 break;
-            case 'F':  // Save Current Game 
+            case "F":  // Save Current Game 
                 fishing();
                 break;
-            case 'A':  // Help Menu
+            case "A":  // Help Menu
                 HelpMenuView();
                 break;
-            case 'Q':  // Quit 
+            case "Q":  // Quit 
                 return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again***");
@@ -89,6 +124,7 @@ public class GetFoodView {
             System.out.println("**** HelpMenuView() called ***");
             System.out.println("no variable");
         }
+        
         
    
     }

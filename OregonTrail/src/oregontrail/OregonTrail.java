@@ -6,6 +6,7 @@
 
 package oregontrail;
 
+import ViewLayer.BuyFoodView;
 import ViewLayer.GetFoodView;
 import ViewLayer.StartProgramView;
 
@@ -27,8 +28,16 @@ public class OregonTrail {
         
         */
         
-        ViewLayer.GetFoodView displayGetFoodView = new GetFoodView();
-        //getFoodView.displayBanner();
+        ViewLayer.GetFoodView getFoodView = new GetFoodView();
+        getFoodView.displayBanner();
+        getFoodView.displayGetFoodView();
+        
+        System.out.println("**** Quit selected, returned to calling class ***");
+        
+        
+        ViewLayer.BuyFoodView buyFoodView = new BuyFoodView();
+        buyFoodView.displayMessage();
+        buyFoodView.displayGetFoodView();
         
         
         
