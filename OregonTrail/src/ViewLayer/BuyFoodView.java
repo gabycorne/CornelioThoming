@@ -31,7 +31,8 @@ public class BuyFoodView {
   
     public void displayGetFoodView() {
         boolean done = false;
-        do{
+        double price = 0;
+        while (done != true) {
             double valueEntry1 = this.getValueEntry();
             if (valueEntry1 < 1 || valueEntry1 > 5) {
 
@@ -39,27 +40,27 @@ public class BuyFoodView {
 
             } else {
                 done = true;
+                price = valueEntry1; 
             }
-            
-        } while (!done);
-        
-        double price = this.getValueEntry();
-    
+           
+        }
+           
         System.out.println("\t  Please enter the quantity (in pounds) of food you wish to purchase:");
         
-        do{
+        done = false;
+        double quantity = 0;
+        while (!done) {
             double valueEntry2 = this.getValueEntry();
             if (valueEntry2 < 1 || valueEntry2 > 500) {
 
                 System.out.println("\t  Please enter a quantity between 1 & 500 pounds");                
-            
+                done = false;
             } else {
                 done = true;
+                quantity = valueEntry2;
             }
             
-        } while (!done);
-     
-        double quantity = this.getValueEntry();
+        }
         
         double totalCost = doAction(price, quantity);
         
@@ -71,24 +72,22 @@ public class BuyFoodView {
         boolean validInput = false;
         double entry = 0;
         
-            do {
-                double number;
-
+            while (!validInput) {
                 Scanner inFile;
                 inFile = new Scanner(System.in);
 
-                number = inFile.nextDouble();
+                validInput = inFile.hasNextDouble();
 
-                if (number < 1 || number > 5) {
-
-                    System.out.println("\"%s\" is not a valid number.\n");
+                if (!validInput) {
+                    System.out.println("Please enter a valid number"); 
+                    
                 }
                 else {
+                    entry = inFile.nextDouble();
                     validInput = true;
-                    entry = number;
                 } 
 
-            } while (!validInput);
+            } //while (!validInput);
 
                 return entry;   
             
@@ -135,30 +134,5 @@ public class BuyFoodView {
 
         return totalCost;
         }
-    //after getting the price and saving it in a variable, do the same thing with the quantity  
-    //Store each in a different variable, then call the InventoryControl class 
-    //to CalcItemTotalCost and return the result
-        
-        /*
-                private double getValueEntry() {
-        boolean validInput = false;
-        
-            Scanner inFile;
-            inFile = new Scanner(System.in);
-            
-            double number;
-            do {
-                System.out.println("Please enter a positive number: ");
-                while (!inFile.hasNextInt()) {
-                    String input = inFile.next();
-                    System.out.printf("\"%s\" is not a valid number.\n", input);
-                }
-                number = inFile.nextInt();
-            } while (number < 0);
-        
-        return number;
-        
-        }
-        */
     
 }

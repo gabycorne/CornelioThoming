@@ -55,12 +55,12 @@ public class GetFoodView {
         System.out.println("\t  Please enter your selection:");
         
         do {
-            String input = "";
-            
             Scanner inFile;
             inFile = new Scanner(System.in);
   
-            input = inFile.nextLine();
+            String input = inFile.nextLine();
+            
+            input = input.toUpperCase();
             
             if (input == null || input.length() < 1 ) {
                 
