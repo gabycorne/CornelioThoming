@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author mthoming
+ * @author Owner
  */
 public class GameControlTest {
     
@@ -27,6 +27,89 @@ public class GameControlTest {
     public void tearDown() {
     }
 
-
+    /**
+     * created by Diana.
+     */
+    @Test
+    public void testHealthOfPlayer() {
+        System.out.println("test case #1");
+        System.out.println("healthOfPlayer");
+        int mealsADay = 7;
+        int hoursWalking = 5;
+        int weight = 180;
+        int expResult = 1500;
+        int result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+       
+        
+        System.out.println("Actual results:" + result + "calories");
+        assertEquals(expResult, result, 0);
+        // TODO review the generated test code and remove the default call to fail.
+       // fail("The test case is a prototype.");
+       
+       System.out.println("test case #2");
+         mealsADay = 0;
+         hoursWalking = 10;
+         weight = 180;
+         expResult = -1;
+         result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+       
+        
+        System.out.println("Actual results:" + result + "calories");
+        assertEquals(expResult, result, 0);
+        // TODO review the generated test code and remove the default call to fail.
+       // fail("The test case is a prototype.");
+       
+        System.out.println("test case #3");
+         mealsADay = 0;
+         hoursWalking = 12;
+         weight = 180;
+         expResult = -1;
+         result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+       
+        
+        System.out.println("Actual results:" + result + "calories");
+        assertEquals(expResult, result, 0);
+        // TODO review the generated test code and remove the default call to fail.
+       // fail("The test case is a prototype.");
+       
+        System.out.println("test case #4");
+         mealsADay = -2;
+         hoursWalking = 12;
+         weight = 180;
+         expResult = -1;
+         result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+       
+        
+        System.out.println("Actual results:" + result + "calories");
+        assertEquals(expResult, result, 0);
+        // TODO review the generated test code and remove the default call to fail.
+       // fail("The test case is a prototype.");
+       
+        System.out.println("test case #5");
+         mealsADay = 1;
+         hoursWalking = 1;
+         weight = 180;
+         expResult = 100;
+         result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+       
+        
+        System.out.println("Actual results:" + result + "calories");
+        assertEquals(expResult, result, 0);
+        // TODO review the generated test code and remove the default call to fail.
+       // fail("The test case is a prototype.");
+       
+        System.out.println("test case #6");
+        mealsADay = 2;
+        hoursWalking = 10;
+        weight = 180;
+        expResult = -3000;
+         result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+       
+        System.out.println("Actual results:" + result + "calories");
+        assertEquals(expResult, result, 0);
+    }
     
 }
+        
+        // TODO review the generated test code and remove the default call to fail.
+       // fail("The test case is a prototype.");
