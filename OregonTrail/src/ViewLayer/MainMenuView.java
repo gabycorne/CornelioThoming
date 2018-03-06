@@ -16,7 +16,7 @@ import ViewLayer.HelpMenuView;
  *
  * @author mthoming
  */
-public class MainMenuView {
+public class MainMenuView extends View {
 
     public MainMenuView() {
     }
