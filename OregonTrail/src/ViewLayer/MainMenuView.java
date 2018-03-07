@@ -96,8 +96,8 @@ public class MainMenuView extends View {
         }
     
         public static void main(String[] args) {
-        ViewLayer.GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+        ViewLayer.StartProgramView startProgramView = new StartProgramView();
+        startProgramView.display();
 
         }
 

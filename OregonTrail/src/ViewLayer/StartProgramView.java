@@ -14,9 +14,18 @@ import oregontrail.Player;
  *
  * @author mthoming
  */
-public class StartProgramView {
+public class StartProgramView extends View {
+       //It requires 
 
     public StartProgramView() {
+        super("\n"
+            + "\n================================="
+            + "\n  Welcome to Oregon Trail!       "
+            + "\n  Test your survival skills      "
+            + "\n  and see if you can survive     "
+            + "\n  on the western frontier!       "
+            + "\n=================================");        
+
     }
     
         public void displayBanner() {
@@ -36,7 +45,7 @@ public class StartProgramView {
         boolean endOfView = false;
         do {
             String[] input = new String[10];
-                    input[0] = getInputs();
+                    input[0] = getInput();
             
             input[0] = input[0].toUpperCase();
             
@@ -57,38 +66,7 @@ public class StartProgramView {
         
     }
     
-    
-    
-    public String getInputs() {
-        boolean validInput = false;
-        String name = ""; 
-        
-        System.out.println("\t  Please enter your name:");
-        
-        do {
-            String input = "";
-            
-            Scanner inFile;
-            inFile = new Scanner(System.in);
-  
-            input = inFile.nextLine();
-            
-            if (input == null || input.length() < 1 ) {
-                
-                System.out.println("\t  You must enter a non-blank value:");
-            }
-            else {
-                validInput = true;
-                name = input.trim();
-                
-            }
-           }
-        
-        while (!validInput);
-        
-        return name;
-        
-        }       
+       
 
 
     private boolean doAction(String input[]) {
@@ -161,6 +139,7 @@ public class StartProgramView {
             
         }
 
+    @Override
     public void display() {
         System.out.println("*** display() called ***");
     }
@@ -171,7 +150,7 @@ public class StartProgramView {
 
         do {
             String[] input = new String[10];
-            input[0] = getInputs();
+            input[0] = getInput();
             input[0] = input[0].toUpperCase();
 
             if (input[0] == null || input[0].length() < 1 || input[0].equals("Q")) {
@@ -182,5 +161,10 @@ public class StartProgramView {
             }
         } while (endView != true);
 
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
