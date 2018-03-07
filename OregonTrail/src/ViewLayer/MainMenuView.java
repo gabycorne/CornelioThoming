@@ -19,14 +19,7 @@ import ViewLayer.HelpMenuView;
 public class MainMenuView extends View {
 
     public MainMenuView() {
-    }
-    
-    public void displayMenuOptions() {
-        
-        
-        
-            //display message
-        System.out.println("\n"
+        super("\n"
             + "\n================================="
             + "\n  Choose from the following:     "
             + "\n                                 "
@@ -37,10 +30,11 @@ public class MainMenuView extends View {
             + "\n=================================");
     
     }
-        
-        
-    public boolean doAction(String selection){
-     
+
+    @Override
+    public boolean doAction(String value){
+    
+        value = value.toUpperCase();  //convert the received input to uppercase
         String input = "";
         switch(input){
             
@@ -61,41 +55,6 @@ public class MainMenuView extends View {
         }
         return false;
     }
-    
-    
-    
-    
-    
-        public String getInputs() {
-        boolean validInput = false;
-        String[] input = new String[10]; 
-        
-        System.out.println("\t  Please enter your desired menu item");
-        
-        do {
-            String value = "";
-            
-            Scanner inFile;
-            inFile = new Scanner(System.in);
-  
-            value = inFile.nextLine();
-            
-            if (value == null || value.length() < 1 ) {
-                
-                System.out.println("\t  You must enter a non-blank value:");
-            }
-            else {
-                validInput = true;
-                input[0] = value.trim();
-                
-            }
-           }
-        
-        while (!validInput);
-        
-        return input[0];
-        
-        } 
         
           
         public void startNewGame(){

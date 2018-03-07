@@ -49,9 +49,9 @@ public class StartProgramView {
         } while (endOfView != true);
 
         ViewLayer.MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMenuOptions();
+        mainMenuView.display();
         String mainMenuInput = "";
-        mainMenuView.getInputs();
+        //mainMenuView.getInputs();  //figure out how to call the getInput() function from the View super-class
         mainMenuView.doAction(mainMenuInput);
         
         
