@@ -52,14 +52,9 @@ public class StartProgramView extends View {
         //mainMenuView.getInputs();  //figure out how to call the getInput() function from the View super-class
         mainMenuView.doAction(mainMenuInput);
         
-        
     }
-    
-       
-
 
     private boolean doAction(String input[]) {
-
                 
         Player player = new Player();
         
@@ -71,11 +66,6 @@ public class StartProgramView extends View {
        player.setName(input[0]);
         System.out.println("=== " + "Welcome to the game " + input + " We hope you have a lot of fun!" + "==="); 
 
-        
-        /*
-        System.out.println("**** doAction() called ***");
-        System.out.println("\tinput = " + input);
-        */
         
         String menuItem = input[0];
         
