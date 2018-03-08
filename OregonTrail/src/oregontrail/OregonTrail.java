@@ -8,6 +8,7 @@ package oregontrail;
 
 import ViewLayer.BuyFoodView;
 import ViewLayer.GetFoodView;
+import ViewLayer.MainMenuView;
 import ViewLayer.StartProgramView;
 
 /**
@@ -19,6 +20,16 @@ public class OregonTrail {
     /**
      * @param args the command line arguments
      */
+    
+        public static void main(String[] args) {
+            //show the game description
+            ViewLayer.StartProgramView startProgramView = new StartProgramView();
+            startProgramView.display();
+            //prompt for the user's name
+            startProgramView.displayGetUserName();            
+            
+        }    
+    
     public void junk(String[] args) {
         
         /*

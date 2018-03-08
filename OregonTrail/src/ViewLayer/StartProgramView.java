@@ -25,10 +25,85 @@ public class StartProgramView extends View {
             + "\n  Test your survival skills      "
             + "\n  and see if you can survive     "
             + "\n  on the western frontier!       "
-            + "\n=================================");
+            + "\n================================="
+            + "\n");       
         
     }
+    
+        public void displayGetUserName() {
+        boolean done = false;
+        do{
+            String userName = this.getUserName();
+            if (userName.toUpperCase().equals("Q"))
+                return;
+            
+            done = this.doAction(userName);
+        } while (!done);
+    
+    }
+    
+        private String getUserName() {
+        boolean validInput = false;
+        String selection = ""; 
+        
+        System.out.println("\t  Please enter your name:");
+        
+        do {
+            Scanner inFile;
+            inFile = new Scanner(System.in);
+  
+            String input = inFile.nextLine();
+            
+            input = input.toUpperCase();
+            
+            if (input == null || input.length() < 1 ) {
+                
+                System.out.println("\t  You must enter a non-blank value:");
+            }
+            else {
+                validInput = true;
+                selection = input.trim();
+                
+            }
+           }
+        
+        while (!validInput);
+        
+        return selection;
+        
+        }
 
+        private String getMenuOption() {
+        boolean validInput = false;
+        String selection = ""; 
+        
+        System.out.println("\t  Please enter your selection:");
+        
+        do {
+            Scanner inFile;
+            inFile = new Scanner(System.in);
+  
+            String input = inFile.nextLine();
+            
+            input = input.toUpperCase();
+            
+            if (input == null || input.length() < 1 ) {
+                
+                System.out.println("\t  You must enter a non-blank value:");
+            }
+            else {
+                validInput = true;
+                selection = input.trim();
+                
+            }
+           }
+        
+        while (!validInput);
+        
+        return selection;
+        
+        }
+    
     public void displayStartProgramView() {
         
         boolean endOfView = false;
@@ -54,7 +129,9 @@ public class StartProgramView extends View {
         
     }
 
-    private boolean doAction(String input[]) {
+    // call the getInput function from the View super-class
+    
+    public boolean doAction(String input) {
                 
         Player player = new Player();
         
@@ -63,11 +140,15 @@ public class StartProgramView extends View {
                 return false;          
                        }
         
-       player.setName(input[0]);
+       player.setName(input);
         System.out.println("=== " + "Welcome to the game " + input + " We hope you have a lot of fun!" + "==="); 
 
+            //show the main menu options
+            ViewLayer.MainMenuView mainMenuView = new MainMenuView();
+            mainMenuView.display();
+            //prompt for a selection        
         
-        String menuItem = input[0];
+        String menuItem = input;
         
         menuItem = menuItem.toUpperCase();
         
@@ -117,28 +198,5 @@ public class StartProgramView extends View {
         MainMenuView.HelpMenuView.displayHelpMenuView();
             
         }
- 
-    public void displayMainMenuView() {
 
-        boolean endView = false;
-
-        do {
-            String[] input = new String[10];
-            input[0] = getInput();
-            input[0] = input[0].toUpperCase();
-
-            if (input[0] == null || input[0].length() < 1 || input[0].equals("Q")) {
-                
-            }
-            else {
-                    endView = doAction(input); 
-            }
-        } while (endView != true);
-
-    }
-
-    @Override
-    public boolean doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

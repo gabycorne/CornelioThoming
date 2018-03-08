@@ -18,8 +18,11 @@ import ViewLayer.HelpMenuView;
  */
 public class MainMenuView extends View {
 
-    public MainMenuView() {
-        super("\n"
+    
+        
+        @Override
+        public void display() {
+        System.out.println("\n"
             + "\n================================="
             + "\n  Choose from the following:     "
             + "\n                                 "
@@ -28,14 +31,11 @@ public class MainMenuView extends View {
             + "\n  H - Get help                   "                
             + "\n  Q - Quit game                  "            
             + "\n=================================");
-    
-    }
-    
-        public static void main(String[] args) {
-            ViewLayer.StartProgramView startProgramView = new StartProgramView();
-            startProgramView.display();
-
+        
+        
         }
+    
+
 
     @Override
     public boolean doAction(String value){
