@@ -30,6 +30,12 @@ public class MainMenuView extends View {
             + "\n=================================");
     
     }
+    
+        public static void main(String[] args) {
+            ViewLayer.StartProgramView startProgramView = new StartProgramView();
+            startProgramView.display();
+
+        }
 
     @Override
     public boolean doAction(String value){
@@ -95,10 +101,6 @@ public class MainMenuView extends View {
             }
         }
     
-        public static void main(String[] args) {
-        ViewLayer.StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
 
-        }
 
 }

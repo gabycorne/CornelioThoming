@@ -15,21 +15,10 @@ import oregontrail.Player;
  * @author mthoming
  */
 public class StartProgramView extends View {
-       //It requires 
-
-    public StartProgramView() {
-        super("\n"
-            + "\n================================="
-            + "\n  Welcome to Oregon Trail!       "
-            + "\n  Test your survival skills      "
-            + "\n  and see if you can survive     "
-            + "\n  on the western frontier!       "
-            + "\n=================================");        
-
-    }
+       
     
-        public void displayBanner() {
-            //display message
+    @Override
+    public void display() {
         System.out.println("\n"
             + "\n================================="
             + "\n  Welcome to Oregon Trail!       "
@@ -37,9 +26,9 @@ public class StartProgramView extends View {
             + "\n  and see if you can survive     "
             + "\n  on the western frontier!       "
             + "\n=================================");
-    
+        
     }
-    
+
     public void displayStartProgramView() {
         
         boolean endOfView = false;
@@ -138,12 +127,7 @@ public class StartProgramView extends View {
         MainMenuView.HelpMenuView.displayHelpMenuView();
             
         }
-
-    @Override
-    public void display() {
-        System.out.println("*** display() called ***");
-    }
-    
+ 
     public void displayMainMenuView() {
 
         boolean endView = false;
