@@ -8,8 +8,8 @@ package ViewLayer;
  *
  * @author Owner
  */
-public abstract class BuildWagon extends View{
-    public BuildWagon() {
+public abstract class BuildWagonView extends View{
+    public BuildWagonView() {
         super("\n"
             + "\n================================="
             + "\n  You can build your wagon       "
@@ -26,12 +26,6 @@ public abstract class BuildWagon extends View{
             + "\n=================================");
     }
     
-     public void displayBanner(){
-        
-        //display message
-        System.out.println("(old message)");
-    
-    }
     
     @Override
     public void display() {

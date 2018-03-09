@@ -6,6 +6,7 @@
 
 package oregontrail;
 
+import ViewLayer.BuildWagonView;
 import ViewLayer.BuyFoodView;
 import ViewLayer.GetFoodView;
 import ViewLayer.MainMenuView;
@@ -22,11 +23,17 @@ public class OregonTrail {
      */
     
         public static void main(String[] args) {
-            //show the game description
-            ViewLayer.StartProgramView startProgramView = new StartProgramView();
-            startProgramView.display();
-            //prompt for the user's name
-            startProgramView.displayGetUserName();            
+//            //show the game description
+//            ViewLayer.StartProgramView startProgramView = new StartProgramView();
+//            startProgramView.display();
+//            //prompt for the user's name
+//            startProgramView.displayGetUserName();  
+//            
+            ViewLayer.BuildWagonView buildWagonView = new BuildWagonView() {};
+           buildWagonView.display();// I comn=mented the top methods so I can run my code from buildWagonclass 
+        
+                
+            
             
         }    
     
@@ -54,6 +61,8 @@ public class OregonTrail {
         
     }
 
+    
+    
     public static Player getplayer;
 
     private Player player;
