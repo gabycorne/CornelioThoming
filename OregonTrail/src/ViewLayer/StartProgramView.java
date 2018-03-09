@@ -191,7 +191,7 @@ public class StartProgramView extends View {
         
         private void restartNewGame(){
              ViewLayer.StartExistingGameView startExistingGameView = new StartExistingGameView();
-           startExistingGameView.displayStartExistingGameView();
+           startExistingGameView.display();
             
         }
         

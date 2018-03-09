@@ -11,42 +11,10 @@ import java.util.Scanner;
  *
  * @author Diana Cornelio
  */
-public class SelectLocationView {
+public class SelectLocationView extends View{
     
      public SelectLocationView() {
-    }
-    
-    public String getInputs(){
-         boolean validInput = false;
-        String input = ""; 
-        
-       displayPlaces();
-        
-        do {
-            String value = "";
-            
-            Scanner inFile;
-            inFile = new Scanner(System.in);
-  
-            value = inFile.nextLine();
-            
-            if (value == null || value.length() < 1 ) {
-                
-                System.out.println("\t  You must enter a non-blank value:");
-            }
-            else {
-                validInput = true;
-                input = value.trim();
-                
-            }
-        }while (!validInput);
-        
-        return input;
-    }
-      public void displayPlaces(){
-        
-    
-        System.out.println("\n"
+         super("\n"
             + "\n---------------------------------"
             + "\n  Welcome to the trail.          "
             + "\n  What places do you want        "
@@ -59,14 +27,22 @@ public class SelectLocationView {
             + "\n                                 "
             + "\n  Q - Quit Game                  "
             + "\n---------------------------------");
+         
+         
+         
+         
+    }
     
+     @Override
+      public void display(){
+        
     }
     
      public void displaySelectLocation() {
             boolean endOfView = false;
             do {
                
-           String  inputs =  getInputs();
+           String  inputs =  getInput();
            if(inputs.toUpperCase().equals("Q") )
                 return;
            doAction(inputs);
@@ -75,6 +51,7 @@ public class SelectLocationView {
             
         }
     
+     @Override
         public boolean doAction(String selection) {
             selection = selection.trim();
             selection = selection.toUpperCase();

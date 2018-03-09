@@ -85,7 +85,7 @@ public class MainMenuView extends View {
         
         public void restartNewGame(){
              ViewLayer.StartExistingGameView startExistingGameView = new StartExistingGameView();
-           startExistingGameView.displayStartExistingGameView();
+           startExistingGameView.display();
             
         }
         
