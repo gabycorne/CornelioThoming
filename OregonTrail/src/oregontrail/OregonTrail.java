@@ -36,16 +36,16 @@ public class OregonTrail {
         
 
         
-        ViewLayer.GetFoodView getFoodView = new GetFoodView();
-        getFoodView.displayBanner();
-        getFoodView.display();
-        
-        System.out.println("**** Quit selected, returned to calling class ***");
-        
-        
-        ViewLayer.BuyFoodView buyFoodView = new BuyFoodView();
-        buyFoodView.displayMessage();
-        buyFoodView.displayGetFoodView();
+//        ViewLayer.GetFoodView getFoodView = new GetFoodView();
+//        getFoodView.displayBanner();
+//        getFoodView.display();
+//        
+//        System.out.println("**** Quit selected, returned to calling class ***");
+//        
+//        
+//        ViewLayer.BuyFoodView buyFoodView = new BuyFoodView();
+//        buyFoodView.displayMessage();
+//        buyFoodView.displayGetFoodView();
         
         
         

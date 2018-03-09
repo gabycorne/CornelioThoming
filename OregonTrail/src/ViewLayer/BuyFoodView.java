@@ -13,8 +13,9 @@ import java.util.Scanner;
  */
 public class BuyFoodView extends View {
 
-    public BuyFoodView() {
-        super("\n"
+    @Override
+    public void display() {
+        System.out.println("\n"
             + "\n================================="
             + "\n  Calculate the cost of the food "
             + "\n  you will buy.                  "
@@ -23,14 +24,7 @@ public class BuyFoodView extends View {
             + "\n  you wish to buy:               ");
     }
     
-    public void displayMessage(){
-        
-        //display message
-        System.out.println("Old Message");
-        
-    }
-  
-    public void displayGetFoodView() {
+    public void getInputs() {
         boolean done = false;
         double price = 0;
         while (done != true) {
@@ -93,40 +87,7 @@ public class BuyFoodView extends View {
                 return entry;   
             
         }
-        
-        /*
-            private double getValueEntry() {
-        boolean validInput = false;
-        double value = ""; 
-        
-
-        do {
-            double input = "";
             
-            Scanner inFile;
-            inFile = new Scanner(System.in);
-  
-            input = inFile.nextLine();
-            
-            if (input = null || input = '0') {
-                
-                System.out.println("\t  You must enter a non-blank value:");
-            }
-            else {
-                validInput = true;
-                value = input.trim();
-                
-            }
-           }
-        
-        while (!validInput);
-        
-        return value;
-        
-        }        
-        
-        */
-    
         private double doAction(double price, double quantity ) {
             
             double totalCost;

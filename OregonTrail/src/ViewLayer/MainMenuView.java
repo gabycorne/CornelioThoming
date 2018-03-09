@@ -27,6 +27,7 @@ public class MainMenuView extends View {
             + "\n  N - New Game                   "
             + "\n  R - Restart saved Game         "
             + "\n  C - Cross river                "
+            + "\n  B - Buy food                   "
             + "\n  H - Get help                   "                
             + "\n  Q - Quit game                  "
             + "\n                                 "
@@ -66,6 +67,9 @@ public class MainMenuView extends View {
             case "C": crossRiver();
                 break;
                 
+            case "B": buyFood();
+                break;
+                
             case "H": getHelp();
                 break;
                
@@ -98,6 +102,13 @@ public class MainMenuView extends View {
             ViewLayer.CrossRiverView crossRiverView = new CrossRiverView();
             crossRiverView.display();
             crossRiverView.displayGetMenuEntry();
+            
+        }
+
+        public void buyFood(){
+            ViewLayer.BuyFoodView buyFoodView = new BuyFoodView();
+            buyFoodView.display();
+            buyFoodView.getInputs();
             
         }        
         
