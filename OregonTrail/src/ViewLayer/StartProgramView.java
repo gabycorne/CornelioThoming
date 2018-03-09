@@ -26,7 +26,16 @@ public class StartProgramView extends View {
             + "\n  and see if you can survive     "
             + "\n  on the western frontier!       "
             + "\n================================="
-            + "\n");       
+            + "\n"); 
+        
+        //prompt for the user's name
+        displayGetUserName();    
+
+        //show the main menu options
+        ViewLayer.MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.display();
+        //prompt for a selection
+        mainMenuView.displayGetMenuEntry();
         
     }
     
@@ -145,11 +154,6 @@ public class StartProgramView extends View {
         System.out.println("=== " + "Welcome to the game " + input + " We hope you have a lot of fun!" + "==="); 
 
 
-            //show the main menu options
-            ViewLayer.MainMenuView mainMenuView = new MainMenuView();
-            mainMenuView.display();
-            //prompt for a selection
-            mainMenuView.getInput();
     /*    
         String menuItem = input;
         

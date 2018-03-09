@@ -17,10 +17,6 @@ public class HelpMenuView extends View {
         super("**** displayMenuView() called ***");
     }
     
-    public void displayHelpMenuView() {
-        System.out.println("Old Menu");
-        System.out.println("no variable");
-    }
 
         public String getInputs() {
         boolean validInput = false;

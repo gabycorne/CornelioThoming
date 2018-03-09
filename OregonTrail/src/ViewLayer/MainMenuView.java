@@ -26,18 +26,21 @@ public class MainMenuView extends View {
             + "\n                                 "
             + "\n  N - New Game                   "
             + "\n  R - Restart saved Game         "
+            + "\n  C - Cross river                "
             + "\n  H - Get help                   "                
-            + "\n  Q - Quit game                  "            
+            + "\n  Q - Quit game                  "
+            + "\n                                 "
+            + "\n  Please enter your selection    "
             + "\n=================================");
         
         
         }
-    
-    /*
+
         public void displayGetMenuEntry() {
             boolean done = false;
             do{
                 String menuSelection = this.getInput();
+                
                 if (menuSelection.toUpperCase().equals("Q"))
                     return;
 
@@ -47,16 +50,20 @@ public class MainMenuView extends View {
         }
 
     @Override
-    public boolean doAction(String value){
+    public boolean doAction(String menuSelection){
     
-        value = value.toUpperCase();  //convert the received input to uppercase
-        String input = "";
-        switch(input){
+        menuSelection = menuSelection.toUpperCase();  //convert the received input to uppercase
+        System.out.println("\n" + menuSelection);
+        //String input = "";
+        switch(menuSelection){
             
             case "N": startNewGame();
                 break;
                 
             case "R": restartGame();
+                break;
+
+            case "C": crossRiver();
                 break;
                 
             case "H": getHelp();
@@ -69,9 +76,7 @@ public class MainMenuView extends View {
             break;
         }
         return false;
-    }
-                
-    */    
+    }   
           
         public void startNewGame(){
              
@@ -89,6 +94,13 @@ public class MainMenuView extends View {
             
         }
         
+        public void crossRiver(){
+            ViewLayer.CrossRiverView crossRiverView = new CrossRiverView();
+            crossRiverView.display();
+            crossRiverView.displayGetMenuEntry();
+            
+        }        
+        
          private void restartGame() {
          }
         
@@ -97,10 +109,6 @@ public class MainMenuView extends View {
         HelpMenuView.displayHelpMenuView();
             
         }      
-
-    public boolean doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
         public static class HelpMenuView {
 
