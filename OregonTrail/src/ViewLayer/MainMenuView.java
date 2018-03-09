@@ -17,9 +17,7 @@ import ViewLayer.HelpMenuView;
  * @author mthoming
  */
 public class MainMenuView extends View {
-
     
-        
         @Override
         public void display() {
         System.out.println("\n"
@@ -35,7 +33,18 @@ public class MainMenuView extends View {
         
         }
     
+    /*
+        public void displayGetMenuEntry() {
+            boolean done = false;
+            do{
+                String menuSelection = this.getInput();
+                if (menuSelection.toUpperCase().equals("Q"))
+                    return;
 
+                done = this.doAction(menuSelection);
+            } while (!done);
+    
+        }
 
     @Override
     public boolean doAction(String value){
@@ -61,7 +70,8 @@ public class MainMenuView extends View {
         }
         return false;
     }
-        
+                
+    */    
           
         public void startNewGame(){
              
@@ -69,7 +79,7 @@ public class MainMenuView extends View {
            
            GameControl.CreateNewGame(OregonTrail.getplayer);
            ViewLayer.GameMenuView gameMenuView = new GameMenuView();
-           gameMenuView.displayGameMenuView();
+           gameMenuView.display();
             
         }
         
@@ -87,6 +97,10 @@ public class MainMenuView extends View {
         HelpMenuView.displayHelpMenuView();
             
         }      
+
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
         public static class HelpMenuView {
 

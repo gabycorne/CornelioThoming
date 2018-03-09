@@ -41,7 +41,7 @@ public class OregonTrail {
         
         ViewLayer.GetFoodView getFoodView = new GetFoodView();
         getFoodView.displayBanner();
-        getFoodView.displayGetFoodView();
+        getFoodView.display();
         
         System.out.println("**** Quit selected, returned to calling class ***");
         

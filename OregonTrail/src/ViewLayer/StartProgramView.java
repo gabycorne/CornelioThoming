@@ -125,7 +125,8 @@ public class StartProgramView extends View {
         mainMenuView.display();
         String mainMenuInput = "";
         //mainMenuView.getInputs();  //figure out how to call the getInput() function from the View super-class
-        mainMenuView.doAction(mainMenuInput);
+        //mainMenuView.doAction(mainMenuInput);  //this is not needed in week 9. we only have to display the
+                                                // main menu, not get input for it (yet)
         
     }
 
@@ -143,11 +144,13 @@ public class StartProgramView extends View {
        player.setName(input);
         System.out.println("=== " + "Welcome to the game " + input + " We hope you have a lot of fun!" + "==="); 
 
+
             //show the main menu options
             ViewLayer.MainMenuView mainMenuView = new MainMenuView();
             mainMenuView.display();
-            //prompt for a selection        
-        
+            //prompt for a selection
+            mainMenuView.getInput();
+    /*    
         String menuItem = input;
         
         menuItem = menuItem.toUpperCase();
@@ -171,16 +174,18 @@ public class StartProgramView extends View {
             
             }
         
+    */
+        
         return true;
     }    
     
-            private void startNewGame(){
+        private void startNewGame(){
              
            Player playerTemp = new Player(); 
            
            GameControl.CreateNewGame(OregonTrail.getplayer);
            ViewLayer.GameMenuView gameMenuView = new GameMenuView();
-           gameMenuView.displayGameMenuView();
+           gameMenuView.display();
             
         }
         

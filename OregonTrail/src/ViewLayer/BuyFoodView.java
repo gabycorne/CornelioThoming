@@ -11,21 +11,22 @@ import java.util.Scanner;
  *
  * @author mthoming
  */
-public class BuyFoodView {
+public class BuyFoodView extends View {
 
     public BuyFoodView() {
-    }
-    
-    public void displayMessage(){
-        
-        //display message
-        System.out.println("\n"
+        super("\n"
             + "\n================================="
             + "\n  Calculate the cost of the food "
             + "\n  you will buy.                  "
             + "\n                                 "
             + "\n  Enter the price of the food    "
             + "\n  you wish to buy:               ");
+    }
+    
+    public void displayMessage(){
+        
+        //display message
+        System.out.println("Old Message");
         
     }
   
@@ -125,7 +126,7 @@ public class BuyFoodView {
         }        
         
         */
-
+    
         private double doAction(double price, double quantity ) {
             
             double totalCost;
@@ -134,5 +135,11 @@ public class BuyFoodView {
 
         return totalCost;
         }
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }

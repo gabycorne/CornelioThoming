@@ -11,15 +11,10 @@ import java.util.Scanner;
  *
  * @author mthoming
  */
-public class GetFoodView {
+public class GetFoodView extends View {
 
     public GetFoodView() {
-    }
-    
-    public void displayBanner(){
-        
-        //display message
-        System.out.println("\n"
+        super("\n"
             + "\n================================="
             + "\n  You can get food on the trail.  "
             + "\n  Hunting, gathering & fishing   "
@@ -33,13 +28,20 @@ public class GetFoodView {
             + "\n  A - Get Help                   "
             + "\n  Q - Quit Game                  "
             + "\n=================================");
+    }
+    
+    public void displayBanner(){
+        
+        //display message
+        System.out.println("(old message)");
     
     }
     
-    public void displayGetFoodView() {
+    @Override
+    public void display() {
         boolean done = false;
         do{
-            String menuOption = this.getMenuOption();
+            String menuOption = this.getInput();
             if (menuOption.toUpperCase().equals("Q"))
                 return;
             
@@ -48,6 +50,7 @@ public class GetFoodView {
     
     }
     
+    /*
         private String getMenuOption() {
         boolean validInput = false;
         String selection = ""; 
@@ -77,10 +80,10 @@ public class GetFoodView {
         
         return selection;
         
-        }
+        }    
+    */
     
-    
-        private boolean doAction(String menuOption) {
+        public boolean doAction(String menuOption) {
                     
         switch (menuOption) {
             case "H":  // Start New Game 

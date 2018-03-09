@@ -11,13 +11,14 @@ import java.util.Scanner;
  *
  * @author mthoming
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
 
     public HelpMenuView() {
+        super("**** displayMenuView() called ***");
     }
     
     public void displayHelpMenuView() {
-        System.out.println("**** displayMenuView() called ***");
+        System.out.println("Old Menu");
         System.out.println("no variable");
     }
 
@@ -52,7 +53,8 @@ public class HelpMenuView {
         
         }
         
-        private boolean doAction(String input) {
+    @Override
+        public boolean doAction(String input) {
             System.out.println("**** HelpMenuView.doAction() called ***");
             System.out.println("\tinput = " + input);
         

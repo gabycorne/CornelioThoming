@@ -9,11 +9,15 @@ package ViewLayer;
  *
  * @author mthoming
  */
-public class GameMenuView {
+public class GameMenuView extends View {
     
-    public void displayGameMenuView() {
-                System.out.println("**** GameMenuView() called ***");
-                System.out.println("\tinput = ??");
-            }
+    public GameMenuView() {
+        super("**** GameMenuView() called ***");
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
