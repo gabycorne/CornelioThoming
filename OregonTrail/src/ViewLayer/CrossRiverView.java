@@ -10,6 +10,9 @@ package ViewLayer;
  * @author mthoming
  */
 public class CrossRiverView extends View {
+    
+    public CrossRiverView() {
+    }
 
         @Override
         public void display() {
