@@ -7,7 +7,10 @@ package Control_Layer;
 
 import oregontrail.Player;
 import ViewLayer.HelpMenuView;
+import oregontrail.Actor;
 import oregontrail.Game;
+import oregontrail.InventoryItem;
+import oregontrail.Map;
 import oregontrail.OregonTrail;
 
 /**
@@ -25,7 +28,6 @@ public class GameControl {
         }   
         
         Player player = new Player(); 
-        
         player.setName(name);
         
         OregonTrail.setPlayer(player);
@@ -33,26 +35,29 @@ public class GameControl {
          return player;
     }   
             
-    public void createNewGame(Player player) {
+    public static int createNewGame(Player player) {
         System.out.println("**** CreateNewGame() called ****");
-        Game currentGame = new Game();
+        System.out.println("Player name = " + player);
+        
+        if (player == null)
+            return -1;
+        
+        Game currentGame = new Game();  //create a new Game object
         OregonTrail.setCurrentGame(currentGame);
         
-        currentGame.setPlayer(player);
+        currentGame.setPlayer(player);  //Save a reference to the Player object in the game
+        System.out.println("Player name = " + player);    
         
-        // TODO Need to set the inventory list...example from Ship game:
-        // InventoryItem[] = inventoryList = GameControl.createInventoryList(); 
-        // game.setInventory(InventoryList);
-        // Create map
-//        Map map = new Map();
-//        map.init();
-//
-//        player.setLocation(map.getLocationAt(0, 0));
-//        
-//        currentGame.setMap(map);
-//
-//        assignItemsToMap(map);
+        //String game = Game.setPlayer(player); //Save a reference to the game in the main class    
         
+        Map map = new Map();  //createMap(noOfRows, noOfColumns, items)
+        if (map == null)
+            return -1;             
+                
+        currentGame.setMap(map);
+        
+        return 1;  //indicates success
+    }
         /*
             game = create a new Game object
             Save a reference to the Player object in the game
@@ -73,7 +78,35 @@ public class GameControl {
             Assign the map to the game
             RETURN 1 // indicates success
         */
+
+    public static InventoryItem[] createItems() {
+        System.out.println("**** createItems() called ****");
+        
+        int noOfItems = 10;
+        InventoryItem[] items = new InventoryItem[noOfItems];
+        return items;
     }
+    
+    public static Map createMap(int noOfRows, int noOfColumns){
+        System.out.println("**** createMap() called ****");
+        
+        Map map = new Map();
+        return map;
+    }
+            
+        // TODO Need to set the inventory list...example from Ship game:
+        // InventoryItem[] = inventoryList = GameControl.createInventoryList(); 
+        // game.setInventory(InventoryList);
+        // Create map
+//        Map map = new Map();
+//        map.init();
+//
+//        player.setLocation(map.getLocationAt(0, 0));
+//        
+//        currentGame.setMap(map);
+//
+//        assignItemsToMap(map);
+    
     
     public static int healthOfPlayer(int mealsADay, int hoursWalking, int weight){
       

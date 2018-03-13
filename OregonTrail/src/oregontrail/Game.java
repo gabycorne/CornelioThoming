@@ -13,6 +13,7 @@ import java.util.Objects;
 public class Game implements Serializable {
     
     private String name;
+    private double totalTime;
     private double bestTime;
     private Player player;
     private Map map;
