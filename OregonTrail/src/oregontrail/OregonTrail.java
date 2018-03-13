@@ -6,6 +6,7 @@
 
 package oregontrail;
 
+import ViewLayer.BuildWagonView;
 import ViewLayer.BuyFoodView;
 import ViewLayer.CrossRiverView;
 import ViewLayer.GetFoodView;
@@ -20,8 +21,11 @@ public class OregonTrail {
 
     /**
      * @param args the command line arguments
-     */   
+     */    
     
+    public static Player getplayer;
+
+    //private Player player;
     private static Game currentGame = null;
     private static Game loadSavedGame = null;
     private static Game saveCurrentGame = null;
