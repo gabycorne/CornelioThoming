@@ -5,9 +5,10 @@
  */
 package Control_Layer;
 
-import oregontrail.OregonTrail;
 import oregontrail.Player;
 import ViewLayer.HelpMenuView;
+import oregontrail.Game;
+import oregontrail.OregonTrail;
 
 /**
  *
@@ -15,28 +16,63 @@ import ViewLayer.HelpMenuView;
  */
 public class GameControl {    
 
-
     public GameControl() {
     }
-    public static Player savePlayer( String name){
-               
-        if (name == null || name.length() < 1){
-                    
-            return null;
-    }
-               
-        Player playerTemp = new Player(); 
-        
-        playerTemp.setName(name);
-        
-        //OregonTrail.setPlayer(playerTemp);
-                    
-         return playerTemp;
-                
-    }
     
-    public static void CreateNewGame(Player player) {
+    public static Player createPlayer(String name) {
+        if (name == null){
+            return null;    
+        }   
+        
+        Player player = new Player(); 
+        
+        player.setName(name);
+        
+        OregonTrail.setPlayer(player);
+                    
+         return player;
+    }   
+            
+    public void createNewGame(Player player) {
         System.out.println("**** CreateNewGame() called ****");
+        Game currentGame = new Game();
+        OregonTrail.setCurrentGame(currentGame);
+        
+        currentGame.setPlayer(player);
+        
+        // TODO Need to set the inventory list...example from Ship game:
+        // InventoryItem[] = inventoryList = GameControl.createInventoryList(); 
+        // game.setInventory(InventoryList);
+        // Create map
+//        Map map = new Map();
+//        map.init();
+//
+//        player.setLocation(map.getLocationAt(0, 0));
+//        
+//        currentGame.setMap(map);
+//
+//        assignItemsToMap(map);
+        
+        /*
+            game = create a new Game object
+            Save a reference to the Player object in the game
+            Save a reference to the game in the main class
+            
+            actors = createActors()
+            Save the list of actors in the Game object
+            Assign an actor to the player
+            
+            items = createItems()
+            Save the list of items in the game
+            
+            map = createMap(noOfRows, noOfColumns, items)
+            IF map == null THEN
+                RETURN -1
+            ENDIF
+                
+            Assign the map to the game
+            RETURN 1 // indicates success
+        */
     }
     
     public static int healthOfPlayer(int mealsADay, int hoursWalking, int weight){

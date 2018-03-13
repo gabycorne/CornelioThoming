@@ -182,16 +182,17 @@ public class StartProgramView extends View {
         
         return true;
     }    
-    
-        private void startNewGame(){
-             
-           Player playerTemp = new Player(); 
-           
-           GameControl.CreateNewGame(OregonTrail.getplayer);
-           ViewLayer.GameMenuView gameMenuView = new GameMenuView();
-           gameMenuView.display();
-            
-        }
+
+        //Old Logic??  Can it be deleted??
+//        private void startNewGame(){
+//             
+//           Player playerTemp = new Player(); 
+//           
+//           GameControl.CreateNewGame(OregonTrail.getPlayer);
+//           ViewLayer.GameMenuView gameMenuView = new GameMenuView();
+//           gameMenuView.display();
+//            
+//        }
         
         private void restartNewGame(){
              ViewLayer.StartExistingGameView startExistingGameView = new StartExistingGameView();

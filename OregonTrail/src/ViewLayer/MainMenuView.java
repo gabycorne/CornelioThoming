@@ -8,9 +8,9 @@ package ViewLayer;
 import java.util.Scanner;
 import ViewLayer.StartExistingGameView;
 import Control_Layer.GameControl;
-import oregontrail.OregonTrail;
 import oregontrail.Player;
 import ViewLayer.HelpMenuView;
+import oregontrail.OregonTrail;
 
 /**
  *
@@ -82,12 +82,13 @@ public class MainMenuView extends View {
         return false;
     }   
           
-        public void startNewGame(){
+        private void startNewGame(){
              
            Player playerTemp = new Player(); 
            
-           GameControl.CreateNewGame(OregonTrail.getplayer);
-           ViewLayer.GameMenuView gameMenuView = new GameMenuView();
+           GameControl gc = new GameControl();
+           gc.createNewGame(OregonTrail.getPlayer());
+           GameMenuView gameMenuView = new GameMenuView();
            gameMenuView.display();
             
         }
