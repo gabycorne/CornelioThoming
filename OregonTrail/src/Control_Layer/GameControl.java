@@ -22,6 +22,7 @@ public class GameControl {
     public GameControl() {
     }
     
+    //is this redundant?
     public static Player createPlayer(String name) {
         if (name == null){
             return null;    
@@ -30,15 +31,15 @@ public class GameControl {
         Player player = new Player(); 
         player.setName(name);
         
-        OregonTrail.setPlayer(player);
+        OregonTrail.setPlayer(player); //Step 4a on pg. 6
                     
          return player;
     }   
             
     public static int createNewGame(Player player) {
         System.out.println("**** CreateNewGame() called ****");
-        System.out.println("Player name = " + player);
-        
+        System.out.println("Player name = " + player); //trying to show the name entry 
+                                                       //provided by the player
         if (player == null)
             return -1;
         
@@ -54,30 +55,10 @@ public class GameControl {
         if (map == null)
             return -1;             
                 
-        currentGame.setMap(map);
+        currentGame.setMap(map); //assign the map to the game
         
         return 1;  //indicates success
     }
-        /*
-            game = create a new Game object
-            Save a reference to the Player object in the game
-            Save a reference to the game in the main class
-            
-            actors = createActors()
-            Save the list of actors in the Game object
-            Assign an actor to the player
-            
-            items = createItems()
-            Save the list of items in the game
-            
-            map = createMap(noOfRows, noOfColumns, items)
-            IF map == null THEN
-                RETURN -1
-            ENDIF
-                
-            Assign the map to the game
-            RETURN 1 // indicates success
-        */
 
     public static InventoryItem[] createItems() {
         System.out.println("**** createItems() called ****");
