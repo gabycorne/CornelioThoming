@@ -122,7 +122,7 @@ public class GameControl {
         
         Location[][] locations = createLocations(noOfRows, noOfColumns);
         
-      //  map.setLocations(locations); // I stopped here because we did not know how to change this to array. the instructions are not clear.
+     // map.setLocations(locations); // I stopped here because we did not know how to change this to array. the instructions are not clear.
         
         return map;
     }
