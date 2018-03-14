@@ -10,6 +10,7 @@ import ViewLayer.HelpMenuView;
 import oregontrail.Actor;
 import oregontrail.Game;
 import oregontrail.InventoryItem;
+import oregontrail.Location;
 import oregontrail.Map;
 import oregontrail.OregonTrail;
 
@@ -18,6 +19,11 @@ import oregontrail.OregonTrail;
  * @author mthoming
  */
 public class GameControl {    
+
+    private static Location[][] createLocations(int noOfRows, int noOfColumns) {
+       System.out.println("createLocations() called");
+       return null;// the tutor helped me to create this method teh return null doesnt do anything it was created so the error disappear
+    }
 
     public GameControl() {
     }
@@ -50,7 +56,7 @@ public class GameControl {
 
         OregonTrail.setCurrentGame(currentGame); //Save a reference to the game in the main class  
         
-        Map map = createMap(5, 5);
+        Map map = createMap(5, 5, InventoryItems[]);
         currentGame.setMap(map); //assign the map to the game
         
         return 1;  //indicates success
@@ -64,13 +70,44 @@ public class GameControl {
         return items;
     }
     
-    public static Map createMap(int noOfRows, int noOfColumns){
-        System.out.println("**** createMap() called ****");
-        Map map = new Map(noOfRows, noOfColumns);  //createMap(noOfRows, noOfColumns, items)
 
+
+//Assign the locations array to the map
+//scenes = createScenes()
+//questions = createQuestions()
+//assignQuestionsToScenes()
+//assignItemsToScenes()
+//assignScenesToLocations()
+//return map 
+//    
+//    
+    
+    
+    public static Map createMap(int noOfRows, int noOfColumns, InventoryItem[] items){
+        if(noOfRows < 0 || noOfColumns < 0 ){
+        return null;
+        } 
+        if(items == null || items.length < 1){
+        return null;
+        }
+                
+        Map map = new Map(noOfRows, noOfColumns);
+       
+        map.setColumnCount(noOfColumns);
+        map.setRowCount(noOfRows);
+
+        Location[][] locations = createLocations(noOfRows, noOfColumns);
+        
         return map;
-    }
-            
+    }    
+      //  map.setLocations(locations); // I stopped here because we did not know how to change this to array. the instructions are not clear.
+        
+//    public static Map createMap(int noOfRows, int noOfColumns){
+//        System.out.println("**** createMap() called ****");
+//        Map map = new Map(noOfRows, noOfColumns);  //createMap(noOfRows, noOfColumns, items)
+//
+//        return map;
+        
         // TODO Need to set the inventory list...example from Ship game:
         // InventoryItem[] = inventoryList = GameControl.createInventoryList(); 
         // game.setInventory(InventoryList);
