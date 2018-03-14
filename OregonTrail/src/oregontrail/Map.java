@@ -28,12 +28,24 @@ public class Map implements Serializable{
         this.locations = locations;
     }
     
+  
     // created by gabby
     
     //default constructor
-    public Map() {
+    
+    //create Array row x cols & location
+    
+    public Map(int row, int col) {
+        this.rowCount = row;
+        this.columnCount = col;
+        
     }
 
+
+    
+    
+    
+    
     //getters and setters    
     public double getRowCount() {
         return rowCount;

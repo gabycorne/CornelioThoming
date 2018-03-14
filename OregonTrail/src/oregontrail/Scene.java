@@ -13,7 +13,7 @@ public class Scene implements Serializable {
     
     
     private String travelTime;
-    private double description;
+    private String description;
     private double blockedLocation;
     private String displaySymbol;
     private InventoryItem inventoryItem;
@@ -28,11 +28,11 @@ public class Scene implements Serializable {
         this.travelTime = travelTime;
     }
 
-    public double getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(double description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -71,6 +71,10 @@ public class Scene implements Serializable {
     @Override
     public String toString() {
         return "WarehouseTypeScene{" + "travelTime=" + travelTime + ", description=" + description + ", blockedLocation=" + blockedLocation + ", displaySymbol=" + displaySymbol + '}';
+    }
+
+    public void setPosition(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
