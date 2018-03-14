@@ -27,8 +27,8 @@ public class OregonTrail {
 
     //private Player player;
     private static Game currentGame = null;
-    private static Game loadSavedGame = null;
-    private static Game saveCurrentGame = null;
+    private static Game loadSavedGame = null;  //might be able to delete
+    private static Game saveCurrentGame = null; //might be able to delete
     private static Player player = null;
     //private static Item item;
     private static Map map;

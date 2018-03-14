@@ -44,17 +44,13 @@ public class GameControl {
             return -1;
         
         Game currentGame = new Game();  //create a new Game object
-        OregonTrail.setCurrentGame(currentGame);
         
         currentGame.setPlayer(player);  //Save a reference to the Player object in the game
         System.out.println("Player name = " + player);    
+
+        OregonTrail.setCurrentGame(currentGame); //Save a reference to the game in the main class  
         
-        //String game = Game.setPlayer(player); //Save a reference to the game in the main class    
-        
-        Map map = new Map();  //createMap(noOfRows, noOfColumns, items)
-        if (map == null)
-            return -1;             
-                
+        Map map = createMap(5, 5);
         currentGame.setMap(map); //assign the map to the game
         
         return 1;  //indicates success
@@ -70,8 +66,8 @@ public class GameControl {
     
     public static Map createMap(int noOfRows, int noOfColumns){
         System.out.println("**** createMap() called ****");
-        
-        Map map = new Map();
+        Map map = new Map(noOfRows, noOfColumns);  //createMap(noOfRows, noOfColumns, items)
+
         return map;
     }
             

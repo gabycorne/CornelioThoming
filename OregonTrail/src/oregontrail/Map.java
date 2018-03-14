@@ -20,7 +20,13 @@ public class Map implements Serializable{
     private ArrayList<Game> games = new ArrayList<Game>(); 
 
     //default constructor
-    public Map() {
+    
+    //create Array row x cols & location
+    
+    public Map(int row, int col) {
+        this.rowCount = row;
+        this.columnCount = col;
+        
     }
 
     //getters and setters    

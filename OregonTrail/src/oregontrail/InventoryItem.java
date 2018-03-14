@@ -14,11 +14,9 @@ import java.util.Objects;
  */
 public class InventoryItem implements Serializable{
     //class instance variables
-    private String inventoryType;
+    private String inventoryType; //food, clothes, 
     private double quantityInStock;
     private double requiredAmount;
-    private Game game;
-    private Scene[] scene = new Scene[10];
 
 
     //constructor method
@@ -50,23 +48,7 @@ public class InventoryItem implements Serializable{
         this.requiredAmount = requiredAmount;
     }
     
-    public Game getGame() {
-        return game;
-    }
-
-    public void setGame(Game game) {
-        this.game = game;
-    }
-
-    public Scene[] getScene() {
-        return scene;
-    }
-
-    public void setScene(Scene[] scene) {
-        this.scene = scene;
-    }
-
-    
+   
     
     //toString, hashCode and equals methods
     @Override
