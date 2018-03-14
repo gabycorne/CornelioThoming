@@ -21,7 +21,7 @@ import oregontrail.OregonTrail;
 public class GameControl {    
 
     private static Location[][] createLocations(int noOfRows, int noOfColumns) {
-       System.out.println("createLocations() called");
+       System.out.println("***createLocations() called***");
        return null;// the tutor helped me to create this method teh return null doesnt do anything it was created so the error disappear
     }
 
@@ -52,22 +52,73 @@ public class GameControl {
         Game currentGame = new Game();  //create a new Game object
         
         currentGame.setPlayer(player);  //Save a reference to the Player object in the game
-        System.out.println("Player name = " + player);    
 
         OregonTrail.setCurrentGame(currentGame); //Save a reference to the game in the main class  
         
-        Map map = createMap(5, 5, InventoryItems[]);
-        currentGame.setMap(map); //assign the map to the game
+        //Map map = createMap(5, 5, InventoryItems[]);
+        //currentGame.setMap(map); //assign the map to the game
         
         return 1;  //indicates success
     }
-
+    
     public static InventoryItem[] createItems() {
         System.out.println("**** createItems() called ****");
         
-        int noOfItems = 10;
-        InventoryItem[] items = new InventoryItem[noOfItems];
+        int noOfItems = 7;
+        InventoryItem[] items = new InventoryItem[noOfItems]; //create an array InventoryItem objects
+        
+        InventoryItem food = new InventoryItem();
+        food.setDescription("Food");
+        food.setQuantityInStock(0);
+        food.setRequiredAmount(0);
+        
+        items[ItemType.food.ordinal()] = food;
+        
+        InventoryItem bullets = new InventoryItem();
+        bullets.setDescription("bullets");
+        bullets.setQuantityInStock(0);
+        bullets.setRequiredAmount(0);
+        
+        items[ItemType.bullets.ordinal()] = bullets;        
+        
+        InventoryItem wagonWheels = new InventoryItem();
+        wagonWheels.setDescription("Wagon Wheels");
+        wagonWheels.setQuantityInStock(0);
+        wagonWheels.setRequiredAmount(0);
+        
+        items[ItemType.wagonWheels.ordinal()] = wagonWheels;         
+        
+        InventoryItem wagonTongues = new InventoryItem();
+        wagonTongues.setDescription("Wagon Tongues");
+        wagonTongues.setQuantityInStock(0);
+        wagonTongues.setRequiredAmount(0);
+        
+        items[ItemType.wagonTongues.ordinal()] = wagonTongues;         
+        
+        InventoryItem wagonAxle = new InventoryItem();
+        wagonAxle.setDescription("Wagon Axle");
+        wagonAxle.setQuantityInStock(0);
+        wagonAxle.setRequiredAmount(0);
+        
+        items[ItemType.wagonAxle.ordinal()] = wagonAxle;         
+        
+        InventoryItem oxen = new InventoryItem();
+        oxen.setDescription("Oxen");
+        oxen.setQuantityInStock(0);
+        oxen.setRequiredAmount(0);
+        
+        items[ItemType.oxen.ordinal()] = oxen;         
+        
+        InventoryItem tools = new InventoryItem();
+        tools.setDescription("Tools");
+        tools.setQuantityInStock(0);
+        tools.setRequiredAmount(0);
+        
+        items[ItemType.tools.ordinal()] = tools;         
+                   
+        
         return items;
+
     }
     
 
@@ -83,13 +134,15 @@ public class GameControl {
 //    
     
     
-    public static Map createMap(int noOfRows, int noOfColumns, InventoryItem[] items){
+    public static Map createMap(int noOfRows, int noOfColumns){  //InventoryItem[] items
+        System.out.println("**** createMap() called ****");
+        
         if(noOfRows < 0 || noOfColumns < 0 ){
         return null;
         } 
-        if(items == null || items.length < 1){
-        return null;
-        }
+//        if(items == null || items.length < 1){
+//        return null;
+//        }
                 
         Map map = new Map(noOfRows, noOfColumns);
        
@@ -101,13 +154,9 @@ public class GameControl {
         return map;
     }    
       //  map.setLocations(locations); // I stopped here because we did not know how to change this to array. the instructions are not clear.
-        
-//    public static Map createMap(int noOfRows, int noOfColumns){
-//        System.out.println("**** createMap() called ****");
-//        Map map = new Map(noOfRows, noOfColumns);  //createMap(noOfRows, noOfColumns, items)
-//
-//        return map;
-        
+
+    
+    
         // TODO Need to set the inventory list...example from Ship game:
         // InventoryItem[] = inventoryList = GameControl.createInventoryList(); 
         // game.setInventory(InventoryList);
