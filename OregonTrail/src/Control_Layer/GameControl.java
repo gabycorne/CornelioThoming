@@ -124,11 +124,7 @@ public class GameControl {
         
         if(noOfRows < 0 || noOfColumns < 0 ){
         return null;
-        } 
-//        if(items == null || items.length < 1){
-//        return null;
-//        }
-                
+        }  
         Map map = new Map(noOfRows, noOfColumns);
        
         map.setColumnCount(noOfColumns);
@@ -136,12 +132,17 @@ public class GameControl {
 
         Location[][] locations = createLocations(noOfRows, noOfColumns);
         
-        map.setLocations(Location);
-    
+        map.setLocations(locations);
+        Scene[] scenes = createScenes();
+        createQuestions();
+        assignQuestionsToScenes(null,null);
+        assignItemsToScenes(null,null);
+        assignScenesToLocations(scenes,locations);
+        
         return map;
     }    
     
-    private static ArrayList<Location> Location;// i added this to stop error on line 139
+    
 
     private static Location[][] createLocations(int noOfRows, int noOfColumns) {
        System.out.println("***createLocations() called***");
@@ -151,27 +152,25 @@ public class GameControl {
      }  
      Location[][] locations = new Location[noOfRows][noOfColumns];
    
-//     for( int noOrRows = 0; noOfRows < noOfColumns.length; noOfRowss++){
-//     for(int noOrColumns)
-//     }
+     for( int Rows = 0; Rows < noOfRows; Rows++){
+    for(int Columns = 0; Columns < noOfColumns; Columns++){
+        locations [Rows][Columns] = new Location();
+        locations[Rows][Columns].setRow(Rows);
+        locations[Rows][Columns].setColumn(Columns);
+         
+        locations[Rows][Columns].setVisited(false);
+    
+    }
+   }
 
-//FOR every row in the locations array
-//FOR every column in the locations array
-
-
-//location = create a new Location object
-//set the row, and column attributes in the location
-//set visited attribute to false
-//Assign location to the row, and column in array
-// ENDFOR
-// RETURN locations
-
-      return locations; 
+    return locations; 
        
     }
+
+   
     public enum SceneType{
-        resource_Scene, resourceScene, // i made a constant not a class is this ok??
-        question_Scene,  questionScene,
+        resource_Scene, 
+        question_Scene,
     }
     private static Scene[] createScenes(){
         System.out.println("******Scene[] called*****");
@@ -183,12 +182,12 @@ public class GameControl {
         resourceScene.setDescription("Resource Scene");
         resourceScene.setPosition(0);
         
-        scenes[SceneType.resourceScene.ordinal()] = resourceScene;            //why is the error??? 
+        scenes[SceneType.resource_Scene.ordinal()] = resourceScene;          
         
         Scene questionScene = new Scene();
         questionScene.setDescription("Question Scene");
         resourceScene.setPosition(1);
-        scenes[SceneType.questionScene.ordinal()] = questionScene;               // why is the error????
+        scenes[SceneType.question_Scene.ordinal()] = questionScene;              
         
         return scenes;
          }
@@ -205,7 +204,9 @@ public class GameControl {
     }
     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations){
         System.out.println("******assignScenesToLocation[] called*****");
-        
+   
+        locations [0][0].setScene(scenes[SceneType.resource_Scene.ordinal()]);
+        locations [0][1].setScene(scenes[SceneType.resource_Scene.ordinal()]); // I dont know if we should have scenetype. it is not a requirement 
         
         
     }    
