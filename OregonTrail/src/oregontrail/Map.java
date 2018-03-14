@@ -18,7 +18,18 @@ public class Map implements Serializable{
     private double rowCount;
     private double columnCount;
     private ArrayList<Game> games = new ArrayList<Game>(); 
+    private ArrayList<Location> locations = new ArrayList<Location>();  // created by gabby 
 
+    public ArrayList<Location> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(ArrayList<Location> locations) {
+        this.locations = locations;
+    }
+    
+    // created by gabby
+    
     //default constructor
     public Map() {
     }

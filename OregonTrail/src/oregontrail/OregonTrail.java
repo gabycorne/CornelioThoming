@@ -61,6 +61,7 @@ public class OregonTrail {
     }
 
     public static void setMap(Map map) {
+            
         OregonTrail.map = map;
     }
 
