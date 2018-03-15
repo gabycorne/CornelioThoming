@@ -4,11 +4,13 @@
  * and open the template in the editor.
  */
 package ViewLayer;
+
+import Control_Layer.InventoryControl;
 /**
  *
  * @author Owner
  */
-public abstract class BuildWagonView extends View{
+public  class BuildWagonView extends View{
     public BuildWagonView() {
         super("\n"
             + "\n================================="
@@ -24,6 +26,10 @@ public abstract class BuildWagonView extends View{
             + "\n  C - Cover                      "     
             + "\n  Q - Quit Game                  "
             + "\n=================================");
+     String[] wagonListItems = null;
+        
+     InventoryControl.Wagonlist(wagonListItems);
+   
     }
     
     
