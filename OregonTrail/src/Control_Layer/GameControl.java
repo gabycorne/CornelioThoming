@@ -10,6 +10,7 @@ import ViewLayer.HelpMenuView;
 import java.util.ArrayList;
 import oregontrail.Actor;
 import oregontrail.Game;
+import oregontrail.InterviewQuestion;
 import oregontrail.InventoryItem;
 import oregontrail.Location;
 import oregontrail.Map;
@@ -134,8 +135,8 @@ public class GameControl {
         
         map.setLocations(locations);
         Scene[] scenes = createScenes();
-        createQuestions();
-        assignQuestionsToScenes(null,null);
+        MapControl.createQuestions();
+        MapControl.assignQuestionsToScenes(null,null);
         assignItemsToScenes(null,null);
         assignScenesToLocations(scenes,locations);
         
@@ -173,7 +174,7 @@ public class GameControl {
         question_Scene,
     }
     private static Scene[] createScenes(){
-        System.out.println("******Scene[] called*****");
+        System.out.println("******createScenes[] called*****");
        
          int noOfScenes = 2;
         Scene[] scenes = new Scene[noOfScenes]; //create an array InventoryItem objects
@@ -192,15 +193,17 @@ public class GameControl {
         return scenes;
          }
     
-    private static Question[] createQuestions(){
-        System.out.println("******createQuestions[] called*****");
-        return null;
-    }
-    private static void assignQuestionsToScenes(Question[] questions, Scene[] scenes){
-         System.out.println("******assignQuestionsToScenes[] called*****");
-        }
+    //moved to MapControl class per instructions in L10
+//    private static Question[] createQuestions(){
+//        System.out.println("******createQuestions[] called*****");
+//        return null;
+//    }
+//    private static void assignQuestionsToScenes(InterviewQuestion[] questions, Scene[] scenes){
+//         System.out.println("******assignQuestionsToScenes[] called*****");
+//        }
+    
     private static void assignItemsToScenes(InventoryItem[] items, Scene[] scenes){
-        System.out.println("******assignItemsToScene[] called*****");
+        System.out.println("******assignItemsToScenes[] called*****");
     }
     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations){
         System.out.println("******assignScenesToLocations[] called*****");
@@ -251,11 +254,11 @@ public class GameControl {
         return netCalories;
     }
 
-    private static class Question { /// to stop error line 167
-
-        public Question() {
-        }
-    }
+//    private static class Question { /// to stop error line 167   
+//
+//        public Question() { //moved to MapControl class per instructions in L10 team assignment
+//        }
+//    }
     
 }
 
