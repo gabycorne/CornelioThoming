@@ -18,3 +18,4 @@ public enum ItemType {
     oxen,
     tools;  
 }
+//Michael I think you could add this code on the game control. like mine in line 172 
