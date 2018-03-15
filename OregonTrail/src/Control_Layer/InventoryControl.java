@@ -5,6 +5,8 @@
  */
 package Control_Layer;
 
+import oregontrail.InventoryItem;
+
 /**
  *
  * @author mthoming
@@ -47,4 +49,42 @@ public class InventoryControl {
         
        
          }    
+
+    // code by gabby
+    public static void Wagonlist(String[] wagonListItems){
+          
+        wagonListItems = new String[6];
+        wagonListItems[0] = "Iron";
+        wagonListItems[1] = "Bed";
+        wagonListItems[2] = "Wheels";
+        wagonListItems[3] = "Axle Asamblies";
+        wagonListItems[4] = "Hounds and Bolsters";
+        wagonListItems[5] = "Cover";
+        
+        int count = 0;
+                
+        for(String list: wagonListItems){
+        System.out.println(list);
+        count++;
+        }
+        System.out.println(count);
+       
+        
+       
+    }
+    
+//   Find the sum of a list
+//total (list): number
+//BEGIN
+//total = 0
+//FOR index = 0 TO list.length -1
+// total = total + list[index]
+//ENDFOR
+//RETURN total
+//END
+
+    public static void Wagonlist() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
