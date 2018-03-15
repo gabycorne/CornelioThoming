@@ -26,9 +26,9 @@ public  class BuildWagonView extends View{
             + "\n  C - Cover                      "     
             + "\n  Q - Quit Game                  "
             + "\n=================================");
-     String[] wagonListItems = null;
+     String[] wagonListItems = null;// individual assignment gabby
         
-     InventoryControl.Wagonlist(wagonListItems);
+     InventoryControl.Wagonlist(wagonListItems);//individual assignment gabby
    
     }
     

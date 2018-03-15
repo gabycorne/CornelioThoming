@@ -73,7 +73,7 @@ public class MainMenuView extends View {
             case "H": getHelp();
                 break;
                 
-            case "W": buildWagon();
+            case "W": buildWagon(); // individual assignment gabby
                 break;
                
             case "Q": return true;
@@ -140,7 +140,7 @@ public class MainMenuView extends View {
     private void buildWagon() {
         BuildWagonView buildWagon = new BuildWagonView();
         buildWagon.display();
-
+// individual assignment gabby
     }
 
         public static class HelpMenuView {

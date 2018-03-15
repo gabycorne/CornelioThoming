@@ -69,22 +69,10 @@ public class InventoryControl {
         }
         System.out.println(count);
        
-        
+        // individual assignment
        
     }
     
-//   Find the sum of a list
-//total (list): number
-//BEGIN
-//total = 0
-//FOR index = 0 TO list.length -1
-// total = total + list[index]
-//ENDFOR
-//RETURN total
-//END
-
-    public static void Wagonlist() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
     
 }
