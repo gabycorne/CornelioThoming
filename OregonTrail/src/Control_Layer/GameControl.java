@@ -193,17 +193,17 @@ public class GameControl {
          }
     
     private static Question[] createQuestions(){
-        System.out.println("******Question[] called*****");
+        System.out.println("******createQuestions[] called*****");
         return null;
     }
     private static void assignQuestionsToScenes(Question[] questions, Scene[] scenes){
-         System.out.println("******assignQuestionToScene[] called*****");
+         System.out.println("******assignQuestionsToScenes[] called*****");
         }
     private static void assignItemsToScenes(InventoryItem[] items, Scene[] scenes){
-        System.out.println("******assignItemsnToScene[] called*****");
+        System.out.println("******assignItemsToScene[] called*****");
     }
     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations){
-        System.out.println("******assignScenesToLocation[] called*****");
+        System.out.println("******assignScenesToLocations[] called*****");
    
         locations [0][0].setScene(scenes[SceneType.resource_Scene.ordinal()]);
         locations [0][1].setScene(scenes[SceneType.resource_Scene.ordinal()]); // I dont know if we should have scenetype. it is not a requirement 
