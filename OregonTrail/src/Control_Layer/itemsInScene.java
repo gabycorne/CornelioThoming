@@ -24,12 +24,17 @@ public class itemsInScene {
         purchasedItems[5] = 200; //2 wagon wheels at $100/ea
         
         int sum = 0;
-                
+            System.out.println("Individual cost of items in the array:");
+            System.out.println("$" + purchasedItems[0]);
+            System.out.println("$" + purchasedItems[1]);
+            System.out.println("$" + purchasedItems[2]);
+            System.out.println("$" + purchasedItems[3]);
+            System.out.println("$" + purchasedItems[4]);
+            System.out.println("$" + purchasedItems[5]);
         for(int i: purchasedItems){
-            System.out.println(Arrays.toString(purchasedItems));
-        sum += i;
+            sum += i;
         }
-            System.out.println(sum);
+            //System.out.println(sum);
         return sum;
 
        

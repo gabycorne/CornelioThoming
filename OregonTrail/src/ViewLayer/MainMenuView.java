@@ -127,7 +127,9 @@ public class MainMenuView extends View {
             Control_Layer.itemsInScene itemsInScene = new itemsInScene();
             int[] myArray = new int[6];
             sum = itemsInScene.purchasedItemsTotal(myArray);
+            System.out.println("The total of all items purchased is: $" + sum);
             return sum;
+
         }        
         
         //MT disabled in week 10 to make room for individual assignment
