@@ -5,6 +5,7 @@
  */
 package Control_Layer;
 
+import static Control_Layer.GameControl.SceneType.resource_Scene;
 import oregontrail.Player;
 import ViewLayer.HelpMenuView;
 import java.util.ArrayList;
@@ -15,13 +16,17 @@ import oregontrail.InventoryItem;
 import oregontrail.Location;
 import oregontrail.Map;
 import oregontrail.OregonTrail;
+import oregontrail.ResourceScene;
 import oregontrail.Scene;
+import Control_Layer.itemsInScene;
 
 /**
  *
  * @author mthoming
  */
 public class GameControl {    
+    
+    public static ArrayList<InventoryItem> itemsInScene = new ArrayList();
 
     public GameControl() {
     }
@@ -171,7 +176,11 @@ public class GameControl {
    
     public enum SceneType{
         resource_Scene, 
-        question_Scene,
+        question_Scene,;
+
+        private void setItems(ArrayList<InventoryItem> itemsInScene) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
     }
     private static Scene[] createScenes(){
         System.out.println("******createScenes[] called*****");
@@ -193,7 +202,8 @@ public class GameControl {
         return scenes;
          }
     
-    //moved to MapControl class per instructions in L10
+    //moved lines 197-204 to MapControl class per instructions in L10 Team Assignment
+    
 //    private static Question[] createQuestions(){
 //        System.out.println("******createQuestions[] called*****");
 //        return null;
@@ -204,6 +214,19 @@ public class GameControl {
     
     private static void assignItemsToScenes(InventoryItem[] items, Scene[] scenes){
         System.out.println("******assignItemsToScenes[] called*****");
+        
+        
+        resource_Scene.setItems(itemsInScene);
+        
+        ResourceScene resourceScene = (ResourceScene) scenes[SceneType.resource_Scene.ordinal()];
+        itemsInScene.add(items[ ItemType.bullets.ordinal()]);
+        itemsInScene.add(items[ ItemType.food.ordinal()]);
+        itemsInScene.add(items[ ItemType.oxen.ordinal()]);
+        itemsInScene.add(items[ ItemType.tools.ordinal()]);
+        itemsInScene.add(items[ ItemType.wagonAxle.ordinal()]);
+        itemsInScene.add(items[ ItemType.wagonTongues.ordinal()]);
+        itemsInScene.add(items[ ItemType.wagonWheels.ordinal()]);
+        
     }
     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations){
         System.out.println("******assignScenesToLocations[] called*****");
