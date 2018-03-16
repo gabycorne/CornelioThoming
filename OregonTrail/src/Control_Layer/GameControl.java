@@ -216,17 +216,17 @@ public class GameControl {
         System.out.println("******assignItemsToScenes[] called*****");
         
         
-        resource_Scene.setItems(itemsInScene);
-        
-        ResourceScene resourceScene = (ResourceScene) scenes[SceneType.resource_Scene.ordinal()];
-        itemsInScene.add(items[ ItemType.bullets.ordinal()]);
-        itemsInScene.add(items[ ItemType.food.ordinal()]);
-        itemsInScene.add(items[ ItemType.oxen.ordinal()]);
-        itemsInScene.add(items[ ItemType.tools.ordinal()]);
-        itemsInScene.add(items[ ItemType.wagonAxle.ordinal()]);
-        itemsInScene.add(items[ ItemType.wagonTongues.ordinal()]);
-        itemsInScene.add(items[ ItemType.wagonWheels.ordinal()]);
-        
+//        resource_Scene.setItems(itemsInScene);
+//        
+//        ResourceScene resourceScene = (ResourceScene) scenes[SceneType.resource_Scene.ordinal()];
+//        itemsInScene.add(items[ ItemType.bullets.ordinal()]);
+//        itemsInScene.add(items[ ItemType.food.ordinal()]);
+//        itemsInScene.add(items[ ItemType.oxen.ordinal()]);
+//        itemsInScene.add(items[ ItemType.tools.ordinal()]);
+//        itemsInScene.add(items[ ItemType.wagonAxle.ordinal()]);
+//        itemsInScene.add(items[ ItemType.wagonTongues.ordinal()]);
+//        itemsInScene.add(items[ ItemType.wagonWheels.ordinal()]);
+//        
     }
     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations){
         System.out.println("******assignScenesToLocations[] called*****");
