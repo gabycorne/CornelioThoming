@@ -221,7 +221,7 @@ public class GameControl {
 //        itemsInScene.add(items[ ItemType.wagonAxle.ordinal()]);
 //        itemsInScene.add(items[ ItemType.wagonTongues.ordinal()]);
 //        itemsInScene.add(items[ ItemType.wagonWheels.ordinal()]);
-        
+//        
     }
     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations){
         System.out.println("******assignScenesToLocations[] called*****");
