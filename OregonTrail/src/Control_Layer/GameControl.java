@@ -25,8 +25,6 @@ import Control_Layer.itemsInScene;
  * @author mthoming
  */
 public class GameControl {    
-    
-    public static ArrayList<InventoryItem> itemsInScene = new ArrayList();
 
     public GameControl() {
     }
@@ -178,9 +176,6 @@ public class GameControl {
         resource_Scene, 
         question_Scene,;
 
-        private void setItems(ArrayList<InventoryItem> itemsInScene) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
     }
     private static Scene[] createScenes(){
         System.out.println("******createScenes[] called*****");
@@ -214,8 +209,8 @@ public class GameControl {
     
     private static void assignItemsToScenes(InventoryItem[] items, Scene[] scenes){
         System.out.println("******assignItemsToScenes[] called*****");
-        
-        
+//        ArrayList<InventoryItem> itemsInScene = null;
+//        
 //        resource_Scene.setItems(itemsInScene);
 //        
 //        ResourceScene resourceScene = (ResourceScene) scenes[SceneType.resource_Scene.ordinal()];
@@ -226,7 +221,7 @@ public class GameControl {
 //        itemsInScene.add(items[ ItemType.wagonAxle.ordinal()]);
 //        itemsInScene.add(items[ ItemType.wagonTongues.ordinal()]);
 //        itemsInScene.add(items[ ItemType.wagonWheels.ordinal()]);
-//        
+        
     }
     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations){
         System.out.println("******assignScenesToLocations[] called*****");

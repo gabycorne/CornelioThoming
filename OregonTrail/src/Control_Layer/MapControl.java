@@ -53,23 +53,23 @@ public class MapControl {
     public static void assignQuestionsToScenes(InterviewQuestion[] questions, Scene[] scenes){
         System.out.println("******assignQuestionsToScenes[] called*****");
         
-        int noOfQuestions = 5;
-        QuestionScene questionScene = (QuestionScene) scenes[SceneType.question_Scene.ordinal()];
-         
-        InterviewQuestion[] questionsInScene = new InterviewQuestion[noOfQuestions];
-        questionsInScene[0] = questions[QuestionType.buySupplies.ordinal()];
-        questionsInScene[1] = questions[QuestionType.whenToStart.ordinal()];
-        questionsInScene[2] = questions[QuestionType.travelerIsSick.ordinal()];
-        questionsInScene[2] = questions[QuestionType.riverCrossing.ordinal()];
-        questionsInScene[2] = questions[QuestionType.whichRoute.ordinal()];            
-         
-        QuestionScene resourceScene = (QuestionScene) scenes[SceneType.resource_Scene.ordinal()];
-        
-        questionsInScene[0] = questions[QuestionType.buySupplies.ordinal()];
-        questionsInScene[1] = questions[QuestionType.whenToStart.ordinal()];
-        questionsInScene[2] = questions[QuestionType.travelerIsSick.ordinal()];
-        questionsInScene[2] = questions[QuestionType.riverCrossing.ordinal()];
-        questionsInScene[2] = questions[QuestionType.whichRoute.ordinal()];
+//        int noOfQuestions = 5;
+//        QuestionScene questionScene = (QuestionScene) scenes[SceneType.question_Scene.ordinal()];
+//         
+//        InterviewQuestion[] questionsInScene = new InterviewQuestion[noOfQuestions];
+//        questionsInScene[0] = questions[QuestionType.buySupplies.ordinal()];
+//        questionsInScene[1] = questions[QuestionType.whenToStart.ordinal()];
+//        questionsInScene[2] = questions[QuestionType.travelerIsSick.ordinal()];
+//        questionsInScene[3] = questions[QuestionType.riverCrossing.ordinal()];
+//        questionsInScene[4] = questions[QuestionType.whichRoute.ordinal()];            
+//         
+//        QuestionScene resourceScene = (QuestionScene) scenes[SceneType.resource_Scene.ordinal()];
+//        
+//        questionsInScene[0] = questions[QuestionType.buySupplies.ordinal()];
+//        questionsInScene[1] = questions[QuestionType.whenToStart.ordinal()];
+//        questionsInScene[2] = questions[QuestionType.travelerIsSick.ordinal()];
+//        questionsInScene[3] = questions[QuestionType.riverCrossing.ordinal()];
+//        questionsInScene[4] = questions[QuestionType.whichRoute.ordinal()];
     }  
     
     
