@@ -27,8 +27,8 @@ public class MainMenuView extends View {
             + "\n                                 "
             + "\n  N - New Game                   "
             + "\n  R - Restart saved Game         "
-            + "\n  C - Cross river                "
-            + "\n  M - purchasedItemsTotal        "
+            + "\n  M - Display Map                "
+            + "\n  P - purchasedItemsTotal        "
             + "\n  H - Get help                   "                
             + "\n  Q - Quit game                  "
             + "\n                                 "
@@ -65,10 +65,10 @@ public class MainMenuView extends View {
             case "R": restartGame();
                 break;
 
-            case "C": crossRiver();
+            case "M": displayMap();
                 break;
                 
-            case "M": purchasedItemsTotal();
+            case "P": purchasedItemsTotal();
                 break;
                 
             case "H": getHelp();
@@ -114,14 +114,18 @@ public class MainMenuView extends View {
            startExistingGameView.display();
             
         }
-        
-        public void crossRiver(){
-            ViewLayer.CrossRiverView crossRiverView = new CrossRiverView();
-            crossRiverView.display();
-            crossRiverView.displayGetMenuEntry();
-            
-        }
 
+        //MT - reference for MT L09 individual Assignment.  Disabled in week 10.        
+//        public void crossRiver(){
+//            ViewLayer.CrossRiverView crossRiverView = new CrossRiverView();
+//            crossRiverView.display();
+//            crossRiverView.displayGetMenuEntry();   
+//        }
+
+        public void displayMap() {
+        System.out.println("***displayMap Called***");
+        }
+        
         public int purchasedItemsTotal(){
             int sum;
             Control_Layer.itemsInScene itemsInScene = new itemsInScene();
@@ -129,15 +133,13 @@ public class MainMenuView extends View {
             sum = itemsInScene.purchasedItemsTotal(myArray);
             System.out.println("The total of all items purchased is: $" + sum);
             return sum;
-
         }        
         
-        //MT disabled in week 10 to make room for individual assignment
+        //MT - reference for MT L09 individual Assignment.  Disabled in week 10.
 //        public void buyFood(){
 //            ViewLayer.BuyFoodView buyFoodView = new BuyFoodView();
 //            buyFoodView.display();
-//            buyFoodView.getInputs();
-//            
+//            buyFoodView.getInputs();  
 //        }        
         
          private void restartGame() {
