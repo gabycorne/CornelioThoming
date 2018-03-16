@@ -56,8 +56,8 @@ public class GameControl {
 
         OregonTrail.setCurrentGame(currentGame); //Save a reference to the game in the main class  
         
-        //Map map = createMap(5, 5, InventoryItems[]);
-        //currentGame.setMap(map); //assign the map to the game
+        Map map = createMap(5, 5);
+        currentGame.setMap(map); //assign the map to the game
         
         return 1;  //indicates success
     }
@@ -139,8 +139,12 @@ public class GameControl {
         map.setLocations(locations);
         Scene[] scenes = createScenes();
         MapControl.createQuestions();
-        MapControl.assignQuestionsToScenes(null,null);
-        assignItemsToScenes(null,null);
+        
+        //make an array for each of the 2 following calls
+        InterviewQuestion[] myQuestion = new InterviewQuestion[6];
+        
+        MapControl.assignQuestionsToScenes(myQuestion,scenes);
+        assignItemsToScenes(null,scenes);
         assignScenesToLocations(scenes,locations);
         
         return map;
@@ -209,6 +213,8 @@ public class GameControl {
     
     private static void assignItemsToScenes(InventoryItem[] items, Scene[] scenes){
         System.out.println("******assignItemsToScenes[] called*****");
+
+//   MT started building in lesson 10 and then removed since it doesn't really fit within the concept of our game         
 //        ArrayList<InventoryItem> itemsInScene = null;
 //        
 //        resource_Scene.setItems(itemsInScene);

@@ -12,11 +12,10 @@ import oregontrail.InventoryItem;
  *
  * @author mthoming
  */
-class itemsInScene {
+public class itemsInScene {
     
         public static int purchasedItemsTotal(int[] purchasedItems){
           
-        purchasedItems = new int[6];
         purchasedItems[0] = 10;  //10 boxes of bullets at $1/ea
         purchasedItems[1] = 500; //125lbs of food at $4/lb
         purchasedItems[2] = 400; //2 oxen at $200/ea

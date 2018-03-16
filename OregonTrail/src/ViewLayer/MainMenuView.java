@@ -11,6 +11,7 @@ import Control_Layer.GameControl;
 import oregontrail.Player;
 import ViewLayer.HelpMenuView;
 import oregontrail.OregonTrail;
+import Control_Layer.itemsInScene;
 
 /**
  *
@@ -27,7 +28,7 @@ public class MainMenuView extends View {
             + "\n  N - New Game                   "
             + "\n  R - Restart saved Game         "
             + "\n  C - Cross river                "
-            + "\n  B - Buy food                   "
+            + "\n  M - purchasedItemsTotal        "
             + "\n  H - Get help                   "                
             + "\n  Q - Quit game                  "
             + "\n                                 "
@@ -67,7 +68,7 @@ public class MainMenuView extends View {
             case "C": crossRiver();
                 break;
                 
-            case "B": buyFood();
+            case "M": purchasedItemsTotal();
                 break;
                 
             case "H": getHelp();
@@ -121,12 +122,21 @@ public class MainMenuView extends View {
             
         }
 
-        public void buyFood(){
-            ViewLayer.BuyFoodView buyFoodView = new BuyFoodView();
-            buyFoodView.display();
-            buyFoodView.getInputs();
-            
+        public int purchasedItemsTotal(){
+            int sum;
+            Control_Layer.itemsInScene itemsInScene = new itemsInScene();
+            int[] myArray = new int[6];
+            sum = itemsInScene.purchasedItemsTotal(myArray);
+            return sum;
         }        
+        
+        //MT disabled in week 10 to make room for individual assignment
+//        public void buyFood(){
+//            ViewLayer.BuyFoodView buyFoodView = new BuyFoodView();
+//            buyFoodView.display();
+//            buyFoodView.getInputs();
+//            
+//        }        
         
          private void restartGame() {
          }

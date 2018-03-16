@@ -52,11 +52,10 @@ public class MapControl {
     
     public static void assignQuestionsToScenes(InterviewQuestion[] questions, Scene[] scenes){
         System.out.println("******assignQuestionsToScenes[] called*****");
-        
+//    MT started building in lesson 10 and then removed since it doesn't really fit within the concept of our game    
 //        int noOfQuestions = 5;
 //        QuestionScene questionScene = (QuestionScene) scenes[SceneType.question_Scene.ordinal()];
 //         
-//        InterviewQuestion[] questionsInScene = new InterviewQuestion[noOfQuestions];
 //        questionsInScene[0] = questions[QuestionType.buySupplies.ordinal()];
 //        questionsInScene[1] = questions[QuestionType.whenToStart.ordinal()];
 //        questionsInScene[2] = questions[QuestionType.travelerIsSick.ordinal()];
