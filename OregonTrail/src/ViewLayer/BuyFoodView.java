@@ -5,6 +5,7 @@
  */
 package ViewLayer;
 
+import Exceptions.InventoryControlException;
 import java.util.Scanner;
 
 /**
@@ -24,7 +25,7 @@ public class BuyFoodView extends View {
             + "\n  you wish to buy:               ");
     }
     
-    public void getInputs() {
+    public void getInputs() throws InventoryControlException {
         boolean done = false;
         double price = 0;
         while (done != true) {
@@ -88,7 +89,7 @@ public class BuyFoodView extends View {
             
         }
             
-        private double doAction(double price, double quantity ) {
+        private double doAction(double price, double quantity ) throws InventoryControlException {
             
             double totalCost;
 

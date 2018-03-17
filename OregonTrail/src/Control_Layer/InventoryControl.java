@@ -5,6 +5,7 @@
  */
 package Control_Layer;
 
+import Exceptions.InventoryControlException;
 import oregontrail.InventoryItem;
 
 /**
@@ -14,18 +15,19 @@ import oregontrail.InventoryItem;
 public class InventoryControl {
     
     //Author: MThoming
-    public static double calcItemTotalCost(double itemCost, double itemQuantityToPurchase) {
+    public static double calcItemTotalCost(double itemCost, double itemQuantityToPurchase) 
+            throws InventoryControlException {
         
         //if (StringUtils.isNumeric(itemCost) = false) {
         //    return -1;
         //}
         
-        if (itemCost < 1) {
-          return -1;
+        if (itemCost < 1) { //cost is less than 1?
+          throw new InventoryControlException("The cost of the item cannot be less than 1.");
         }
     
         if (itemQuantityToPurchase < 1 || itemQuantityToPurchase > 10000) {
-            return -1;
+            throw new InventoryControlException("The quantity must be greater than zero.");
         }
     
         double totalCost = itemCost * itemQuantityToPurchase;

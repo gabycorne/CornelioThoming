@@ -12,6 +12,9 @@ import oregontrail.Player;
 import ViewLayer.HelpMenuView;
 import oregontrail.OregonTrail;
 import Control_Layer.itemsInScene;
+import Exceptions.InventoryControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,7 +31,7 @@ public class MainMenuView extends View {
             + "\n  N - New Game                   "
             + "\n  R - Restart saved Game         "
             + "\n  M - Display Map                "
-            + "\n  P - PurchasedItemsTotal        "
+            + "\n  B - Buy Food                   "
             + "\n  W - Build Wagon                "
             + "\n  H - Get help                   "                
             + "\n  Q - Quit game                  "
@@ -69,7 +72,13 @@ public class MainMenuView extends View {
             case "M": displayMap();
                 break;
                 
-            case "P": purchasedItemsTotal();
+            case "B": {
+            try {
+                buyFood();
+            } catch (InventoryControlException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
                 
             case "H": getHelp();
@@ -127,22 +136,24 @@ public class MainMenuView extends View {
         System.out.println("***displayMap Called***");
         ViewLayer.GameMenuView.displayMap();
         }
+                 
+        //MT reference for MT L10 individual assignment. Disabled in L11
+//        public int purchasedItemsTotal(){
+//            int sum;
+//            Control_Layer.itemsInScene itemsInScene = new itemsInScene();
+//            int[] myArray = new int[6];
+//            sum = itemsInScene.purchasedItemsTotal(myArray);
+//            System.out.println("The total of all items purchased is: $" + sum);
+//            return sum;
+//        }        
         
-        public int purchasedItemsTotal(){
-            int sum;
-            Control_Layer.itemsInScene itemsInScene = new itemsInScene();
-            int[] myArray = new int[6];
-            sum = itemsInScene.purchasedItemsTotal(myArray);
-            System.out.println("The total of all items purchased is: $" + sum);
-            return sum;
-        }        
         
         //MT - reference for MT L09 individual Assignment.  Disabled in week 10.
-//        public void buyFood(){
-//            ViewLayer.BuyFoodView buyFoodView = new BuyFoodView();
-//            buyFoodView.display();
-//            buyFoodView.getInputs();  
-//        }        
+        public void buyFood() throws InventoryControlException{
+            ViewLayer.BuyFoodView buyFoodView = new BuyFoodView();
+            buyFoodView.display();
+            buyFoodView.getInputs();  
+        }        
         
          private void restartGame() {
          }
