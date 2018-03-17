@@ -25,12 +25,12 @@ public class itemsInScene {
         
         int sum = 0;
             System.out.println("Individual cost of items in the array:");
-            System.out.println("$" + purchasedItems[0]);
-            System.out.println("$" + purchasedItems[1]);
-            System.out.println("$" + purchasedItems[2]);
-            System.out.println("$" + purchasedItems[3]);
-            System.out.println("$" + purchasedItems[4]);
-            System.out.println("$" + purchasedItems[5]);
+            System.out.println("10 boxes of bullets: $" + purchasedItems[0]);
+            System.out.println("125 lbs of food: $" + purchasedItems[1]);
+            System.out.println("2 oxen: $" + purchasedItems[2]);
+            System.out.println("10 sets of clothing: $" + purchasedItems[3]);
+            System.out.println("2 wagon tongues: $" + purchasedItems[4]);
+            System.out.println("2 wagon wheels: $" + purchasedItems[5]);
         for(int i: purchasedItems){
             sum += i;
         }
