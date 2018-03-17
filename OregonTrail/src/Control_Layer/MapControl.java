@@ -7,6 +7,8 @@ package Control_Layer;
 
 import Control_Layer.GameControl.SceneType;
 import oregontrail.InterviewQuestion;
+import oregontrail.Location;
+import oregontrail.Map;
 import oregontrail.QuestionScene;
 import oregontrail.Scene;
 
@@ -15,6 +17,33 @@ import oregontrail.Scene;
  * @author mthoming
  */
 public class MapControl {
+    
+        public static Map createMap(int noOfRows, int noOfColumns){  //InventoryItem[] items
+        System.out.println("**** createMap() called ****");
+        
+        if(noOfRows < 0 || noOfColumns < 0 ){
+        return null;
+        }  
+        Map map = new Map(noOfRows, noOfColumns);
+       
+        map.setColumnCount(noOfColumns);
+        map.setRowCount(noOfRows);
+
+        Location[][] locations = GameControl.createLocations(noOfRows, noOfColumns);
+        
+        map.setLocations(locations);
+        Scene[] scenes = GameControl.createScenes();
+        MapControl.createQuestions();
+        
+        //make an array for each of the 2 following calls
+        InterviewQuestion[] myQuestion = new InterviewQuestion[6];
+        
+        MapControl.assignQuestionsToScenes(myQuestion,scenes);
+        GameControl.assignItemsToScenes(null,scenes);
+        GameControl.assignScenesToLocations(scenes,locations);
+        
+        return map;
+    }
     
     public static InterviewQuestion[] createQuestions(){
         System.out.println("******createQuestions[] called*****");

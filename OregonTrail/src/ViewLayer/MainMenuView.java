@@ -28,7 +28,8 @@ public class MainMenuView extends View {
             + "\n  N - New Game                   "
             + "\n  R - Restart saved Game         "
             + "\n  M - Display Map                "
-            + "\n  P - purchasedItemsTotal        "
+            + "\n  P - PurchasedItemsTotal        "
+            + "\n  W - Build Wagon                "
             + "\n  H - Get help                   "                
             + "\n  Q - Quit game                  "
             + "\n                                 "
@@ -124,6 +125,7 @@ public class MainMenuView extends View {
 
         public void displayMap() {
         System.out.println("***displayMap Called***");
+        ViewLayer.GameMenuView.displayMap();
         }
         
         public int purchasedItemsTotal(){

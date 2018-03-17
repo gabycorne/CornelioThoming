@@ -26,6 +26,10 @@ public class Location implements Serializable{
     //default constructor
     public Location() {
     }
+
+    public Location(int noOfRows, int noOfColumns) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
         
     //getters and setters
     public double getRow() {

@@ -14,6 +14,9 @@ import java.util.ArrayList;
  */
 public class Map implements Serializable{
     
+    public Map() {
+    }
+    
     //class instance variables
     private double rowCount;
     private double columnCount;
@@ -42,11 +45,6 @@ public class Map implements Serializable{
         
     }
 
-
-    
-    
-    
-    
     //getters and setters    
     public double getRowCount() {
         return rowCount;

@@ -150,9 +150,9 @@ public class GameControl {
         return map;
     }    
     
-    
+   
 
-    private static Location[][] createLocations(int noOfRows, int noOfColumns) {
+    public static Location[][] createLocations(int noOfRows, int noOfColumns) {
        System.out.println("***createLocations() called***");
       
      if ( noOfRows < 1 || noOfColumns < 1){
@@ -181,7 +181,7 @@ public class GameControl {
         question_Scene,;
 
     }
-    private static Scene[] createScenes(){
+    public static Scene[] createScenes(){
         System.out.println("******createScenes[] called*****");
        
          int noOfScenes = 2;
@@ -211,7 +211,7 @@ public class GameControl {
 //         System.out.println("******assignQuestionsToScenes[] called*****");
 //        }
     
-    private static void assignItemsToScenes(InventoryItem[] items, Scene[] scenes){
+    public static void assignItemsToScenes(InventoryItem[] items, Scene[] scenes){
         System.out.println("******assignItemsToScenes[] called*****");
 
 //   MT started building in lesson 10 and then removed since it doesn't really fit within the concept of our game         
@@ -229,7 +229,7 @@ public class GameControl {
 //        itemsInScene.add(items[ ItemType.wagonWheels.ordinal()]);
 //        
     }
-    private static void assignScenesToLocations(Scene[] scenes, Location[][] locations){
+    public static void assignScenesToLocations(Scene[] scenes, Location[][] locations){
         System.out.println("******assignScenesToLocations[] called*****");
    
         locations [0][0].setScene(scenes[SceneType.resource_Scene.ordinal()]);

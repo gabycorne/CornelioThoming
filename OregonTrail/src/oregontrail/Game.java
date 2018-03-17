@@ -24,8 +24,8 @@ public class Game implements Serializable {
     }
 
     //getters and setters
-    public Map getMap() {
-        return map;
+    public static Map getMap() {
+        return null;
     }
 
     public void setMap(Map map) {
