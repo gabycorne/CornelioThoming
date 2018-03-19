@@ -79,7 +79,7 @@ public  class BuildWagonView extends View{
         }
 
         private void iron() {
-            System.out.println("**** hunting() called ***");
+            System.out.println("**** iron() called ***");
             System.out.println("no variable");
         }
 

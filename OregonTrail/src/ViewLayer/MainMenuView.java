@@ -31,7 +31,7 @@ public class MainMenuView extends View {
             + "\n  N - New Game                   "
             + "\n  R - Restart saved Game         "
             + "\n  M - Display Map                "
-            + "\n  B - Buy Food                   "
+            + "\n  C - Calculate Wagon Volume     "
             + "\n  W - Build Wagon                "
             + "\n  H - Get help                   "                
             + "\n  Q - Quit game                  "
@@ -71,7 +71,10 @@ public class MainMenuView extends View {
 
             case "M": displayMap();
                 break;
-                
+            
+            case "C": calcWagonVolume();
+                break;
+/*      //MT commented out in L11 to make room for calcWagonVolume
             case "B": {
             try {
                 buyFood();
@@ -79,7 +82,8 @@ public class MainMenuView extends View {
                 Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-                break;
+                break;                
+*/
                 
             case "H": getHelp();
                 break;
@@ -136,7 +140,13 @@ public class MainMenuView extends View {
         System.out.println("***displayMap Called***");
         ViewLayer.GameMenuView.displayMap();
         }
-                 
+
+        public void calcWagonVolume() {
+        System.out.println("***calcWagonVolume Called***");
+        //call the view-layer function to get inputs from the user and feed them to MapControl.calcWagonVolume
+        ViewLayer.GameMenuView.displayMap();
+        }
+
         //MT reference for MT L10 individual assignment. Disabled in L11
 //        public int purchasedItemsTotal(){
 //            int sum;
