@@ -13,6 +13,7 @@ import ViewLayer.HelpMenuView;
 import oregontrail.OregonTrail;
 import Control_Layer.itemsInScene;
 import Exceptions.InventoryControlException;
+import Exceptions.MapControlException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -72,7 +73,13 @@ public class MainMenuView extends View {
             case "M": displayMap();
                 break;
             
-            case "C": calcWagonVolume();
+            case "C": {
+            try {
+                calcWagonVolume();
+            } catch (MapControlException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
 /*      //MT commented out in L11 to make room for calcWagonVolume
             case "B": {
@@ -141,10 +148,14 @@ public class MainMenuView extends View {
         ViewLayer.GameMenuView.displayMap();
         }
 
-        public void calcWagonVolume() {
+        public void calcWagonVolume() throws MapControlException {
         System.out.println("***calcWagonVolume Called***");
         //call the view-layer function to get inputs from the user and feed them to MapControl.calcWagonVolume
-        ViewLayer.GameMenuView.displayMap();
+        ViewLayer.WagonVolumeView wagonVolumeView = new WagonVolumeView();
+        wagonVolumeView.display();
+        wagonVolumeView.getInputs();
+        
+        
         }
 
         //MT reference for MT L10 individual assignment. Disabled in L11
@@ -156,8 +167,7 @@ public class MainMenuView extends View {
 //            System.out.println("The total of all items purchased is: $" + sum);
 //            return sum;
 //        }        
-        
-        
+  
         //MT - reference for MT L09 individual Assignment.  Disabled in week 10.
         public void buyFood() throws InventoryControlException{
             ViewLayer.BuyFoodView buyFoodView = new BuyFoodView();

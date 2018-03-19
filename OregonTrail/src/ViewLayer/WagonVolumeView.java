@@ -12,15 +12,15 @@ import java.util.Scanner;
  *
  * @author mthoming
  */
-public class WagonVolumeView extends View{
+public class WagonVolumeView extends View {
     //build this similar to the BuyFoodView
-    
-        @Override
+
+    @Override
     public void display() {
         System.out.println("\n"
             + "\n================================="
             + "\n  Calculate the volume of your   "
-            + "\n  wagon       .                  "
+            + "\n  wagon                          "
             + "\n                                 "
             + "\n  Enter the width of the wagon   "
             + "\n  you wish to build:             ");
@@ -32,14 +32,17 @@ public class WagonVolumeView extends View{
         double width = 0;
         while (done != true) {
             double valueEntry1 = this.getValueEntry();
-            if (valueEntry1 < 1 || valueEntry1 > 5) {
-
-                System.out.println("\t  Please enter a width between 6 and 12:");                
-
-            } else {
-                done = true;
-                width = valueEntry1; 
-            }
+                  done = true;
+                  width = valueEntry1;             
+            
+//            if (valueEntry1 < 6 || valueEntry1 > 12) {
+//
+//                System.out.println("\t  Please enter a width between 6 and 12:");                
+//
+//            } else {
+//                done = true;
+//                width = valueEntry1; 
+//            }
            
         }
            
@@ -49,24 +52,26 @@ public class WagonVolumeView extends View{
         double depth = 0;
         while (!done) {
             double valueEntry2 = this.getValueEntry();
-            if (valueEntry2 < 1 || valueEntry2 > 500) {
-
-                System.out.println("\t  Please enter a depth between 12 and 18:");                
-                done = false;
-            } else {
-                done = true;
-                depth = valueEntry2;
-            }
+                  done = true;
+                  depth = valueEntry2;          
+//            if (valueEntry2 < 12 || valueEntry2 > 18) {
+//
+//                System.out.println("\t  Please enter a depth between 12 and 18:");                
+//                done = false;
+//            } else {
+//                done = true;
+//                depth = valueEntry2;
+//            }
             
         }
         
-        double totalCost = doAction(width, depth, height);
+        double totalVolume = doAction(width, depth, height);
         
-        System.out.println("\t  total cost = " + totalCost);     
+        System.out.println("\t  total volume = " + totalVolume);     
         
     }
     
-        private double getValueEntry() {
+        public double getValueEntry() {
         boolean validInput = false;
         double entry = 0;
         
@@ -75,15 +80,15 @@ public class WagonVolumeView extends View{
                 inFile = new Scanner(System.in);
 
                 validInput = inFile.hasNextDouble();
-
-                if (!validInput) {
-                    System.out.println("Please enter a valid number"); 
-                    
-                }
-                else {
-                    entry = inFile.nextDouble();
-                    validInput = true;
-                } 
+                validInput = true;
+//                if (!validInput) {
+//                    System.out.println("Please enter a valid number"); 
+//                    
+//                }
+//                else {
+//                    entry = inFile.nextDouble();
+//                    validInput = true;
+//                } 
 
             } //while (!validInput);
 
