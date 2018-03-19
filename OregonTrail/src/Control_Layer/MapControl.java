@@ -6,6 +6,7 @@
 package Control_Layer;
 
 import Control_Layer.GameControl.SceneType;
+import Exceptions.MapControlException;
 import oregontrail.InterviewQuestion;
 import oregontrail.Location;
 import oregontrail.Map;
@@ -101,18 +102,18 @@ public class MapControl {
     }  
     
     //MT L05 individual assignment 
-    public static double calcWagonVolume(double width, double height, double depth) {
+    public static double calcWagonVolume(double width, double height, double depth) throws MapControlException {
                 
         if (width < 1 || height < 1 || depth < 1) {
-          return -1;
+          throw new MapControlException("The width and height must be numeric and cannot be less than 1.");
         }
     
         if (width > 12 || width < 6) {
-            return -1;
+            throw new MapControlException("The width and height must be numeric and cannot be less than 1.");
         }
 
         if (depth > 18 || depth < 6) {
-            return -1;
+            throw new MapControlException("The width and height must be numeric and cannot be less than 1.");
         }
         double wagonVolume = width * height * depth;
             return wagonVolume;

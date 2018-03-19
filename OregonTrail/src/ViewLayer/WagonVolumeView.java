@@ -5,6 +5,7 @@
  */
 package ViewLayer;
 
+import Control_Layer.MapControl;
 import Exceptions.MapControlException;
 import java.util.Scanner;
 
@@ -99,6 +100,14 @@ public class WagonVolumeView extends View {
         private double doAction(double width, double depth, double height ) throws MapControlException {
             
             double totalCost;
+            
+            try {
+                MapControl.calcWagonVolume(width, height, depth);
+            }
+            catch(MapControlException e) {
+                System.out.println("e.getMessage");
+                return 0;
+            }
 
             totalCost = Control_Layer.MapControl.calcWagonVolume(width, depth, height);
 
