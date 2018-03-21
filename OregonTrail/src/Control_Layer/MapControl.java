@@ -5,12 +5,10 @@
  */
 package Control_Layer;
 
-import Control_Layer.GameControl.SceneType;
 import Exceptions.MapControlException;
 import oregontrail.InterviewQuestion;
 import oregontrail.Location;
 import oregontrail.Map;
-import oregontrail.QuestionScene;
 import oregontrail.Scene;
 
 /**
