@@ -68,7 +68,7 @@ public class MainMenuView extends View {
             
             case "N": {
             try{
-            startNewGame();
+            startNewGame();    // WE WANT THE CALL THE FUNCTION CREATENEWGAME() ON GAME CONTROL  AND CATCH IT HERE. WE HAVE FJNCTIONS AND METHODS BUT NOTHING IS CONNECTED
             }catch (GameControlException ex){
                 System.out.println(ex.getMessage());
             }
@@ -109,7 +109,7 @@ public class MainMenuView extends View {
                 
             case "I":{
                 try{
-                    calcItemTotalWeight();// TEAM ASSIGNEMTN PAGE 8 GABBY
+                    calcItemTotalWeight();// TEAM ASSIGNEMTN PAGE 8 GABBY   WE WANT TO USE THIS FUNCTION THAT IS LOCATED ON  INVENTORY CONTROL WE WANT TO DISPLAY THE MESSAGE BUT IS NOT WORKING
                 }catch (InventoryControlException ex){
                 System.out.println(ex.getMessage());}
             }
