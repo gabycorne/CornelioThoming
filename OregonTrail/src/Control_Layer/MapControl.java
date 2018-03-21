@@ -6,6 +6,7 @@
 package Control_Layer;
 
 import Control_Layer.GameControl.SceneType;
+import Exceptions.GameControlException;
 import Exceptions.MapControlException;
 import oregontrail.InterviewQuestion;
 import oregontrail.Location;
@@ -19,7 +20,7 @@ import oregontrail.Scene;
  */
 public class MapControl {
     
-        public static Map createMap(int noOfRows, int noOfColumns){  //InventoryItem[] items
+        public static Map createMap(int noOfRows, int noOfColumns) throws GameControlException{  //InventoryItem[] items
         System.out.println("**** createMap() called ****");
         
         if(noOfRows < 0 || noOfColumns < 0 ){

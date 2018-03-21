@@ -6,6 +6,7 @@
 package ViewLayer;
 
 import Control_Layer.InventoryControl;
+import Exceptions.InventoryControlException;
 /**
  *
  * @author Owner
@@ -33,8 +34,9 @@ public  class BuildWagonView extends View{
     }
     
     
+    
     @Override
-    public void display() {
+    public void display(){
         boolean done = false;
         do{
             String menuOption = this.getInput();
@@ -47,7 +49,7 @@ public  class BuildWagonView extends View{
     }
     
     @Override
-     public boolean doAction(String menuOption) {
+     public boolean doAction(String menuOption){
                     
         switch (menuOption) {
             case "I":  
@@ -58,6 +60,8 @@ public  class BuildWagonView extends View{
                 break;
             case "W":  
                 wheels();
+                
+                
                 break;
             case "A":  
                 axleAssemblies();
