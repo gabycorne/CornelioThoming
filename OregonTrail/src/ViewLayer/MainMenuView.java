@@ -8,6 +8,7 @@ package ViewLayer;
 import java.util.Scanner;
 import ViewLayer.StartExistingGameView;
 import Control_Layer.GameControl;
+import Control_Layer.InventoryControl;
 import oregontrail.Player;
 import ViewLayer.HelpMenuView;
 import oregontrail.OregonTrail;
@@ -34,7 +35,8 @@ public class MainMenuView extends View {
             + "\n  R - Restart saved Game         "
             + "\n  M - Display Map                "
             + "\n  C - Calculate Wagon Volume     "
-            + "\n  I - Calculate Wagon Weight     "    
+            + "\n  B - Buy Food                   "
+            + "\n  T - Total cost                 " 
             + "\n  W - Build Wagon                "
             + "\n  H - Get help                   "                
             + "\n  Q - Quit game                  "
@@ -81,6 +83,7 @@ public class MainMenuView extends View {
             case "M": displayMap();
                 break;
             
+            //Use for L11 team assignment
             case "C": {
             try {
                 calcWagonVolume();
@@ -90,7 +93,8 @@ public class MainMenuView extends View {
             }
         }
                 break;
-/*      //MT commented out in L11 to make room for calcWagonVolume
+
+            //Mike use this for individual assignment
             case "B": {
             try {
                 buyFood();
@@ -99,20 +103,26 @@ public class MainMenuView extends View {
             }
         }
                 break;                
-*/
+
                 
             case "H": getHelp();
                 break;
                 
+//            case "T": totalCost();
+//                break;
+                
             case "W": buildWagon(); // individual assignment gabby
                 break;
                 
-            case "I":{
-                try{
-                    calcItemTotalWeight();// TEAM ASSIGNEMTN PAGE 8 GABBY
-                }catch (InventoryControlException ex){
-                System.out.println(ex.getMessage());}
-            }
+//            case "I":{
+//                break;
+//            }
+//                try{
+//                
+//                    InventoryControl.calcItemTotalWeight();// TEAM ASSIGNEMTN PAGE 8 GABBY
+//                }catch (InventoryControlException ex){
+//                System.out.println(ex.getMessage());}
+//            }
                
             case "Q": return true;
                 
@@ -172,7 +182,6 @@ public class MainMenuView extends View {
         wagonVolumeView.display();
         wagonVolumeView.getInputs();
         
-        
         }
 
         public void buyFood() throws InventoryControlException{
@@ -196,7 +205,9 @@ public class MainMenuView extends View {
 // individual assignment gabby
     }
 
-    private void calcItemTotalWeight() throws InventoryControlException {
+    private void oldcalcItemTotalWeight() throws InventoryControlException {
+        
+        
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
