@@ -36,20 +36,16 @@ public class InventoryControl {
     
     
     //Author: Gaby Cornelio
-    public static  double calcItemTotalWeight( double itemWeight, double itemQuantityToPurchase) throws InventoryControlException{
-      
-       
+    public static double calcItemTotalWeight( double itemWeight, double itemQuantityToPurchase) throws InventoryControlException{
        //test case 1
         if (itemQuantityToPurchase < 2 || itemQuantityToPurchase > 4){
                     throw new InventoryControlException("You can choose a number between 2 and 4.") ; 
         }
-     
-     
+
        double totalWeight = itemWeight * itemQuantityToPurchase;
 
         return totalWeight;
-        
-       
+
          }    
 
     // code by gabby
