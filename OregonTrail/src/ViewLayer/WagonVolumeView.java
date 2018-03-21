@@ -33,8 +33,9 @@ public class WagonVolumeView extends View {
         double width = 0;
         while (done != true) {
             double valueEntry1 = this.getValueEntry();
+                  width = valueEntry1;
                   done = true;
-                  width = valueEntry1;             
+             
             
 //            if (valueEntry1 < 6 || valueEntry1 > 12) {
 //
@@ -74,14 +75,17 @@ public class WagonVolumeView extends View {
     
         public double getValueEntry() {
         boolean validInput = false;
+        String string1;
         double entry = 0;
         
             while (!validInput) {
                 Scanner inFile;
                 inFile = new Scanner(System.in);
 
-                validInput = inFile.hasNextDouble();
-                validInput = true;
+                string1 = inFile.next();
+                entry = Double.parseDouble(string1);
+                //validInput = inFile.hasNextDouble();
+
 //                if (!validInput) {
 //                    System.out.println("Please enter a valid number"); 
 //                    
@@ -105,7 +109,7 @@ public class WagonVolumeView extends View {
                 MapControl.calcWagonVolume(width, height, depth);
             }
             catch(MapControlException e) {
-                System.out.println("e.getMessage");
+                System.out.println("MapControlException.e.getMessage");
                 return 0;
             }
 

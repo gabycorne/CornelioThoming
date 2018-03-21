@@ -5,6 +5,9 @@
  */
 package Control_Layer;
 
+import Exceptions.InventoryControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,7 +35,7 @@ public class InventoryControlTest {
      * Author: MThoming
      */
     @Test
-    public void testCalcItemTotalCost() {
+    public void testCalcItemTotalCost() throws InventoryControlException {
         System.out.println("calcItemTotalCost (Michael's Tests)");
         
         // Test case 1
@@ -75,8 +78,12 @@ public class InventoryControlTest {
         //define the expected output variable
         expResult = 120.0;
         
-        //call the method
-        result = InventoryControl.calcItemTotalCost(itemCost, itemQuantityToPurchase);
+        try {
+            //call the method
+            result = InventoryControl.calcItemTotalCost(itemCost, itemQuantityToPurchase);
+        } catch (InventoryControlException ex) {
+            Logger.getLogger(InventoryControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0);
         
                 
@@ -135,8 +142,12 @@ public class InventoryControlTest {
         //define the expected output variable
         expResult = 1;
         
-        //call the method
-        result = InventoryControl.calcItemTotalCost(itemCost, itemQuantityToPurchase);
+        try {
+            //call the method
+            result = InventoryControl.calcItemTotalCost(itemCost, itemQuantityToPurchase);
+        } catch (InventoryControlException ex) {
+            Logger.getLogger(InventoryControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0);
         
                         
@@ -164,7 +175,12 @@ public class InventoryControlTest {
         double itemWeight = 50;
         double itemQuantityToPurchase = 4;
         double expResult = 200;
-        double result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        double result = 0;
+        try {
+            result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        } catch (InventoryControlException ex) {
+            Logger.getLogger(InventoryControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -174,7 +190,11 @@ public class InventoryControlTest {
          itemWeight = 50;
          itemQuantityToPurchase = -1;
         expResult = -1;
-         result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        try {
+            result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        } catch (InventoryControlException ex) {
+            Logger.getLogger(InventoryControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -183,7 +203,11 @@ public class InventoryControlTest {
          itemWeight = 50;
          itemQuantityToPurchase = 5;
         expResult = -1;
-         result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        try {
+            result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        } catch (InventoryControlException ex) {
+            Logger.getLogger(InventoryControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -192,7 +216,11 @@ public class InventoryControlTest {
          itemWeight = 50;
          itemQuantityToPurchase = 0;
         expResult = -1;
-         result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        try {
+            result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        } catch (InventoryControlException ex) {
+            Logger.getLogger(InventoryControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -201,7 +229,11 @@ public class InventoryControlTest {
          itemWeight = 50;
          itemQuantityToPurchase = 2;
         expResult = 100;
-         result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        try {
+            result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        } catch (InventoryControlException ex) {
+            Logger.getLogger(InventoryControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -210,7 +242,11 @@ public class InventoryControlTest {
          itemWeight = 50;
          itemQuantityToPurchase = 4;
         expResult = 200;
-         result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        try {
+            result = InventoryControl.calcItemTotalWeight(itemWeight, itemQuantityToPurchase);
+        } catch (InventoryControlException ex) {
+            Logger.getLogger(InventoryControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");

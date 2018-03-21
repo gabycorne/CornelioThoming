@@ -16,6 +16,7 @@ import Exceptions.InventoryControlException;
 import Exceptions.MapControlException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import Exceptions.GameControlException;
 
 /**
  *
@@ -33,6 +34,7 @@ public class MainMenuView extends View {
             + "\n  R - Restart saved Game         "
             + "\n  M - Display Map                "
             + "\n  C - Calculate Wagon Volume     "
+            + "\n  I - Calculate Wagon Weight     "    
             + "\n  W - Build Wagon                "
             + "\n  H - Get help                   "                
             + "\n  Q - Quit game                  "
@@ -64,7 +66,13 @@ public class MainMenuView extends View {
         //String input = "";
         switch(menuSelection){
             
-            case "N": startNewGame();
+            case "N": {
+            try{
+            startNewGame();
+            }catch (GameControlException ex){
+                System.out.println(ex.getMessage());
+            }
+            };
                 break;
                 
             case "R": restartGame();
@@ -78,6 +86,7 @@ public class MainMenuView extends View {
                 calcWagonVolume();
             } catch (MapControlException ex) {
                 Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex.getMessage());// this is how to display the exception message 
             }
         }
                 break;
@@ -97,6 +106,13 @@ public class MainMenuView extends View {
                 
             case "W": buildWagon(); // individual assignment gabby
                 break;
+                
+            case "I":{
+                try{
+                    calcItemTotalWeight();// TEAM ASSIGNEMTN PAGE 8 GABBY
+                }catch (InventoryControlException ex){
+                System.out.println(ex.getMessage());}
+            }
                
             case "Q": return true;
                 
@@ -112,13 +128,14 @@ public class MainMenuView extends View {
     
     
     
-        private void startNewGame(){
+        private void startNewGame() throws GameControlException {
              
            Player playerTemp = new Player(); 
            OregonTrail.setPlayer(playerTemp);
            
            GameControl gc = new GameControl();
-           GameControl.createNewGame(OregonTrail.getPlayer());
+            
+                GameControl.createNewGame(OregonTrail.getPlayer());
            
            GameControl.createItems();
            GameControl.createMap(5, 5);
@@ -158,17 +175,6 @@ public class MainMenuView extends View {
         
         }
 
-        //MT reference for MT L10 individual assignment. Disabled in L11
-//        public int purchasedItemsTotal(){
-//            int sum;
-//            Control_Layer.itemsInScene itemsInScene = new itemsInScene();
-//            int[] myArray = new int[6];
-//            sum = itemsInScene.purchasedItemsTotal(myArray);
-//            System.out.println("The total of all items purchased is: $" + sum);
-//            return sum;
-//        }        
-  
-        //MT - reference for MT L09 individual Assignment.  Disabled in week 10.
         public void buyFood() throws InventoryControlException{
             ViewLayer.BuyFoodView buyFoodView = new BuyFoodView();
             buyFoodView.display();
@@ -188,6 +194,10 @@ public class MainMenuView extends View {
         BuildWagonView buildWagon = new BuildWagonView();
         buildWagon.display();
 // individual assignment gabby
+    }
+
+    private void calcItemTotalWeight() throws InventoryControlException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
         public static class HelpMenuView {

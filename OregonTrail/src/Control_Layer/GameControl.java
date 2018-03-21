@@ -19,7 +19,7 @@ import oregontrail.OregonTrail;
 import oregontrail.ResourceScene;
 import oregontrail.Scene;
 import Control_Layer.itemsInScene;
-
+import Exceptions.GameControlException;
 /**
  *
  * @author mthoming
@@ -43,12 +43,12 @@ public class GameControl {
          return player;
     }   
             
-    public static int createNewGame(Player player) {
+    public static void createNewGame(Player player) throws GameControlException {
         System.out.println("**** CreateNewGame() called ****");
         System.out.println("Player name = " + player); //trying to show the name entry 
                                                        //provided by the player
         if (player == null)
-            return -1;
+            throw new GameControlException("You have to type your name");
         
         Game currentGame = new Game();  //create a new Game object
         
@@ -57,9 +57,9 @@ public class GameControl {
         OregonTrail.setCurrentGame(currentGame); //Save a reference to the game in the main class  
         
         Map map = createMap(5, 5);
-        currentGame.setMap(map); //assign the map to the game
-        
-        return 1;  //indicates success
+        currentGame.setMap(map);
+        //indicates success
+        //assign the map to the game
     }
     
     public static InventoryItem[] createItems() {
@@ -123,7 +123,7 @@ public class GameControl {
     }
    
     
-    public static Map createMap(int noOfRows, int noOfColumns){  //InventoryItem[] items
+    public static Map createMap(int noOfRows, int noOfColumns) throws GameControlException{  //InventoryItem[] items
         System.out.println("**** createMap() called ****");
         
         if(noOfRows < 0 || noOfColumns < 0 ){
@@ -152,11 +152,11 @@ public class GameControl {
     
    
 
-    public static Location[][] createLocations(int noOfRows, int noOfColumns) {
+    public static Location[][] createLocations(int noOfRows, int noOfColumns) throws GameControlException {
        System.out.println("***createLocations() called***");
       
      if ( noOfRows < 1 || noOfColumns < 1){
-     return null;
+     throw new GameControlException("Your number has to be greater than 0");
      }  
      Location[][] locations = new Location[noOfRows][noOfColumns];
    
@@ -175,6 +175,7 @@ public class GameControl {
        
     }
 
+   
    
     public enum SceneType{
         resource_Scene, 
@@ -241,7 +242,7 @@ public class GameControl {
 
 
 
-    public static int healthOfPlayer(int mealsADay, int hoursWalking, int weight){
+    public static int healthOfPlayer(int mealsADay, int hoursWalking, int weight) throws GameControlException{
       
         int caloriesPerMile;
         
@@ -254,11 +255,11 @@ public class GameControl {
         
        int caloriesPerMeal = 500;
         if (mealsADay < 1){
-            return -1;
+            throw new GameControlException("You need to eat more");
         }
         
         if (hoursWalking >= 12){
-            return -1;
+            throw new GameControlException("You have to rest");
         }
         
         int totalCaloriesBurned =  caloriesPerMile * 4 * hoursWalking;

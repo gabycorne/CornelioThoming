@@ -5,6 +5,9 @@
  */
 package Control_Layer;
 
+import Exceptions.MapControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,7 +43,12 @@ public class MapControlTest {
         double height = 3.0;
         double depth = 12.0;
         double expResult = 288.0;
-        double result = MapControl.calcWagonVolume(width, height, depth);
+        double result = 0;
+        try {
+            result = MapControl.calcWagonVolume(width, height, depth);
+        } catch (MapControlException ex) {
+            Logger.getLogger(MapControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
@@ -51,7 +59,11 @@ public class MapControlTest {
         height = 3.0;
         depth = 12.0;
         expResult = -1;
-        result = MapControl.calcWagonVolume(width, height, depth);
+        try {
+            result = MapControl.calcWagonVolume(width, height, depth);
+        } catch (MapControlException ex) {
+            Logger.getLogger(MapControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0);
 
         //Test case 3 
@@ -60,7 +72,11 @@ public class MapControlTest {
         height = 0.0;
         depth = 12.0;
         expResult = -1;
-        result = MapControl.calcWagonVolume(width, height, depth);
+        try {
+            result = MapControl.calcWagonVolume(width, height, depth);
+        } catch (MapControlException ex) {
+            Logger.getLogger(MapControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0);
         
         //Test case 4 
@@ -69,7 +85,11 @@ public class MapControlTest {
         height = 3.0;
         depth = 0.0;
         expResult = -1;
-        result = MapControl.calcWagonVolume(width, height, depth);
+        try {
+            result = MapControl.calcWagonVolume(width, height, depth);
+        } catch (MapControlException ex) {
+            Logger.getLogger(MapControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0);  
         
         //Test case 5 
@@ -78,7 +98,11 @@ public class MapControlTest {
         height = 3.0;
         depth = 12.0;
         expResult = 216;
-        result = MapControl.calcWagonVolume(width, height, depth);
+        try {
+            result = MapControl.calcWagonVolume(width, height, depth);
+        } catch (MapControlException ex) {
+            Logger.getLogger(MapControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0); 
         
         //Test case 6 
@@ -87,7 +111,11 @@ public class MapControlTest {
         height = 3.0;
         depth = 6.0;
         expResult = 144;
-        result = MapControl.calcWagonVolume(width, height, depth);
+        try {
+            result = MapControl.calcWagonVolume(width, height, depth);
+        } catch (MapControlException ex) {
+            Logger.getLogger(MapControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0);    
         
         //Test case 7 
@@ -96,7 +124,11 @@ public class MapControlTest {
         height = 3.0;
         depth = 18.0;
         expResult = 648;
-        result = MapControl.calcWagonVolume(width, height, depth);
+        try {
+            result = MapControl.calcWagonVolume(width, height, depth);
+        } catch (MapControlException ex) {
+            Logger.getLogger(MapControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         assertEquals(expResult, result, 0.0);        
     }
     

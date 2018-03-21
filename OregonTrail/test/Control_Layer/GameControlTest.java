@@ -5,6 +5,9 @@
  */
 package Control_Layer;
 
+import Exceptions.GameControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,7 +41,12 @@ public class GameControlTest {
         int hoursWalking = 5;
         int weight = 180;
         int expResult = 1500;
-        int result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        int result = 0;
+        try {
+            result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        } catch (GameControlException ex) {
+            Logger.getLogger(GameControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
         
         System.out.println("Actual results:" + result + "calories");
@@ -51,7 +59,11 @@ public class GameControlTest {
          hoursWalking = 10;
          weight = 180;
          expResult = -1;
-         result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        try {
+            result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        } catch (GameControlException ex) {
+            Logger.getLogger(GameControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
         
         System.out.println("Actual results:" + result + "calories");
@@ -64,7 +76,11 @@ public class GameControlTest {
          hoursWalking = 12;
          weight = 180;
          expResult = -1;
-         result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        try {
+            result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        } catch (GameControlException ex) {
+            Logger.getLogger(GameControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
         
         System.out.println("Actual results:" + result + "calories");
@@ -77,7 +93,11 @@ public class GameControlTest {
          hoursWalking = 12;
          weight = 180;
          expResult = -1;
-         result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        try {
+            result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        } catch (GameControlException ex) {
+            Logger.getLogger(GameControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
         
         System.out.println("Actual results:" + result + "calories");
@@ -90,7 +110,11 @@ public class GameControlTest {
          hoursWalking = 1;
          weight = 180;
          expResult = 100;
-         result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        try {
+            result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        } catch (GameControlException ex) {
+            Logger.getLogger(GameControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
         
         System.out.println("Actual results:" + result + "calories");
@@ -103,7 +127,11 @@ public class GameControlTest {
         hoursWalking = 10;
         weight = 180;
         expResult = -3000;
-         result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        try {
+            result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        } catch (GameControlException ex) {
+            Logger.getLogger(GameControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
         System.out.println("Actual results:" + result + "calories");
         assertEquals(expResult, result, 0);
