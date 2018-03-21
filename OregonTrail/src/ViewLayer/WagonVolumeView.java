@@ -83,19 +83,25 @@ public class WagonVolumeView extends View {
                 inFile = new Scanner(System.in);
 
                 string1 = inFile.next();
-                entry = Double.parseDouble(string1);
-                //validInput = inFile.hasNextDouble();
-
+                try {
+                entry = Double.parseDouble(string1); //change the user's entry into a double
+                validInput = inFile.hasNextDouble(); 
+                return Double.parseDouble(string1);
+                } catch (NumberFormatException exc) {  //or handle the error if they enter a non-numeric value
+                    System.out.println("Please enter a valid number"); 
+                }
+                
+                
+                //old logic used prior to week 11
 //                if (!validInput) {
-//                    System.out.println("Please enter a valid number"); 
-//                    
+//                    System.out.println("2Please enter a valid number"); 
 //                }
 //                else {
 //                    entry = inFile.nextDouble();
 //                    validInput = true;
 //                } 
 
-            } //while (!validInput);
+            } 
 
                 return entry;   
             
@@ -120,7 +126,7 @@ public class WagonVolumeView extends View {
 
     @Override
     public boolean doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("WagonVolumeView.doAction Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
