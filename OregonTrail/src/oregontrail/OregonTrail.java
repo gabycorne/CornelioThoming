@@ -102,7 +102,7 @@ public class OregonTrail {
         startProgramView.display();
         startProgramView.displayGetUserName();
         } catch (Exception e){
-
+        System.out.println(e);
         }
     }    
    
