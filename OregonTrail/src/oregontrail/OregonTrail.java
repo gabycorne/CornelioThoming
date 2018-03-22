@@ -96,14 +96,14 @@ public class OregonTrail {
 
     public static void main(String[] args) {
 
-        //try{
+        try{
         //show the game description
         ViewLayer.StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
+        startProgramView.displayGetUserName();
+        } catch (Exception e){
 
-        //} catch (Exception e){
-        //    startProgramView.displayGetUserName();
-        //}
+        }
     }    
    
     public void junk(String[] args) {
