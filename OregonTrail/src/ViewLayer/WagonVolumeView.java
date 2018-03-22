@@ -51,7 +51,7 @@ public class WagonVolumeView extends View {
 //           
 //        }
            
-        System.out.println("\t  Please enter the depth of the wagon you wish to build:");
+        System.out.println("\n  Please enter the depth of the wagon you wish to build:");
         
         //done = false;
         //double depth = 0;

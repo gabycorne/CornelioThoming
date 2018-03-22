@@ -103,7 +103,7 @@ public class MapControl {
     
     //MT L05 individual assignment 
     public static double calcWagonVolume(double width, double height, double depth) throws MapControlException {
-        System.out.println("MapControl.calcWagonVolume() called");
+        //System.out.println("MapControl.calcWagonVolume() called");
             double wagonVolume = width * height * depth;
             
             
