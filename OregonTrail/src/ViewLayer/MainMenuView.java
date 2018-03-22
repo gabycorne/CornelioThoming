@@ -8,6 +8,8 @@ package ViewLayer;
 import java.util.Scanner;
 import ViewLayer.StartExistingGameView;
 import Control_Layer.GameControl;
+import Control_Layer.InterviewControl;
+import Control_Layer.InventoryControl;
 import oregontrail.Player;
 import ViewLayer.HelpMenuView;
 import oregontrail.OregonTrail;
@@ -17,6 +19,7 @@ import Exceptions.MapControlException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import Exceptions.GameControlException;
+import Exceptions.InterviewControlException;
 
 /**
  *
@@ -34,8 +37,10 @@ public class MainMenuView extends View {
             + "\n  R - Restart saved Game         "
             + "\n  M - Display Map                "
             + "\n  C - Calculate Wagon Volume     "
-            + "\n  I - Calculate Wagon Weight     "    
+            + "\n  B - Buy Food                   "
+            + "\n  T - Total cost                 " 
             + "\n  W - Build Wagon                "
+            + "\n  P - Health Player              "
             + "\n  H - Get help                   "                
             + "\n  Q - Quit game                  "
             + "\n                                 "
@@ -81,6 +86,7 @@ public class MainMenuView extends View {
             case "M": displayMap();
                 break;
             
+            //Use for L11 team assignment
             case "C": {
             try {
                 calcWagonVolume();
@@ -90,7 +96,8 @@ public class MainMenuView extends View {
             }
         }
                 break;
-/*      //MT commented out in L11 to make room for calcWagonVolume
+
+            //Mike use this for individual assignment
             case "B": {
             try {
                 buyFood();
@@ -99,20 +106,33 @@ public class MainMenuView extends View {
             }
         }
                 break;                
-*/
+
                 
             case "H": getHelp();
                 break;
                 
-            case "W": buildWagon(); // individual assignment gabby
+//            case "T": totalCost();
+//                break;
+                
+            case "W": buildWagon(); // 
                 break;
                 
-            case "I":{
+            case "P":
                 try{
-                    calcItemTotalWeight();// TEAM ASSIGNEMTN PAGE 8 GABBY   WE WANT TO USE THIS FUNCTION THAT IS LOCATED ON  INVENTORY CONTROL WE WANT TO DISPLAY THE MESSAGE BUT IS NOT WORKING
-                }catch (InventoryControlException ex){
-                System.out.println(ex.getMessage());}
-            }
+                 playerHealth();
+                }catch (InterviewControlException ex){
+                System.out.println(ex.getMessage());
+                return false;
+                }
+                // individual assignment gabby
+                break;
+//            case "I":{
+//                try{
+//                    calcItemTotalWeight();// TEAM ASSIGNEMTN PAGE 8 GABBY   WE WANT TO USE THIS FUNCTION THAT IS LOCATED ON  INVENTORY CONTROL WE WANT TO DISPLAY THE MESSAGE BUT IS NOT WORKING
+//                }catch (InventoryControlException ex){
+//                System.out.println(ex.getMessage());}
+//            }
+
                
             case "Q": return true;
                 
@@ -172,7 +192,6 @@ public class MainMenuView extends View {
         wagonVolumeView.display();
         wagonVolumeView.getInputs();
         
-        
         }
 
         public void buyFood() throws InventoryControlException{
@@ -185,8 +204,8 @@ public class MainMenuView extends View {
          }
         
          public void getHelp() {
-        ViewLayer.MainMenuView.HelpMenuView helpMenuView = new HelpMenuView();
-        HelpMenuView.displayHelpMenuView();
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display();
             
         }      
 
@@ -196,22 +215,28 @@ public class MainMenuView extends View {
 // individual assignment gabby
     }
 
-    private void calcItemTotalWeight() throws InventoryControlException {
+    private void oldcalcItemTotalWeight() throws InventoryControlException {
+        
+        
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-        public static class HelpMenuView {
+    private void playerHealth() throws InterviewControlException {
+      
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter how many meals you ate in a day");
+      int  mealsAday = keyboard.nextInt();
+       System.out.print("Enter how many hours you walked in a day");
+      int  hoursWalking = keyboard.nextInt();     
+       System.out.print("Enter your weight");
+      int  weight = keyboard.nextInt();
+      
+       InterviewControl.healthOfPlayer(mealsAday,hoursWalking,weight);
+      
+      
+    }
 
-            public static void displayHelpMenuView() {
-                System.out.println("**** displayHelpMenuView() called ***");
-                
-            }
-
-            public HelpMenuView() {
-                System.out.println("**** HelpMenuView() called ***");
-                
-            }
-        }
+      
     
 
 

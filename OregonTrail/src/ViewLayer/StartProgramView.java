@@ -204,8 +204,8 @@ public class StartProgramView extends View {
          }
         
          private void getHelp() {
-        ViewLayer.MainMenuView.HelpMenuView helpMenuView = new MainMenuView.HelpMenuView();
-        MainMenuView.HelpMenuView.displayHelpMenuView();
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display();
             
         }
 

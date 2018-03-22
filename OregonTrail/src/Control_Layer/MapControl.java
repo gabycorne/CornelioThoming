@@ -11,7 +11,6 @@ import Exceptions.MapControlException;
 import oregontrail.InterviewQuestion;
 import oregontrail.Location;
 import oregontrail.Map;
-import oregontrail.QuestionScene;
 import oregontrail.Scene;
 
 /**

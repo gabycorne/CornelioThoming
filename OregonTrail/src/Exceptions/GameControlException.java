@@ -14,7 +14,7 @@ public class GameControlException extends Exception {
     }
 
     public GameControlException(String you_have_type_your_name) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
     }
 
    

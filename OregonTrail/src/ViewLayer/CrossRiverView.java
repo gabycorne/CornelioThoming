@@ -90,8 +90,8 @@ public class CrossRiverView extends View {
         }     
 
          public void getHelp() {
-        ViewLayer.MainMenuView.HelpMenuView helpMenuView = new MainMenuView.HelpMenuView();
-        MainMenuView.HelpMenuView.displayHelpMenuView();
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display();
             
         }
      

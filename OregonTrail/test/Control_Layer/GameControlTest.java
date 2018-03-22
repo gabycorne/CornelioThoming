@@ -6,6 +6,7 @@
 package Control_Layer;
 
 import Exceptions.GameControlException;
+import Exceptions.InterviewControlException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.After;
@@ -43,8 +44,8 @@ public class GameControlTest {
         int expResult = 1500;
         int result = 0;
         try {
-            result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
-        } catch (GameControlException ex) {
+            result = InterviewControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        } catch (InterviewControlException ex) {
             Logger.getLogger(GameControlTest.class.getName()).log(Level.SEVERE, null, ex);
         }
        
@@ -60,8 +61,8 @@ public class GameControlTest {
          weight = 180;
          expResult = -1;
         try {
-            result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
-        } catch (GameControlException ex) {
+            result = InterviewControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        } catch (InterviewControlException ex) {
             Logger.getLogger(GameControlTest.class.getName()).log(Level.SEVERE, null, ex);
         }
        
@@ -77,8 +78,8 @@ public class GameControlTest {
          weight = 180;
          expResult = -1;
         try {
-            result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
-        } catch (GameControlException ex) {
+            result = InterviewControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        } catch (InterviewControlException ex) {
             Logger.getLogger(GameControlTest.class.getName()).log(Level.SEVERE, null, ex);
         }
        
@@ -94,8 +95,8 @@ public class GameControlTest {
          weight = 180;
          expResult = -1;
         try {
-            result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
-        } catch (GameControlException ex) {
+            result = InterviewControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        } catch (InterviewControlException ex) {
             Logger.getLogger(GameControlTest.class.getName()).log(Level.SEVERE, null, ex);
         }
        
@@ -111,8 +112,8 @@ public class GameControlTest {
          weight = 180;
          expResult = 100;
         try {
-            result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
-        } catch (GameControlException ex) {
+            result = InterviewControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        } catch (InterviewControlException ex) {
             Logger.getLogger(GameControlTest.class.getName()).log(Level.SEVERE, null, ex);
         }
        
@@ -128,8 +129,8 @@ public class GameControlTest {
         weight = 180;
         expResult = -3000;
         try {
-            result = GameControl.healthOfPlayer(mealsADay, hoursWalking, weight);
-        } catch (GameControlException ex) {
+            result = InterviewControl.healthOfPlayer(mealsADay, hoursWalking, weight);
+        } catch (InterviewControlException ex) {
             Logger.getLogger(GameControlTest.class.getName()).log(Level.SEVERE, null, ex);
         }
        
