@@ -204,7 +204,7 @@ public class MainMenuView extends View {
          }
         
          public void getHelp() {
-        HelpMenuView helpMenuView = new HelpMenuView();
+        HelpMenuView helpMenuView = new HelpMenuView(); // Gabby modified this code because was not calling the help view , tutor show me how so i modified all of the vies that have this method
         helpMenuView.display();
             
         }      
@@ -221,7 +221,7 @@ public class MainMenuView extends View {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void playerHealth() throws InterviewControlException {
+    private void playerHealth() throws InterviewControlException { // individual assignment gabby
       
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Enter how many meals you ate in a day");

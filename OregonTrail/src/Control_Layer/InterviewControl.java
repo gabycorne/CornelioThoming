@@ -9,7 +9,7 @@ import Exceptions.InterviewControlException;
 
 /**
  *
- * @author mthoming
+ * @gabby
  */
 public class InterviewControl {
      public static int healthOfPlayer(int mealsADay, int hoursWalking, int weight) throws InterviewControlException{

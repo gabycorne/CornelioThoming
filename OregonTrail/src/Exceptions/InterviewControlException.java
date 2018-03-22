@@ -7,7 +7,7 @@ package Exceptions;
 
 /**
  *
- * @author Owner
+ * @author gabby
  */
 public class InterviewControlException extends Exception {
 
