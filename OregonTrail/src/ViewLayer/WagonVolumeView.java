@@ -83,15 +83,16 @@ public class WagonVolumeView extends View {
         boolean validInput = false;
         String string1;
         double entry = 0;
-        
+        Scanner inFile;
+        inFile = new Scanner(System.in);        
             while (!validInput) {
-                Scanner inFile;
-                inFile = new Scanner(System.in);
+
 
                 string1 = inFile.next();
                 try {
                 entry = Double.parseDouble(string1); //change the user's entry into a double
-                validInput = inFile.hasNextDouble(); 
+                validInput = true;
+                //validInput = inFile.hasNextDouble(); 
                 //return Double.parseDouble(string1);
                 } catch (NumberFormatException exc) {  //or handle the error if they enter a non-numeric value
                     System.out.println("Please enter a valid number"); 
@@ -121,7 +122,7 @@ public class WagonVolumeView extends View {
                 totalCost = Control_Layer.MapControl.calcWagonVolume(width, height, depth);
             }
             catch(MapControlException e) {
-                System.out.println("e.getMessage");
+                System.out.println(e.getMessage());
                 return 0;
             }
             
