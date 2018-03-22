@@ -28,15 +28,18 @@ public class WagonVolumeView extends View {
     }
     
     public void getInputs() throws MapControlException {
-        boolean done = false;
+        //boolean done = false; //MT removed 3/21/18 to test without using while statement
         double height = 3;
-        double width = 0;
-        while (done != true) {
-            double valueEntry1 = this.getValueEntry();
-                  width = valueEntry1;
-                  done = true;
-             
-            
+        //double width;
+        double valueEntry1 = this.getValueEntry();
+        double width = valueEntry1;
+        
+//        while (done != true) {
+//            double valueEntry1 = this.getValueEntry();
+//                  width = valueEntry1;
+//                  done = true;
+//             
+//            
 //            if (valueEntry1 < 6 || valueEntry1 > 12) {
 //
 //                System.out.println("\t  Please enter a width between 6 and 12:");                
@@ -45,17 +48,20 @@ public class WagonVolumeView extends View {
 //                done = true;
 //                width = valueEntry1; 
 //            }
-           
-        }
+//           
+//        }
            
         System.out.println("\t  Please enter the depth of the wagon you wish to build:");
         
-        done = false;
-        double depth = 0;
-        while (!done) {
-            double valueEntry2 = this.getValueEntry();
-                  done = true;
-                  depth = valueEntry2;          
+        //done = false;
+        //double depth = 0;
+        double valueEntry2 = this.getValueEntry();
+        double depth = valueEntry2;
+
+//        while (!done) {
+//            double valueEntry2 = this.getValueEntry();
+//                  done = true;
+//                  depth = valueEntry2;          
 //            if (valueEntry2 < 12 || valueEntry2 > 18) {
 //
 //                System.out.println("\t  Please enter a depth between 12 and 18:");                
@@ -64,8 +70,8 @@ public class WagonVolumeView extends View {
 //                done = true;
 //                depth = valueEntry2;
 //            }
-            
-        }
+//            
+//        }
         
         double totalVolume = doAction(width, depth, height);
         
@@ -86,7 +92,7 @@ public class WagonVolumeView extends View {
                 try {
                 entry = Double.parseDouble(string1); //change the user's entry into a double
                 validInput = inFile.hasNextDouble(); 
-                return Double.parseDouble(string1);
+                //return Double.parseDouble(string1);
                 } catch (NumberFormatException exc) {  //or handle the error if they enter a non-numeric value
                     System.out.println("Please enter a valid number"); 
                 }
@@ -112,14 +118,14 @@ public class WagonVolumeView extends View {
             double totalCost;
             
             try {
-                MapControl.calcWagonVolume(width, height, depth);
+                totalCost = Control_Layer.MapControl.calcWagonVolume(width, height, depth);
             }
             catch(MapControlException e) {
-                System.out.println("MapControlException.e.getMessage");
+                System.out.println("e.getMessage");
                 return 0;
             }
-
-            totalCost = Control_Layer.MapControl.calcWagonVolume(width, depth, height);
+            
+            //totalCost = Control_Layer.MapControl.calcWagonVolume(width, depth, height);
 
         return totalCost;
         }
