@@ -26,37 +26,44 @@ public class BuyFoodView extends View {
     }
     
     public void getInputs() throws InventoryControlException {
-        boolean done = false;
-        double price = 0;
-        while (done != true) {
-            double valueEntry1 = this.getValueEntry();
-            if (valueEntry1 < 1 || valueEntry1 > 5) {
-
-                System.out.println("\t  Please enter a price between 0 and 5 dollars");                
-
-            } else {
-                done = true;
-                price = valueEntry1; 
-            }
-           
-        }
+        
+        double valueEntry1 = this.getValueEntry();
+        double price = valueEntry1;
+        //MT removed 3/22/18 for L11 Individual assignment
+//        boolean done = false;
+//        double price = 0;
+//        while (done != true) {
+//            double valueEntry1 = this.getValueEntry();
+//            if (valueEntry1 < 1 || valueEntry1 > 5) {
+//
+//                System.out.println("\t  Please enter a price between 0 and 5 dollars");                
+//
+//            } else {
+//                done = true;
+//                price = valueEntry1; 
+//            }
+//           
+//        }
            
         System.out.println("\t  Please enter the quantity (in pounds) of food you wish to purchase:");
-        
-        done = false;
-        double quantity = 0;
-        while (!done) {
-            double valueEntry2 = this.getValueEntry();
-            if (valueEntry2 < 1 || valueEntry2 > 500) {
 
-                System.out.println("\t  Please enter a quantity between 1 & 500 pounds");                
-                done = false;
-            } else {
-                done = true;
-                quantity = valueEntry2;
-            }
-            
-        }
+        double valueEntry2 = this.getValueEntry();
+        double quantity = valueEntry2;
+        //MT removed 3/22/18 for L11 Individual assignment        
+//        done = false;
+//        double quantity = 0;
+//        while (!done) {
+//            double valueEntry2 = this.getValueEntry();
+//            if (valueEntry2 < 1 || valueEntry2 > 500) {
+//
+//                System.out.println("\t  Please enter a quantity between 1 & 500 pounds");                
+//                done = false;
+//            } else {
+//                done = true;
+//                quantity = valueEntry2;
+//            }
+//            
+//        }
         
         double totalCost = doAction(price, quantity);
         
@@ -65,25 +72,37 @@ public class BuyFoodView extends View {
     }
     
         private double getValueEntry() {
-        boolean validInput = false;
-        double entry = 0;
-        
+            boolean validInput = false;
+            String string1;
+            double entry = 0;
+            Scanner inFile;
+            inFile = new Scanner(System.in);
+
             while (!validInput) {
-                Scanner inFile;
-                inFile = new Scanner(System.in);
-
-                validInput = inFile.hasNextDouble();
-
-                if (!validInput) {
-                    System.out.println("Please enter a valid number"); 
-                    
-                }
-                else {
-                    entry = inFile.nextDouble();
+                string1 = inFile.next();
+                try {
+                    entry = Double.parseDouble(string1);
                     validInput = true;
-                } 
-
-            } //while (!validInput);
+                } catch (NumberFormatException exc) {
+                    System.out.println("Please enter a valid number");
+                }
+            }
+//            while (!validInput) {
+//                Scanner inFile;
+//                inFile = new Scanner(System.in);
+//
+//                validInput = inFile.hasNextDouble();
+//
+//                if (!validInput) {
+//                    System.out.println("Please enter a valid number"); 
+//                    
+//                }
+//                else {
+//                    entry = inFile.nextDouble();
+//                    validInput = true;
+//                } 
+//
+//            } //while (!validInput);
 
                 return entry;   
             
@@ -92,9 +111,15 @@ public class BuyFoodView extends View {
         private double doAction(double price, double quantity ) throws InventoryControlException {
             
             double totalCost;
-
-            totalCost = Control_Layer.InventoryControl.calcItemTotalCost(price, quantity);
-
+            
+            try {
+                totalCost = Control_Layer.InventoryControl.calcItemTotalCost(price, quantity);
+            }
+            catch(InventoryControlException e) {
+                System.out.println(e.getMessage());
+                return 0;
+            }
+            
         return totalCost;
         }
 
