@@ -12,6 +12,12 @@ import ViewLayer.CrossRiverView;
 import ViewLayer.GetFoodView;
 import ViewLayer.MainMenuView;
 import ViewLayer.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -32,6 +38,10 @@ public class OregonTrail {
     private static Player player = null;
     //private static Item item;
     public static Map map;
+    
+    //MT L12 variables for the input and output files
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
     
     public static Game getCurrentGame(){
          return currentGame;
@@ -96,14 +106,53 @@ public class OregonTrail {
 
     public static void main(String[] args) {
 
-
-        //show the game description
-        ViewLayer.StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
-
-
+        try{
+            //MT L12 create new BufferedReader object and assign it to the inFile attribute
+            OregonTrail.inFile = new BufferedReader(new InputStreamReader(System.in));
+            
+            OregonTrail.outFile = new PrintWriter(System.out, true);
+            
+            //show the game description
+            ViewLayer.StartProgramView startProgramView = new StartProgramView();
+            startProgramView.display();
+            startProgramView.displayGetUserName();
+            
+            } catch (Exception e){
+                System.out.println(e);
+            }
+        
+            //MT L12 add a "finally" statement to ensure the inFile is closed and catches all errors
+            finally {
+                try {
+                    OregonTrail.inFile.close();
+                    OregonTrail.outFile.close();
+                } catch (IOException ex) {
+                    System.out.println("Error closing files");
+                    return;  //MT L12 this is from pg.5 of the instructions, but I'm not sure if it's really needed.
+                            //There is no error whether it's here or not, so I'm not sure which way is correct.
+                }
+                
+            }
     }    
    
+    //MT L12 Getter and Setter methods for the outFile and inFile variables created at the top of this class
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        OregonTrail.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        OregonTrail.inFile = inFile;
+    }
+        
     public void junk(String[] args) {
         
 

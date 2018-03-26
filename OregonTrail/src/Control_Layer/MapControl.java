@@ -103,20 +103,23 @@ public class MapControl {
     
     //MT L05 individual assignment 
     public static double calcWagonVolume(double width, double height, double depth) throws MapControlException {
-                
+        //System.out.println("MapControl.calcWagonVolume() called");
+            double wagonVolume = width * height * depth;
+            
+            
         if (width < 1 || height < 1 || depth < 1) {
           throw new MapControlException("The width and height must be numeric and cannot be less than 1.");
         }
     
         if (width > 12 || width < 6) {
-            throw new MapControlException("The width and height must be numeric and cannot be less than 1.");
+            throw new MapControlException("The width must between 6 and 12.");
         }
 
         if (depth > 18 || depth < 6) {
-            throw new MapControlException("The width and height must be numeric and cannot be less than 1.");
+            throw new MapControlException("The depth must be between 6 and 18.");
         }
-        double wagonVolume = width * height * depth;
-            return wagonVolume;
+        return wagonVolume;
+
     }    
     
 }

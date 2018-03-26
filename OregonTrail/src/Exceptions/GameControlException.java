@@ -16,9 +16,5 @@ public class GameControlException extends Exception {
     public GameControlException(String you_have_type_your_name) {
       
     }
-
-   
-    
-    
     
 }

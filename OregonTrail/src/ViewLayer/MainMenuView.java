@@ -67,7 +67,7 @@ public class MainMenuView extends View {
     public boolean doAction(String menuSelection){
     
         menuSelection = menuSelection.toUpperCase();  //convert the received input to uppercase
-        System.out.println("\n" + menuSelection);
+        //System.out.println("\n" + menuSelection);
         //String input = "";
         switch(menuSelection){
             
@@ -186,7 +186,7 @@ public class MainMenuView extends View {
         }
 
         public void calcWagonVolume() throws MapControlException {
-        System.out.println("***calcWagonVolume Called***");
+        //System.out.println("***calcWagonVolume Called***");
         //call the view-layer function to get inputs from the user and feed them to MapControl.calcWagonVolume
         ViewLayer.WagonVolumeView wagonVolumeView = new WagonVolumeView();
         wagonVolumeView.display();
