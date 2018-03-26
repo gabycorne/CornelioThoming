@@ -5,7 +5,10 @@
  */
 package ViewLayer;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import oregontrail.OregonTrail;
 
 /**
  *
@@ -14,6 +17,10 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    
+    //MT L12 attributes to store references to the BufferedReader and PrinterWriter objects
+    protected final BufferedReader keyboard = OregonTrail.getInFile();
+    protected final PrintWriter console = OregonTrail.getOutFile();
     
     public View() {
     }
