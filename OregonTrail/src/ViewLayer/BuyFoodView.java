@@ -72,7 +72,7 @@ public class BuyFoodView extends View {
     }
     
         private double getValueEntry() {  // gabby I modified all the code here from the on in the reading but got this error because this is a double not string.
-        return 0;// to delete the error but from line 78 to line 96 are the changes I made on this week 12
+        return 0;// to delete the error but from line 78 to line 96 are the changes I made on this week 
        
             
 //         boolean valid = false;
