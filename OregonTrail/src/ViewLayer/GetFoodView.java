@@ -33,7 +33,7 @@ public class GetFoodView extends View {
     public void displayBanner(){
         
         //display message
-        System.out.println("(old message)");
+        this.console.println("(old message)");
     
     }
     
@@ -50,38 +50,7 @@ public class GetFoodView extends View {
     
     }
     
-    /*
-        private String getMenuOption() {
-        boolean validInput = false;
-        String selection = ""; 
-        
-        System.out.println("\t  Please enter your selection:");
-        
-        do {
-            Scanner inFile;
-            inFile = new Scanner(System.in);
   
-            String input = inFile.nextLine();
-            
-            input = input.toUpperCase();
-            
-            if (input == null || input.length() < 1 ) {
-                
-                System.out.println("\t  You must enter a non-blank value:");
-            }
-            else {
-                validInput = true;
-                selection = input.trim();
-                
-            }
-           }
-        
-        while (!validInput);
-        
-        return selection;
-        
-        }    
-    */
     
         public boolean doAction(String menuOption) {
                     
@@ -101,7 +70,7 @@ public class GetFoodView extends View {
             case "Q":  // Quit 
                 return true;
             default:
-                System.out.println("\n*** Invalid selection *** Try again***");
+                this.console.println("\n*** Invalid selection *** Try again***");
                 break;
         }
 
@@ -109,23 +78,23 @@ public class GetFoodView extends View {
         }
 
         private void hunting() {
-            System.out.println("**** hunting() called ***");
-            System.out.println("no variable");
+            this.console.println("**** hunting() called ***");
+            this.console.println("no variable");
         }
 
         private void gathering() {
-            System.out.println("**** gathering() called ***");
-            System.out.println("no variable");
+            this.console.println("**** gathering() called ***");
+            this.console.println("no variable");
         }
 
         private void fishing() {
-            System.out.println("**** fishing() called ***");
-            System.out.println("no variable");
+            this.console.println("**** fishing() called ***");
+            this.console.println("no variable");
         }
 
         private void HelpMenuView() {
-            System.out.println("**** HelpMenuView() called ***");
-            System.out.println("no variable");
+            this.console.println("**** HelpMenuView() called ***");
+            this.console.println("no variable");
         }
         
         

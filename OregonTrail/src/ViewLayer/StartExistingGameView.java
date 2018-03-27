@@ -13,8 +13,8 @@ public class StartExistingGameView extends View{
     
         @Override
         public void display() {
-                System.out.println("**** GameMenuView() called ***");
-                System.out.println("\tinput = ??");
+                this.console.println("**** GameMenuView() called ***");
+                this.console.println("\tinput = ??");
             }
 
     @Override

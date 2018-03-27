@@ -7,6 +7,8 @@ package ViewLayer;
 
 import Exceptions.InventoryControlException;
 import java.util.Scanner;
+import ViewLayer.View;
+import java.io.IOException;
 
 /**
  *
@@ -16,7 +18,7 @@ public class BuyFoodView extends View {
 
     @Override
     public void display() {
-        System.out.println("\n"
+        this.console.println("\n"
             + "\n================================="
             + "\n  Calculate the cost of the food "
             + "\n  you will buy.                  "
@@ -45,7 +47,7 @@ public class BuyFoodView extends View {
 //           
 //        }
            
-        System.out.println("\t  Please enter the quantity (in pounds) of food you wish to purchase:");
+        this.console.println("\t  Please enter the quantity (in pounds) of food you wish to purchase:");
 
         double valueEntry2 = this.getValueEntry();
         double quantity = valueEntry2;
@@ -67,13 +69,49 @@ public class BuyFoodView extends View {
         
         double totalCost = doAction(price, quantity);
         
-        System.out.println("\t  total cost = " + totalCost);     
+        this.console.println("\t  total cost = " + totalCost);     
         
     }
     
-        private double getValueEntry() {  // gabby I modified all the code here from the on in the reading but got this error because this is a double not string.
-        return 0;// to delete the error but from line 78 to line 96 are the changes I made on this week 
-       
+        private double getValueEntry() {
+            boolean validInput = false;
+            String string1;
+            double entry = 0;
+            
+            try {
+                while (!validInput) {
+                    
+                    string1 = this.keyboard.readLine();
+                    
+                    try {
+                        entry = Double.parseDouble(string1);
+                        validInput = true;
+                    } catch (NumberFormatException exc) {
+                        this.console.println("Please enter a valid number");
+                    }
+                }           
+            } catch (IOException e) {
+                this.console.println("Error reading input: " + e.getMessage());
+            }
+
+//            while (!validInput) {
+//                Scanner inFile;
+//                inFile = new Scanner(System.in);
+//
+//                validInput = inFile.hasNextDouble();
+//
+//                if (!validInput) {
+//                    System.out.println("Please enter a valid number"); 
+//                    
+//                }
+//                else {
+//                    entry = inFile.nextDouble();
+//                    validInput = true;
+//                } 
+//
+//            } //while (!validInput);
+
+                return entry;   
             
         }
             
@@ -85,7 +123,7 @@ public class BuyFoodView extends View {
                 totalCost = Control_Layer.InventoryControl.calcItemTotalCost(price, quantity);
             }
             catch(InventoryControlException e) {
-                System.out.println(e.getMessage());
+                this.console.println(e.getMessage());
                 return 0;
             }
             

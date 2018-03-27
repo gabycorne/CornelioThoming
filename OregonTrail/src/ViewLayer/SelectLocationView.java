@@ -76,35 +76,35 @@ public class SelectLocationView extends View{
             case 'Q':  // Quit 
                 return true;
             default:
-                System.out.println("\n You typed an invalid selection, please try again.");
+                       ErrorView.display(this.getClass().getName(),"You typed an invalid selection, please try again.");       //gabby
                 break;
         }
 
         return false;
         }
      private void missouriFrontier() {
-            System.out.println(" missouriFrontier() called ");
-            System.out.println("no variable");
+            this.console.println(" missouriFrontier() called ");
+            this.console.println("no variable");
         }
 
         private void storeAtMissouri() {
-            System.out.println(" storeAtMissouri() called ");
-            System.out.println("no variable");
+            this.console.println(" storeAtMissouri() called ");
+            this.console.println("no variable");
         }
 
         private void wagonBuildingArea() {
-            System.out.println(" wagonBuildingArea() called ");
-            System.out.println("no variable");
+            this.console.println(" wagonBuildingArea() called ");
+            this.console.println("no variable");
         }
 
         private void dessert() {
-            System.out.println(" dessert() called ");
-            System.out.println("no variable");
+            this.console.println(" dessert() called ");
+            this.console.println("no variable");
         }
     
         private void oregon() {
-            System.out.println(" oregon() called ");
-            System.out.println("no variable");
+            this.console.println(" oregon() called ");
+            this.console.println("no variable");
         }
    
 }

@@ -6,14 +6,10 @@
 package ViewLayer;
 
 import java.util.Scanner;
-import ViewLayer.StartExistingGameView;
 import Control_Layer.GameControl;
 import Control_Layer.InterviewControl;
-import Control_Layer.InventoryControl;
 import oregontrail.Player;
-import ViewLayer.HelpMenuView;
 import oregontrail.OregonTrail;
-import Control_Layer.itemsInScene;
 import Exceptions.InventoryControlException;
 import Exceptions.MapControlException;
 import java.util.logging.Level;
@@ -29,7 +25,7 @@ public class MainMenuView extends View {
     
         @Override
         public void display() {
-        System.out.println("\n"
+        this.console.println("\n"
             + "\n================================="
             + "\n  Choose from the following:     "
             + "\n                                 "
@@ -41,6 +37,7 @@ public class MainMenuView extends View {
             + "\n  T - Total cost                 " 
             + "\n  W - Build Wagon                "
             + "\n  P - Health Player              "
+            + "\n  S - Save the Game              "    
             + "\n  H - Get help                   "                
             + "\n  Q - Quit game                  "
             + "\n                                 "
@@ -75,7 +72,7 @@ public class MainMenuView extends View {
             try{
             startNewGame();    // WE WANT THE CALL THE FUNCTION CREATENEWGAME() ON GAME CONTROL  AND CATCH IT HERE. WE HAVE FJNCTIONS AND METHODS BUT NOTHING IS CONNECTED
             }catch (GameControlException ex){
-                System.out.println(ex.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input:" + ex.getMessage());//gabby
             }
             };
                 break;
@@ -87,18 +84,18 @@ public class MainMenuView extends View {
                 break;
             
             //Use for L11 team assignment
-            case "C": {
+            case "C": {  //calculate wagon volume
             try {
                 calcWagonVolume();
             } catch (MapControlException ex) {
                 Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-                System.out.println(ex.getMessage());// this is how to display the exception message 
+              ErrorView.display(this.getClass().getName(), "Error reading input:" + ex.getMessage());//gabby
             }
         }
                 break;
 
             //Mike use this for individual assignment
-            case "B": {
+            case "B": {  //buy food
             try {
                 buyFood();
             } catch (InventoryControlException ex) {
@@ -121,7 +118,7 @@ public class MainMenuView extends View {
                 try{
                  playerHealth();
                 }catch (InterviewControlException ex){
-                System.out.println(ex.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input:" + ex.getMessage());//gabby
                 return false;
                 }
                 // individual assignment gabby
@@ -133,10 +130,19 @@ public class MainMenuView extends View {
 //                System.out.println(ex.getMessage());}
 //            }
 
-               
+            case "S": 
+        {
+            try {
+                this.saveGame();
+            } catch (GameControlException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+                break;
+            
             case "Q": return true;
                 
-            default: System.out.println("Invalid selection");
+            default: this.console.println("Invalid selection"); // ErrorView.display(this.getClass().getName(),"invalid selection") spould we modified this too???????
       
             break;
         }
@@ -144,7 +150,9 @@ public class MainMenuView extends View {
     }   
           
     
-    
+        private void saveGame() throws GameControlException {
+            this.console.println("***saveGame Called***");
+        }
     
     
     
@@ -181,7 +189,7 @@ public class MainMenuView extends View {
 //        }
 
         public void displayMap() {
-        System.out.println("***displayMap Called***");
+        this.console.println("***displayMap Called***");
         ViewLayer.GameMenuView.displayMap();
         }
 
@@ -217,18 +225,17 @@ public class MainMenuView extends View {
 
     private void oldcalcItemTotalWeight() throws InventoryControlException {
         
-        
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   
     }
 
     private void playerHealth() throws InterviewControlException { // individual assignment gabby
       
-        Scanner keyboard = new Scanner(System.in);
-        System.out.print("Enter how many meals you ate in a day");
+        Scanner keyboard = new Scanner(System.in);// I had to change this one too but makes an error. 
+        this.console.print("Enter how many meals you ate in a day");
       int  mealsAday = keyboard.nextInt();
-       System.out.print("Enter how many hours you walked in a day");
+       this.console.print("Enter how many hours you walked in a day");
       int  hoursWalking = keyboard.nextInt();     
-       System.out.print("Enter your weight");
+       this.console.print("Enter your weight");
       int  weight = keyboard.nextInt();
       
        InterviewControl.healthOfPlayer(mealsAday,hoursWalking,weight);

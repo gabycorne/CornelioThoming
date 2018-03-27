@@ -16,7 +16,7 @@ public class CrossRiverView extends View {
 
         @Override
         public void display() {
-        System.out.println("\n"
+        this.console.println("\n"
             + "\n================================="
             + "\n  You encountered a river!       "
             + "\n  Choose what you will do:       "
@@ -49,7 +49,7 @@ public class CrossRiverView extends View {
     public boolean doAction(String menuSelection){
     
         menuSelection = menuSelection.toUpperCase();  //convert the received input to uppercase
-        System.out.println("\n" + menuSelection);
+        this.console.println("\n" + menuSelection);
         //String input = "";
         switch(menuSelection){
             
@@ -67,7 +67,7 @@ public class CrossRiverView extends View {
                
             case "Q": return true;
                 
-            default: System.out.println("Invalid selection");
+            default: this.console.println("Invalid selection");
       
             break;
         }
@@ -75,17 +75,17 @@ public class CrossRiverView extends View {
     }   
           
         private void waitOneDay() {
-           System.out.println("*** waitOneDay Selected***");
+           this.console.println("*** waitOneDay Selected***");
             
         }
         
         private void findFerry() {
-           System.out.println("*** findFerry Selected***");
+           this.console.println("*** findFerry Selected***");
             
         }
         
         private void sealFloatBoat() {
-           System.out.println("*** sealFloatBoat Selected***");
+           this.console.println("*** sealFloatBoat Selected***");
             
         }     
 

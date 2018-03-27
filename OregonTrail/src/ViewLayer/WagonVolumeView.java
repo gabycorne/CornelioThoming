@@ -7,6 +7,7 @@ package ViewLayer;
 
 import Control_Layer.MapControl;
 import Exceptions.MapControlException;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -18,7 +19,7 @@ public class WagonVolumeView extends View {
 
     @Override
     public void display() {
-        System.out.println("\n"
+        this.console.println("\n"
             + "\n================================="
             + "\n  Calculate the volume of your   "
             + "\n  wagon                          "
@@ -42,7 +43,7 @@ public class WagonVolumeView extends View {
 //            
 //            if (valueEntry1 < 6 || valueEntry1 > 12) {
 //
-//                System.out.println("\t  Please enter a width between 6 and 12:");                
+//                this.console.out.println("\t  Please enter a width between 6 and 12:");                
 //
 //            } else {
 //                done = true;
@@ -51,7 +52,7 @@ public class WagonVolumeView extends View {
 //           
 //        }
            
-        System.out.println("\n  Please enter the depth of the wagon you wish to build:");
+        this.console.println("\n  Please enter the depth of the wagon you wish to build:");
         
         //done = false;
         //double depth = 0;
@@ -75,7 +76,7 @@ public class WagonVolumeView extends View {
         
         double totalVolume = doAction(width, depth, height);
         
-        System.out.println("\t  total volume = " + totalVolume);     
+        this.console.println("\t  total volume = " + totalVolume);     
         
     }
     
@@ -83,20 +84,31 @@ public class WagonVolumeView extends View {
         boolean validInput = false;
         String string1;
         double entry = 0;
-        Scanner inFile;
-        inFile = new Scanner(System.in);        
-            while (!validInput) {
+        //Scanner inFile;
+        //inFile = new Scanner(System.in);        // I did not modifed this one because I did not know how
+            
+            try {
+                while (!validInput) {
 
+                    string1 = this.keyboard.readLine();
 
-                string1 = inFile.next();
-                try {
-                entry = Double.parseDouble(string1); //change the user's entry into a double
-                validInput = true;
-                //validInput = inFile.hasNextDouble(); 
-                //return Double.parseDouble(string1);
-                } catch (NumberFormatException exc) {  //or handle the error if they enter a non-numeric value
-                    System.out.println("Please enter a valid number"); 
+                    try {
+                        entry = Double.parseDouble(string1); //change the user's entry into a double
+                        validInput = true;
+                    //validInput = inFile.hasNextDouble(); 
+                    //return Double.parseDouble(string1);
+                    } catch (NumberFormatException exc) {  //or handle the error if they enter a non-numeric value
+                        ErrorView.display(this.getClass().getName(), "Please enter a valid number.");//gabby
+                        continue;
+                    }
+                    
                 }
+                
+            } catch (IOException e) {
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
+
+            }
+
                 
                 
                 //old logic used prior to week 11
@@ -106,9 +118,7 @@ public class WagonVolumeView extends View {
 //                else {
 //                    entry = inFile.nextDouble();
 //                    validInput = true;
-//                } 
-
-            } 
+//                }  
 
                 return entry;   
             
@@ -122,7 +132,7 @@ public class WagonVolumeView extends View {
                 totalCost = Control_Layer.MapControl.calcWagonVolume(width, height, depth);
             }
             catch(MapControlException e) {
-                System.out.println(e.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());//gabby
                 return 0;
             }
             

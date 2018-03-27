@@ -15,38 +15,22 @@ public class HealthOfPlayerView extends View {
     
     @Override
     public void display() {
-      System.out.println("Please enter your weight");
+      this.console.println("Please enter your weight");
       String weight = getInput();// I change this to a string it was int
-      System.out.println("Please enter how many hours you walked");
+      this.console.println("Please enter how many hours you walked");
       String  hoursWalked = getInput();
       
-      //  doAction(weight, hoursWalked);
+     
     }
-//     public int getInputs(){ 
-//        System.out.println("Please enter a number");
-//        Scanner Keyboard = new Scanner(System.in);
-//        boolean valid = false;
-//        int selection = 0;
-//        while (!valid){
-//            
-//            selection = Keyboard.nextInt();
-//            
-//            
-//        if (selection < 1 ){
-//            System.out.println("You have entered an invalid selection. Try again");
-//            continue;
-//        }
-//        break;
-//        }
-//        return selection;
-//     }
+
+
      private boolean doAction(int weight, int hoursWalking){
          
         if(weight > 99 || weight < 270 && hoursWalking > 1 || hoursWalking < 10 ){
-              System.out.println(" You are in good condition to make this jorney. ");  
+            ErrorView.display(this.getClass().getName(),"You are in good condition to make this jorney.");//gabby
                 }
         else{
-             System.out.println( " You need to either eat more to add more calories to your diet or to walk less. ");  
+             ErrorView.display(this.getClass().getName(),"You need to either eat more to add more calories to your diet or to walk less.");//gabby
         }
          return false;
 
@@ -54,7 +38,8 @@ public class HealthOfPlayerView extends View {
 
     @Override
     public boolean doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
+        
     }
 
    

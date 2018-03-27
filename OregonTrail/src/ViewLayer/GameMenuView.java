@@ -52,7 +52,7 @@ public class GameMenuView extends View {
         
         for (String[] location : locations) {
             for (String location1 : location) {
-                System.out.println(location1);
+                System.out.println(location1); //can't change these to "this.console" w/o causing errors
             }
             System.out.println("\n");
         }
