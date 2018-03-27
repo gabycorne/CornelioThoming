@@ -18,7 +18,6 @@ import oregontrail.Map;
 import oregontrail.OregonTrail;
 import oregontrail.ResourceScene;
 import oregontrail.Scene;
-import Control_Layer.itemsInScene;
 import Exceptions.GameControlException;
 /**
  *
