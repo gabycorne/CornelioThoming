@@ -38,7 +38,7 @@ public class OregonTrail {
     private static Player player = null;
     //private static Item item;
     public static Map map;
-    private static PrintWriter logFile = null;
+    
     //MT L12 variables for the input and output files
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
@@ -111,7 +111,7 @@ public class OregonTrail {
             OregonTrail.inFile = new BufferedReader(new InputStreamReader(System.in));
             
             OregonTrail.outFile = new PrintWriter(System.out, true);
-             OregonTrail.logFile = new PrintWriter("logFile.txt");// gabby
+            
             //show the game description
             ViewLayer.StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
@@ -126,7 +126,6 @@ public class OregonTrail {
                 try {
                     OregonTrail.inFile.close();
                     OregonTrail.outFile.close();
-                    OregonTrail.logFile.close();// gabby
                 } catch (IOException ex) {
                     System.out.println("Error closing files");
                     return;  //MT L12 this is from pg.5 of the instructions, but I'm not sure if it's really needed.
@@ -153,18 +152,25 @@ public class OregonTrail {
     public static void setInFile(BufferedReader inFile) {
         OregonTrail.inFile = inFile;
     }
-    
-    public static PrintWriter getLogFile(){
-    return logFile;
-    }   // gabby
-    public static void setLogFile(PrintWriter logFile){
-    OregonTrail.logFile = logFile;//gabby
-    }
+        
+    public void junk(String[] args) {
+        
 
-    public static PrintWriter getOutPut() {// i created this to delete the error on the new class errorview
-        return null;
+        
+//        ViewLayer.GetFoodView getFoodView = new GetFoodView();
+//        getFoodView.displayBanner();
+//        getFoodView.display();
+//        
+//        System.out.println("**** Quit selected, returned to calling class ***");
+//        
+//        
+//        ViewLayer.BuyFoodView buyFoodView = new BuyFoodView();
+//        buyFoodView.displayMessage();
+//        buyFoodView.displayGetFoodView();
+        
+        
+        
     }
-    
 
     
 }

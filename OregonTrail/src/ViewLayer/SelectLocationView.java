@@ -76,7 +76,7 @@ public class SelectLocationView extends View{
             case 'Q':  // Quit 
                 return true;
             default:
-                       ErrorView.display(this.getClass().getName(),"You typed an invalid selection, please try again.");       //gabby
+                System.out.println("\n You typed an invalid selection, please try again.");
                 break;
         }
 

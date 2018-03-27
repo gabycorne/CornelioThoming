@@ -84,7 +84,7 @@ public class WagonVolumeView extends View {
         String string1;
         double entry = 0;
         Scanner inFile;
-        inFile = new Scanner(System.in);        // I did not modifed this one because I did not know how
+        inFile = new Scanner(System.in);        
             while (!validInput) {
 
 
@@ -95,7 +95,7 @@ public class WagonVolumeView extends View {
                 //validInput = inFile.hasNextDouble(); 
                 //return Double.parseDouble(string1);
                 } catch (NumberFormatException exc) {  //or handle the error if they enter a non-numeric value
-                    ErrorView.display(this.getClass().getName(), "Please enter a valid number" + exc.getMessage());//gabby
+                    System.out.println("Please enter a valid number"); 
                 }
                 
                 
@@ -122,7 +122,7 @@ public class WagonVolumeView extends View {
                 totalCost = Control_Layer.MapControl.calcWagonVolume(width, height, depth);
             }
             catch(MapControlException e) {
-                ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());//gabby
+                System.out.println(e.getMessage());
                 return 0;
             }
             

@@ -50,7 +50,38 @@ public class GetFoodView extends View {
     
     }
     
+    /*
+        private String getMenuOption() {
+        boolean validInput = false;
+        String selection = ""; 
+        
+        System.out.println("\t  Please enter your selection:");
+        
+        do {
+            Scanner inFile;
+            inFile = new Scanner(System.in);
   
+            String input = inFile.nextLine();
+            
+            input = input.toUpperCase();
+            
+            if (input == null || input.length() < 1 ) {
+                
+                System.out.println("\t  You must enter a non-blank value:");
+            }
+            else {
+                validInput = true;
+                selection = input.trim();
+                
+            }
+           }
+        
+        while (!validInput);
+        
+        return selection;
+        
+        }    
+    */
     
         public boolean doAction(String menuOption) {
                     
