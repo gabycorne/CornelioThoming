@@ -7,7 +7,7 @@ package ViewLayer;
 
 import Exceptions.InventoryControlException;
 import java.util.Scanner;
-
+import ViewLayer.ErrorView;
 /**
  *
  * @author mthoming
@@ -71,41 +71,31 @@ public class BuyFoodView extends View {
         
     }
     
-        private double getValueEntry() {
-            boolean validInput = false;
-            String string1;
-            double entry = 0;
-            Scanner inFile;
-            inFile = new Scanner(System.in);
-
-            while (!validInput) {
-                string1 = inFile.next();
-                try {
-                    entry = Double.parseDouble(string1);
-                    validInput = true;
-                } catch (NumberFormatException exc) {
-                    System.out.println("Please enter a valid number");
-                }
-            }
-//            while (!validInput) {
-//                Scanner inFile;
-//                inFile = new Scanner(System.in);
-//
-//                validInput = inFile.hasNextDouble();
-//
-//                if (!validInput) {
-//                    System.out.println("Please enter a valid number"); 
-//                    
-//                }
-//                else {
-//                    entry = inFile.nextDouble();
-//                    validInput = true;
-//                } 
-//
-//            } //while (!validInput);
-
-                return entry;   
+        private double getValueEntry() {  // gabby I modified all the code here from the on in the reading but got this error because this is a double not string.
+        return 0;// to delete the error but from line 78 to line 96 are the changes I made on this week 12
+       
             
+//         boolean valid = false;
+//        String selection = null;
+//        try {
+//        while (!valid){
+//            selection = this.keyboard.readLine();
+//            selection = selection.trim();
+//            
+//            if (selection.length() < 1){
+//                ErrorView.display(this.getClass().getName(),"You must enter a value")
+//               ;//gabby
+//                continue;
+//            }
+//            
+//            break;
+//        }
+//        } catch (Exception e) {
+//           ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());//gabby
+//        }
+//        return selection;
+//  
+//            
         }
             
         private double doAction(double price, double quantity ) throws InventoryControlException {

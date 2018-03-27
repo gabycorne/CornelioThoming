@@ -51,68 +51,48 @@ public class StartProgramView extends View {
     
     }
     
-        private String getUserName() {
-        boolean validInput = false;
-        String selection = ""; 
-        
-        System.out.println("\t  Please enter your name:");
-        
-        do {
-            Scanner inFile;
-            inFile = new Scanner(System.in);
-  
-            String input = inFile.nextLine();
+        private String getUserName() { // gabby I modified all the code here from the on in the reading
+         boolean valid = false;
+        String selection = null;
+        try {
+        while (!valid){
+            selection = this.keyboard.readLine();
+            selection = selection.trim();
             
-            input = input.toUpperCase();
+            if (selection.length() < 1){
+                 ErrorView.display(this.getClass().getName(),"You must enter a value");
+                continue;
+            }
             
-            if (input == null || input.length() < 1 ) {
-                
-                System.out.println("\t  You must enter a non-blank value:");
-            }
-            else {
-                validInput = true;
-                selection = input.trim();
-                
-            }
-           }
-        
-        while (!validInput);
-        
-        return selection;
-        
+            break;
         }
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());//gabby
+        }
+        return selection;
+    }    
 
-        private String getMenuOption() {
-        boolean validInput = false;
-        String selection = ""; 
-        
-        System.out.println("\t  Please enter your selection:");
-        
-        do {
-            Scanner inFile;
-            inFile = new Scanner(System.in);
-  
-            String input = inFile.nextLine();
+        private String getMenuOption() {   // gabby I modified all the code here from the on in the reading
+         boolean valid = false;
+        String selection = null;
+        try {
+        while (!valid){
+            selection = this.keyboard.readLine();
+            selection = selection.trim();
             
-            input = input.toUpperCase();
+            if (selection.length() < 1){
+                ErrorView.display(this.getClass().getName(),"You must enter a value");
+                continue;
+            }
             
-            if (input == null || input.length() < 1 ) {
-                
-                System.out.println("\t  You must enter a non-blank value:");
-            }
-            else {
-                validInput = true;
-                selection = input.trim();
-                
-            }
-           }
-        
-        while (!validInput);
-        
-        return selection;
-        
+            break;
         }
-    
+        } catch (Exception e) {
+          ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());//gabby
+        }
+        return selection;
+    }    
+
     public void displayStartProgramView() {
         
         boolean endOfView = false;

@@ -18,36 +18,27 @@ public class HelpMenuView extends View {
     }
     
 
-        public String getInputs() {
-        boolean validInput = false;
-        String input = ""; 
-        
-        System.out.println("\t  Please enter your desired menu item");
-        
-        do {
-            String value = "";
+        public String getInputs() {    // gabby I modified all the code here from the on in the reading
+         boolean valid = false;
+        String selection = null;
+        try {
+        while (!valid){
+            selection = this.keyboard.readLine();
+            selection = selection.trim();
             
-            Scanner inFile;
-            inFile = new Scanner(System.in);
-  
-            value = inFile.nextLine();
+            if (selection.length() < 1){
+                 ErrorView.display(this.getClass().getName(),"You must enter a value");//gabby
+                continue;
+            }
             
-            if (value == null || value.length() < 1 ) {
-                
-                System.out.println("\t  You must enter a non-blank value:");
-            }
-            else {
-                validInput = true;
-                input = value.trim();
-                
-            }
-           }
-        
-        while (!validInput);
-        
-        return input;
-        
+            break;
         }
+        } catch (Exception e) {
+             ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());//gabby
+        }
+        return selection;
+    
+}
         
     @Override
         public boolean doAction(String input) {

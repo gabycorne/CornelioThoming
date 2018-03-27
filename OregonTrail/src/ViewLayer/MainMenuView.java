@@ -75,7 +75,7 @@ public class MainMenuView extends View {
             try{
             startNewGame();    // WE WANT THE CALL THE FUNCTION CREATENEWGAME() ON GAME CONTROL  AND CATCH IT HERE. WE HAVE FJNCTIONS AND METHODS BUT NOTHING IS CONNECTED
             }catch (GameControlException ex){
-                System.out.println(ex.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input:" + ex.getMessage());//gabby
             }
             };
                 break;
@@ -92,7 +92,7 @@ public class MainMenuView extends View {
                 calcWagonVolume();
             } catch (MapControlException ex) {
                 Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-                System.out.println(ex.getMessage());// this is how to display the exception message 
+              ErrorView.display(this.getClass().getName(), "Error reading input:" + ex.getMessage());//gabby
             }
         }
                 break;
@@ -121,7 +121,7 @@ public class MainMenuView extends View {
                 try{
                  playerHealth();
                 }catch (InterviewControlException ex){
-                System.out.println(ex.getMessage());
+                ErrorView.display(this.getClass().getName(), "Error reading input:" + ex.getMessage());//gabby
                 return false;
                 }
                 // individual assignment gabby
@@ -136,7 +136,7 @@ public class MainMenuView extends View {
                
             case "Q": return true;
                 
-            default: System.out.println("Invalid selection");
+            default: System.out.println("Invalid selection"); // ErrorView.display(this.getClass().getName(),"invalid selection") spould we modified this too???????
       
             break;
         }
@@ -217,13 +217,12 @@ public class MainMenuView extends View {
 
     private void oldcalcItemTotalWeight() throws InventoryControlException {
         
-        
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+   
     }
 
     private void playerHealth() throws InterviewControlException { // individual assignment gabby
       
-        Scanner keyboard = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);// I had to change this one too but makes an error. 
         System.out.print("Enter how many meals you ate in a day");
       int  mealsAday = keyboard.nextInt();
        System.out.print("Enter how many hours you walked in a day");
