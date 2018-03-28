@@ -44,7 +44,7 @@ public class GameControl {
         throw new GameControlException("Problem saving the game");
         }
         try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))){
-        out.writeObject(filePath);// inside parenthesis shoudld be game so we have to continue 
+        out.writeObject(filePath);// inside parenthesis shoudld be game so we have to continue with the instruction 
         } catch(IOException ex){
         throw ex;
         } 
