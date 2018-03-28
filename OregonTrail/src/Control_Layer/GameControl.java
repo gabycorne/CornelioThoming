@@ -40,6 +40,11 @@ public class GameControl {
 // create a new ObjectOutputStream from the FileOutputStream
 // write the game object to the ObjectOutputStream
     }
+    
+    public static Game getGame() {
+        System.out.println("getGame() in GameControl class");
+    return null;
+    }
 
     public GameControl() {
     }

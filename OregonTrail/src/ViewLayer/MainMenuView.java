@@ -77,7 +77,7 @@ public class MainMenuView extends View {
             };
                 break;
                 
-            case "R": restartGame();
+            case "R": this.startSavedGame();
                 break;
 
             case "M": displayMap();
@@ -176,9 +176,12 @@ public class MainMenuView extends View {
             
         }
         
-        public void restartNewGame(){
-             ViewLayer.StartExistingGameView startExistingGameView = new StartExistingGameView();
-           startExistingGameView.display();
+        public void startSavedGame(){
+            this.console.println("***restartGame() called***");
+            
+            
+            ViewLayer.StartExistingGameView startExistingGameView = new StartExistingGameView();
+            startExistingGameView.display();
             
         }
 
@@ -209,8 +212,6 @@ public class MainMenuView extends View {
             buyFoodView.getInputs();  
         }        
         
-         private void restartGame() {
-         }
         
          public void getHelp() {
         HelpMenuView helpMenuView = new HelpMenuView(); // Gabby modified this code because was not calling the help view , tutor show me how so i modified all of the vies that have this method
