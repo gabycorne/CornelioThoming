@@ -19,11 +19,27 @@ import oregontrail.OregonTrail;
 import oregontrail.ResourceScene;
 import oregontrail.Scene;
 import Exceptions.GameControlException;
+import java.io.*;
 /**
  *
  * @author mthoming
  */
 public class GameControl {    
+
+    public static void saveGame(Game game, String filePath) throws GameControlException, IOException {
+        if(game == null || filePath == null || filePath.length() < 1){
+        throw new GameControlException("Problem saving the game");
+        }
+        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))){
+        out.writeObject(game);
+        } catch(IOException e){
+        throw e;
+        } 
+        
+// create a new FileOutputStream for the filePath
+// create a new ObjectOutputStream from the FileOutputStream
+// write the game object to the ObjectOutputStream
+    }
 
     public GameControl() {
     }
@@ -237,17 +253,7 @@ public class GameControl {
         
         
     }    
-// made by gabby
 
-
-
-   
-
-//    private static class Question { /// to stop error line 167   
-//
-//        public Question() { //moved to MapControl class per instructions in L10 team assignment
-//        }
-//    }
     
 }
 

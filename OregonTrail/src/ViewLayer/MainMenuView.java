@@ -151,7 +151,8 @@ public class MainMenuView extends View {
           
     
         private void saveGame() throws GameControlException {
-            this.console.println("***saveGame Called***");
+           SaveGameView saveGameView = new SaveGameView();
+           saveGameView.display();
         }
     
     
