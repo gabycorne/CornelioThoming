@@ -35,15 +35,32 @@ public class GameControl {
         } catch(IOException e){
         throw e;
         } 
-        
-// create a new FileOutputStream for the filePath
-// create a new ObjectOutputStream from the FileOutputStream
-// write the game object to the ObjectOutputStream
+
     }
     
-    public static Game getGame() {
-        System.out.println("getGame() in GameControl class");
+    public static Game getGame(String filePath)throws GameControlException, IOException {
+        
+        if(filePath == null || filePath.length() < 1){
+        throw new GameControlException("Problem saving the game");
+        }
+        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))){
+        out.writeObject(filePath);// inside parenthesis shoudld be game so we have to continue 
+        } catch(IOException ex){
+        throw ex;
+        } 
+        
+     
+// game = call ObjectInputStream’s readObject() method
+// set the currentGame attribute in the main class to the
+// game object
+// set the player attribute in the main class to the
+// player object saved in the game object
+// return game
     return null;
+    }
+
+    public static void getGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public GameControl() {

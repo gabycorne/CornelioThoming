@@ -24,9 +24,7 @@ public class SaveGameView extends View {
         String[] inputs = new String[0];
        
         inputs[0] = getInput("Save the game");
-        
-// input1 = getInput(thePromptMessage)
-// save a reference to input1 in the inputs array 
+ 
         return inputs;
     
     }

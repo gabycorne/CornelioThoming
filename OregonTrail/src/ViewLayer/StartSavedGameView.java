@@ -30,20 +30,24 @@ public class StartSavedGameView extends View {
     
     }
     
-    private boolean doAction(String[] inputs) {
+    private boolean doAction(String[] inputs){
         String filePath = inputs[0];
-        
-        //MT commented out on 03/27/18.  Re-enable it and continue working on page 22 of L12
-//        try{
-//            GameControl.getGame();
-//        } catch (GameControlException e) 
-//        {
-//            ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());
-//        return false;
+//   try{
+//   GameControl.getGame();
+//   }catch(GameControlException e){
+//         ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());
+//   return false;
+//   } catch (IOException ex) {
+//            ErrorView.display(this.getClass().getName(), "Saving the Game Error" + ex.getMessage());
 //        }
-        this.console.println("The file was started from: " + filePath);
-  
-        return true;
+   
+// this should be like this. on line 36 marks an error because getGame() is empty and on GameControl getGame() has parameters String file path,
+//so if we continue with the assignment we will solve this, but 
+// i did not know how to do the rest. I solved the catch error but when i place the other error it came back so we can ask the instructor about this tonight.
+
+   GameMenuView gameMenuView = new GameMenuView();
+   this.console.println("This is the: " + gameMenuView);
+   return true;
     }
 
     private String getInput(String save_the_game) {

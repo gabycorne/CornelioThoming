@@ -77,7 +77,13 @@ public class MainMenuView extends View {
             };
                 break;
                 
-            case "R": this.startSavedGame();
+            case "R":{
+                 try {
+                startSavedGame();
+            } catch (GameControlException e) {
+              ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());//gabby
+            }
+            }
                 break;
 
             case "M": displayMap();
@@ -176,12 +182,10 @@ public class MainMenuView extends View {
             
         }
         
-        public void startSavedGame(){
+        public void startSavedGame() throws GameControlException{
             this.console.println("***restartGame() called***");
-            
-            
-            ViewLayer.StartExistingGameView startExistingGameView = new StartExistingGameView();
-            startExistingGameView.display();
+         StartSavedGameView startSavedGameView = new StartSavedGameView();
+           startSavedGameView.display();
             
         }
 
