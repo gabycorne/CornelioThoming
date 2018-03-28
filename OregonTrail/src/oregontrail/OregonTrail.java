@@ -111,7 +111,7 @@ public class OregonTrail {
             OregonTrail.inFile = new BufferedReader(new InputStreamReader(System.in));
             
             OregonTrail.outFile = new PrintWriter(System.out, true);
-             OregonTrail.logFile = new PrintWriter("logFile.txt");// gabby
+            OregonTrail.logFile = new PrintWriter("logFile.txt");// gabby
             //show the game description
             ViewLayer.StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
@@ -133,10 +133,9 @@ public class OregonTrail {
                     if (OregonTrail.logFile != null)
                         OregonTrail.logFile.close();
                     
-                    OregonTrail.logFile.close();// gabby
                 } catch (IOException ex) {
                     System.out.println("Error closing files");
-                    return;  //MT L12 this is from pg.5 of the instructions, but I'm not sure if it's really needed.
+                    return;  //MT L12 this is from pg.5 & pg. 9 of the instructions, but I'm not sure if it's really needed.
                             //There is no error whether it's here or not, so I'm not sure which way is correct.
                 }
                 
