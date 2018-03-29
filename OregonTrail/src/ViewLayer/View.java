@@ -31,6 +31,7 @@ public abstract class View implements ViewInterface {
     
     @Override
     public void display() {
+        
     
         boolean done = false;
         do {

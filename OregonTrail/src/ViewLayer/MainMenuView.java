@@ -161,16 +161,14 @@ public class MainMenuView extends View {
            saveGameView.display();
         }
     
-    
-    
         private void startNewGame() throws GameControlException {
              
-           Player playerTemp = new Player(); 
-           OregonTrail.setPlayer(playerTemp);
+           //Player playerTemp = new Player();  no need for a new player, it's being passed from another class
+           //OregonTrail.setPlayer(playerTemp);
            
            GameControl gc = new GameControl();
             
-                GameControl.createNewGame(OregonTrail.getPlayer());
+           GameControl.createNewGame(OregonTrail.getPlayer());
            
            GameControl.createItems();
            GameControl.createMap(5, 5);
@@ -183,7 +181,7 @@ public class MainMenuView extends View {
         }
         
         public void startSavedGame() throws GameControlException{
-            this.console.println("***restartGame() called***");
+            this.console.println("Where do you want to load the game from?");
          StartSavedGameView startSavedGameView = new StartSavedGameView();
            startSavedGameView.display();
             

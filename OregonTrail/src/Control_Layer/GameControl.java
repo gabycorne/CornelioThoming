@@ -20,6 +20,8 @@ import oregontrail.ResourceScene;
 import oregontrail.Scene;
 import Exceptions.GameControlException;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author mthoming
@@ -39,28 +41,24 @@ public class GameControl {
     }
     
     public static Game getGame(String filePath)throws GameControlException, IOException {
-        
+        Game game = new Game(); 
         if(filePath == null || filePath.length() < 1){
-        throw new GameControlException("Problem saving the game");
+            
+            throw new GameControlException("Problem saving the game");
+            }
+            try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(filePath))){
+            game = (Game) in.readObject();// inside parenthesis should be game so we have to continue with the instruction 
+            } catch(IOException ex){
+            throw ex;
+            } catch (ClassNotFoundException ex) { 
+            Logger.getLogger(GameControl.class.getName()).log(Level.SEVERE, null, ex);
         }
-        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))){
-        out.writeObject(filePath);// inside parenthesis shoudld be game so we have to continue with the instruction 
-        } catch(IOException ex){
-        throw ex;
-        } 
+            
+        OregonTrail.setCurrentGame(game);
+        OregonTrail.setPlayer(game.getPlayer());
         
-     
-// game = call ObjectInputStream’s readObject() method
-// set the currentGame attribute in the main class to the
-// game object
-// set the player attribute in the main class to the
-// player object saved in the game object
-// return game
-    return null;
-    }
 
-    public static void getGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return game;
     }
 
     public GameControl() {

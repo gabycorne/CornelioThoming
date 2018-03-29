@@ -133,49 +133,14 @@ public class StartProgramView extends View {
                 return false;          
                        }
         
-       player.setName(input);
+        player.setName(input);
         this.console.println("=== " + "Welcome to the game " + input + " We hope you have a lot of fun!" + "==="); 
 
-
-    /*    
-        String menuItem = input;
-        
-        menuItem = menuItem.toUpperCase();
-        
-        switch(menuItem){
-            
-            case "N": startNewGame();
-                break;
-                
-            case "R": restartGame();
-                break;
-                
-            case "H": getHelp();
-                break;
-               
-            case "E": return true;
-                
-                default: System.out.println("Invalid main menu");
-      
-            return false;
-            
-            }
-        
-    */
-        
+        OregonTrail.setPlayer(player);
+       
         return true;
     }    
 
-        //Old Logic??  Can it be deleted??
-//        private void startNewGame(){
-//             
-//           Player playerTemp = new Player(); 
-//           
-//           GameControl.CreateNewGame(OregonTrail.getPlayer);
-//           ViewLayer.GameMenuView gameMenuView = new GameMenuView();
-//           gameMenuView.display();
-//            
-//        }
         
         private void restartNewGame(){
              ViewLayer.StartExistingGameView startExistingGameView = new StartExistingGameView();

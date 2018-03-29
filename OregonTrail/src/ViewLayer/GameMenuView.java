@@ -22,6 +22,12 @@ public class GameMenuView extends View {
         super("**** GameMenuView() called ***");
     }
 
+    private void saveGame() {
+        SaveGameView saveGameView = new SaveGameView();
+        saveGameView.display();
+    }
+    
+
     public static void displayMap() {
         
         

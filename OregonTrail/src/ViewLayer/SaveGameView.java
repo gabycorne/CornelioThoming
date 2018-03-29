@@ -20,18 +20,21 @@ import static oregontrail.OregonTrail.getCurrentGame;
 public class SaveGameView extends View {
     
     
-    private String[] getInputs(){
-        String[] inputs = new String[0];
-       
-        inputs[0] = getInput("Save the game");
- 
-        return inputs;
+//    private String[] getInputs(){
+//        String[] inputs = new String[0];
+//       
+//        inputs[0] = getInput("Save the game");
+// 
+//        return inputs;
+//    
+//    }
     
-    }
     
-    public boolean doAction(String[] inputs){
-        String filePath = inputs[0];
+    @Override
+    public boolean doAction(String inputs){
+        String filePath = inputs;
         Game game = getCurrentGame(); 
+        
         try{
         GameControl.saveGame(game, filePath);
         }catch (GameControlException e){
@@ -47,19 +50,19 @@ public class SaveGameView extends View {
 
     private String getInput(String save_the_game) {
          System.out.println("Where do you want to save the game?");
-       String place = null;
+       String filePath = null;
          try {
-            place = this.keyboard.readLine();
+            filePath = this.keyboard.readLine();
         } catch (IOException ex) {
             Logger.getLogger(SaveGameView.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return  place ;
+        return  filePath ;
     }
 
-    @Override
-    public boolean doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    @Override
+//    public boolean doAction(String value) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
   
 }
