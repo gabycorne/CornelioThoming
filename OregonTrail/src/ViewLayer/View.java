@@ -37,6 +37,7 @@ public abstract class View implements ViewInterface {
         do {
             //prompt for and get input
             String value = this.getInput();
+            this.console.println("reading user's entry...");
             if (value.toUpperCase().equals("Q")) //user wants to quit
                 return; //exit the view
             

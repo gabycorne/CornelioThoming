@@ -49,7 +49,7 @@ public class SaveGameView extends View {
     }
 
     private String getInput(String save_the_game) {
-         System.out.println("Where do you want to save the game?");
+         this.console.println("Where do you want to save the game?");
        String filePath = null;
          try {
             filePath = this.keyboard.readLine();

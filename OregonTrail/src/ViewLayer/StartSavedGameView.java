@@ -21,7 +21,6 @@ public class StartSavedGameView extends View {
 
     @Override
     public String getInput() {
-        this.console.println("Where do you want to load the game from?");
         String filePath = new String();
          try {
             filePath = this.keyboard.readLine();
