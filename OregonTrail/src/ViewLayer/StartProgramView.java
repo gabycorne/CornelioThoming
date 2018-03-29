@@ -124,6 +124,7 @@ public class StartProgramView extends View {
 
     // call the getInput function from the View super-class
     
+    @Override
     public boolean doAction(String input) {
                 
         Player player = new Player();
