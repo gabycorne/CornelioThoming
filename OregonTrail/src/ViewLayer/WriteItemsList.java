@@ -9,6 +9,7 @@ import Control_Layer.ItemType;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -16,20 +17,20 @@ import java.util.ArrayList;
  */
 public class WriteItemsList extends View {
 
-    public static void writeItemsList(ArrayList<String> list, String filepath) throws IOException {
+    public void writeItemsList(ArrayList<String> list, String filepath) throws IOException {
     
         try (PrintWriter output = new PrintWriter(filepath)) {
         
             String header = "The following items are in the list:";
             output.println(header);
             //if itemList is not empty, write each item on a new line
-//            if (list.isEmpty()) {
-//            //do nothing
-//            } else {
-//                for (ItemType itemType : OregonTrail.ItemType()) {
-//                    output.println(itemType...());
-//                }
-//            }
+            if (list.isEmpty()) {
+            //do nothing
+            } else {
+                for (ItemType itemType : ItemType.values()) {
+                    System.out.println(Arrays.asList());
+                }
+            }
             output.flush();
         } catch (Exception e) {
             throw new IOException(e.getMessage());

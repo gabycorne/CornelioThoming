@@ -37,7 +37,8 @@ public class MainMenuView extends View {
             + "\n  T - Total cost                 " 
             + "\n  W - Build Wagon                "
             + "\n  P - Health Player              "
-            + "\n  S - Save the Game              "    
+            + "\n  S - Save the Game              "
+            + "\n  D - Display Items List         "
             + "\n  H - Get help                   "                
             + "\n  Q - Quit game                  "
             + "\n                                 "
@@ -76,6 +77,15 @@ public class MainMenuView extends View {
             }
             };
                 break;
+                
+            case "D": {
+            try{
+            displayItemList();    // WE WANT THE CALL THE FUNCTION CREATENEWGAME() ON GAME CONTROL  AND CATCH IT HERE. WE HAVE FJNCTIONS AND METHODS BUT NOTHING IS CONNECTED
+            }catch (GameControlException ex){
+                ErrorView.display(this.getClass().getName(), "Error reading input:" + ex.getMessage());//gabby
+            }
+            };
+                break;                
                 
             case "R":{
                  try {
@@ -155,6 +165,12 @@ public class MainMenuView extends View {
         return false;
     }   
           
+    
+        private void displayItemList() throws GameControlException {
+            this.console.println("Enter a filename where you want to save the Items List");
+            WriteItemsList writeItemsList = new WriteItemsList();
+            writeItemsList.display();
+        }
     
         private void saveGame() throws GameControlException {
            this.console.println("Enter a filename where you want to save your game");

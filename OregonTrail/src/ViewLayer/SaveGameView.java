@@ -19,17 +19,6 @@ import static oregontrail.OregonTrail.getCurrentGame;
 
 public class SaveGameView extends View {
     
-    
-//    private String[] getInputs(){
-//        String[] inputs = new String[0];
-//       
-//        inputs[0] = getInput("Save the game");
-// 
-//        return inputs;
-//    
-//    }
-    
-    
     @Override
     public boolean doAction(String inputs){
         String filePath = inputs;
@@ -49,9 +38,9 @@ public class SaveGameView extends View {
     }
 
     private String getInput(String save_the_game) {
-         this.console.println("Where do you want to save the game?");
-       String filePath = null;
-         try {
+        this.console.println("Where do you want to save the game?");
+        String filePath = null;
+        try {
             filePath = this.keyboard.readLine();
         } catch (IOException ex) {
             Logger.getLogger(SaveGameView.class.getName()).log(Level.SEVERE, null, ex);
