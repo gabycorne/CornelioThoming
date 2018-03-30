@@ -17,7 +17,7 @@ import java.util.Arrays;
  */
 public class WriteItemsList extends View {
 
-    public void writeItemsList(ArrayList<String> list, String filepath) throws IOException {
+    public void display(ArrayList<String> list, String filepath) throws IOException {
     
         try (PrintWriter output = new PrintWriter(filepath)) {
         
