@@ -9,7 +9,9 @@ import Control_Layer.ItemType;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,23 +19,38 @@ import java.util.Arrays;
  */
 public class WriteItemsList extends View {
 
-    public void display(ArrayList<String> list, String filepath) throws IOException {
-    
+    @Override
+    public void display() {
+        String filepath = "";
+               
         try (PrintWriter output = new PrintWriter(filepath)) {
         
             String header = "The following items are in the list:";
             output.println(header);
-            //if itemList is not empty, write each item on a new line
-            if (list.isEmpty()) {
-            //do nothing
-            } else {
-                for (ItemType itemType : ItemType.values()) {
-                    System.out.println(Arrays.asList());
-                }
+        
+            String[][] strArr = {{"Number", "Item"},
+                                 {"1", "Food"},
+                                 {"2", "Bullets"},
+                                 {"3", "Wagon Wheels"},
+                                 {"4", "Wagon Tongues"},
+                                 {"5", "Wagon Axle"},
+                                 {"6", "Oxen"},
+                                 {"7", "Tools"},                             
+                                };
+
+        for (String[] strArr1 : strArr) {
+            for (String[] strArr2 : strArr) {
+                this.console.println(Arrays.asList());
             }
+        }
+
             output.flush();
         } catch (Exception e) {
-            throw new IOException(e.getMessage());
+            try {
+                throw new IOException(e.getMessage());
+            } catch (IOException ex) {
+                Logger.getLogger(WriteItemsList.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     
