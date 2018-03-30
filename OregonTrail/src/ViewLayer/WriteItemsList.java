@@ -54,6 +54,7 @@ public class WriteItemsList extends View {
                     }
                 }
                 output.flush();
+                this.console.println("File output completed successfully!!");
             }
             
         } catch (Exception e) {
