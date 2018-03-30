@@ -168,9 +168,10 @@ public class MainMenuView extends View {
     
         private void displayItemList() throws GameControlException {
             this.console.println("Enter a filename where you want to save the Items List");
+            String filepath = "";
             WriteItemsList writeItemsList = new WriteItemsList();
-            writeItemsList.getInput();
-            writeItemsList.display();
+            filepath = writeItemsList.getInput();
+            writeItemsList.exportList(filepath);
         }
     
         private void saveGame() throws GameControlException {
