@@ -40,7 +40,8 @@ public class WriteItemsList extends View {
         try (PrintWriter output = new PrintWriter(new FileOutputStream(filepath))){
             //String header = "The following items are in the list:";
             //output.println(itemList);
-            this.console.println("\n");
+            this.console.println("\n Report Title: Item List \n");
+            output.println("\n Report Title: Item List \n\n");
 
             if ("".equals(itemList[0][0])) {
             } else {
