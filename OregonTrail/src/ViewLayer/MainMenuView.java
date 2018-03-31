@@ -71,7 +71,7 @@ public class MainMenuView extends View {
             
             case "N": {
             try{
-            startNewGame();    // WE WANT THE CALL THE FUNCTION CREATENEWGAME() ON GAME CONTROL  AND CATCH IT HERE. WE HAVE FJNCTIONS AND METHODS BUT NOTHING IS CONNECTED
+            startNewGame();
             }catch (GameControlException ex){
                 ErrorView.display(this.getClass().getName(), "Error reading input:" + ex.getMessage());//gabby
             }
@@ -80,7 +80,7 @@ public class MainMenuView extends View {
                 
             case "D": {
             try{
-            displayItemList();    // WE WANT THE CALL THE FUNCTION CREATENEWGAME() ON GAME CONTROL  AND CATCH IT HERE. WE HAVE FJNCTIONS AND METHODS BUT NOTHING IS CONNECTED
+            displayItemList();
             }catch (GameControlException ex){
                 ErrorView.display(this.getClass().getName(), "Error reading input:" + ex.getMessage());//gabby
             }
@@ -168,7 +168,7 @@ public class MainMenuView extends View {
     
         private void displayItemList() throws GameControlException {
             this.console.println("Enter a filename where you want to save the Items List");
-            String filepath = "";
+            String filepath;
             WriteItemsList writeItemsList = new WriteItemsList();
             filepath = writeItemsList.getInput();
             writeItemsList.exportList(filepath);

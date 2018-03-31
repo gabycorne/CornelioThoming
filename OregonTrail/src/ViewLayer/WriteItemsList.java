@@ -25,7 +25,7 @@ public class WriteItemsList extends View {
 
     public void exportList(String filepath) {
 
-        String[][] itemList = {{"Number", "Item"},
+        String[][] itemList = {{"Row", "Item"},
                      {"1", "Food"},
                      {"2", "Bullets"},
                      {"3", "Wagon Wheels"},
@@ -37,24 +37,22 @@ public class WriteItemsList extends View {
                String item = "";
         //try (PrintWriter output = new PrintWriter(filepath)) {
         
-        try (ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(filepath))){
+        try (PrintWriter output = new PrintWriter(new FileOutputStream(filepath))){
             //String header = "The following items are in the list:";
-            output.writeObject(itemList);
-        
-
+            //output.println(itemList);
+            this.console.println("\n");
 
             if ("".equals(itemList[0][0])) {
             } else {
                 for (int i=0; i<8; i++) {
                     for (int j=0; j<2; j++) {
                         item += itemList[i][j];
-                        
-                        this.console.println(itemList[i][j]);
-                        output.writeObject(itemList[i][j]); 
                     }
+                    this.console.println(" "+ itemList[i][0] + "\t" + itemList[i][1]);
+                    output.println(" "+ itemList[i][0]+"\t" + itemList[i][1]);
                 }
+                this.console.println("\n ***File output completed successfully***");
                 output.flush();
-                this.console.println("File output completed successfully!!");
             }
             
         } catch (Exception e) {

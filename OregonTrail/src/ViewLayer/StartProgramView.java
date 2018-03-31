@@ -6,6 +6,7 @@
 package ViewLayer;
 
 import Control_Layer.GameControl;
+import java.io.IOException;
 import java.util.Scanner;
 import oregontrail.OregonTrail;
 import oregontrail.Player;
@@ -69,7 +70,7 @@ public class StartProgramView extends View {
             
             break;
         }
-        } catch (Exception e) {
+        } catch (IOException e) {
             ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());//gabby
         }
         return selection;

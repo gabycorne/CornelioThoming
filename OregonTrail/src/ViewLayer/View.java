@@ -60,8 +60,14 @@ public abstract class View implements ViewInterface {
             selection = selection.trim();
             
             if (selection.length() < 1){
-                 ErrorView.display(this.getClass().getName(),"You must enter a value");//gabby
-                continue;
+                ErrorView.display(this.getClass().getName(),"You must enter a value");//gabby
+                valid = false;
+            }
+            
+            if (selection.contains("/")) {
+                this.console.println("Please enter a valid filepath");
+                ErrorView.display(this.getClass().getName(),"Please enter a valid filepath");//gabby
+                valid = false;
             }
             
             break;
