@@ -6,6 +6,7 @@
 package ViewLayer;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import oregontrail.OregonTrail;
@@ -72,7 +73,7 @@ public abstract class View implements ViewInterface {
             
             break;
         }
-        } catch (Exception e) {
+        } catch (IOException e) {
             ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());//gabby
         }
         return selection;
