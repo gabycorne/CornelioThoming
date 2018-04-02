@@ -57,20 +57,12 @@ public class GameMenuView extends View {
 
         String total = "";
         
-        for (int i = 0; i < locations.length; i++) {
-        
+        for (String[] location : locations) {
             for (int j = 0; j < locations.length; j++) {
-                total += locations[i][j];
+                total += location[j];
             }
-            System.out.println(" | " + locations[i][0]
-                             + " | " + locations[i][1] 
-                             + " | " + locations[i][2]
-                             + " | " + locations[i][3]
-                             + " | " + locations[i][4] + " | "
-                             + "\n----------------------------");            
+            System.out.println(" | " + location[0] + " | " + location[1] + " | " + location[2] + " | " + location[3] + " | " + location[4] + " | " + "\n----------------------------");            
         }
-        
-        
 //        System.out.println("\n\nMap of the Oregon Trail"
 //                         +"\n    1  2  3  4  5  "
 //                         +"\n-------------------"
