@@ -30,7 +30,6 @@ public class GameMenuView extends View {
 
     public static void displayMap() {
         
-        
         Game currentGame = new Game();
         currentGame = OregonTrail.getCurrentGame(); //game = get the currentGame from the main class
         
@@ -49,19 +48,29 @@ public class GameMenuView extends View {
 //        String[][] locations;
 //        locations = new String[5][5];
         
-        String[][] locations = {{"A", "B", "C", "D", "E"},
-                                {"F", "G", "H", "I", "J"},
-                                {"K", "L", "M", "N", "O"},
-                                {"P", "Q", "R", "S", "T"},
-                                {"U", "V", "W", "X", "Y"},
+        String[][] locations = {{"??", "??", "??", "??", "??"},
+                                {"??", "??", "??", "??", "??"},
+                                {"??", "??", "??", "??", "??"},
+                                {"??", "??", "??", "??", "??"},
+                                {"??", "??", "??", "??", "??"},
                                };
+
+        String total = "";
         
-        for (String[] location : locations) {
-            for (String location1 : location) {
-                System.out.println(location1); //can't change these to "this.console" w/o causing errors
+        for (int i = 0; i < locations.length; i++) {
+        
+            for (int j = 0; j < locations.length; j++) {
+                total += locations[i][j];
             }
-            System.out.println("\n");
+            System.out.println(" | " + locations[i][0]
+                             + " | " + locations[i][1] 
+                             + " | " + locations[i][2]
+                             + " | " + locations[i][3]
+                             + " | " + locations[i][4] + " | "
+                             + "\n----------------------------");            
         }
+        
+        
 //        System.out.println("\n\nMap of the Oregon Trail"
 //                         +"\n    1  2  3  4  5  "
 //                         +"\n-------------------"

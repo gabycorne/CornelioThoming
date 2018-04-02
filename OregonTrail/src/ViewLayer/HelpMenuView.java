@@ -14,9 +14,21 @@ import java.util.Scanner;
 public class HelpMenuView extends View {
 
     public HelpMenuView() {
-        super("**** displayMenuView() called ***");
+        //super("**** displayMenuView() called ***");
     }
     
+    @Override
+    public void display() {
+        this.console.println("\n"
+            + "\n================================="
+            + "\n  If you need help, you have     "
+            + "\n  come to the right place!       "
+            + "\n                                 "
+            + "\n  However, this part of the game "
+            + "\n  is not fully implemented yet.  "
+            + "\n  so you will need to survive on "
+            + "\n  your own until it's done!      ");
+    }
 
         public String getInputs() {
         boolean validInput = false;

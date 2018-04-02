@@ -214,7 +214,7 @@ public class MainMenuView extends View {
 //        }
 
         public void displayMap() {
-        this.console.println("***displayMap Called***");
+        this.console.println("Game Map: \n");
         ViewLayer.GameMenuView.displayMap();
         }
 
@@ -234,9 +234,10 @@ public class MainMenuView extends View {
         }        
         
         
-         public void getHelp() {
-        HelpMenuView helpMenuView = new HelpMenuView(); // Gabby modified this code because was not calling the help view , tutor show me how so i modified all of the vies that have this method
-        helpMenuView.display();
+        public void getHelp() {
+            this.console.println("***Help Menu Called***");
+            HelpMenuView helpMenuView = new HelpMenuView(); // Gabby modified this code because was not calling the help view , tutor show me how so i modified all of the vies that have this method
+            helpMenuView.display();
             
         }      
 
