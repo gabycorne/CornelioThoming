@@ -216,6 +216,14 @@ public class MainMenuView extends View {
         public void displayMap() {
         this.console.println("Game Map: \n");
         ViewLayer.GameMenuView.displayMap();
+        this.console.println("\n The Game Map has been displayed, "
+                           + "do you want to return to the "
+                           + "main menu?");
+//  How to allow the user to press "Y" to go back to the main menu?
+//            String menuOption;
+//            menuOption = GameMenuView.getInput();
+//        GameMenuView.doAction(String menuOption);
+        
         }
 
         public void calcWagonVolume() throws MapControlException {

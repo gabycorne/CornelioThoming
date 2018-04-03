@@ -55,13 +55,13 @@ public class GetFoodView extends View {
         public boolean doAction(String menuOption) {
                     
         switch (menuOption) {
-            case "H":  // Start New Game 
+            case "H":  // go hunting for food
                 hunting();
                 break;
-            case "G":  // Load Saved Game
+            case "G":  // gather food
                 gathering();
                 break;
-            case "F":  // Save Current Game 
+            case "F":  // go fishing 
                 fishing();
                 break;
             case "A":  // Help Menu

@@ -63,47 +63,23 @@ public class GameMenuView extends View {
             }
             System.out.println(" | " + location[0] + " | " + location[1] + " | " + location[2] + " | " + location[3] + " | " + location[4] + " | " + "\n----------------------------");            
         }
-//        System.out.println("\n\nMap of the Oregon Trail"
-//                         +"\n    1  2  3  4  5  "
-//                         +"\n-------------------"
-//                         +"\n1  |  |  |  |  |  |"
-//                         +"\n-------------------"
-//                         +"\n2  |  |  |  |  |  |"
-//                         +"\n-------------------"                         
-//                         +"\n3  |  |  |  |  |  |"
-//                         +"\n-------------------"               
-//                         +"\n4  |  |  |  |  |  |"
-//                         +"\n-------------------"               
-//                         +"\n5  |  |  |  |  |  |"
-//                         +"\n-------------------");
-//        OregonTrail.map.setLocations(locations);
-//        
-//        locations[Rows][Columns] = new Location();
-//        locations[Rows][Columns].setRow(Rows);
-        //Print the column numbers for each column
-        //for every row in map
-        //Print a row divider
-        //Print the row number on a new line
-        //for every column in the row
-        //Print a column divider
-        //location = locations[row][column]
-        //if location has been visited
-        //Get the mapSymbol for the scene in this location
-        //Print the mapSymbol
-        //else
-        //Print " ?? "
-        //endif
-        //endFor
-        //Print the ending column divider
-        //endFor
-        //Print the ending row divider
-    
+        
     }
     
-    @Override
-    public boolean doAction(String value) {
-        System.out.println("******assignItemsToScenes[] called*****");
-        return false;
-    }
+        public boolean doAction(String menuOption) {
+                    
+            switch (menuOption) {
+                case "Y":  // return to main menu
+                    return false;
 
+                case "N":  // Quit 
+                    return true;
+                default:
+                    this.console.println("\n*** Invalid selection *** Try again***");
+                    break;
+            }
+
+            return false;
+            }       
+        
 }
